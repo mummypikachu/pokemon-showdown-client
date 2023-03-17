@@ -19,10 +19,10 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	host: 'psim.us',
-	port: 7777,
-	httpport: 7777,
-	altport: 0,
+	host: 'sim3.psim.us',
+	port: 443,
+	httpport: 8000,
+	altport: 80,
 	registered: true
 };
 
@@ -33,11 +33,11 @@ Config.customcolors = {
 	'zarel': 'aeo'
 };
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (20c82e3d)";
+Config.version = "0.11.2 (8f42bcfe/81f562a9)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'play.pokemonshowdown.com',
+	client: 'lizshowdownv2.strangled.net',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

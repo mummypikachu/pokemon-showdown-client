@@ -20,8 +20,8 @@ Config.whitelist = [
 Config.defaultserver = {
 	id: 'showdown',
 	host: 'lizshowdownv2.strangled.net',
-	port: 7777,
-	httpport: 7777,
+	port: 0,
+	httpport: 0,
 	altport: 0,
 	registered: true
 };

@@ -20,8 +20,8 @@ Config.whitelist = [
 Config.defaultserver = {
 	id: 'showdown',
 	host: 'psim.us',
-	port: 0,
-	httpport: 0,
+	port: 7777,
+	httpport: 7777,
 	altport: 0,
 	registered: true
 };

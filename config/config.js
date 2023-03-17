@@ -19,7 +19,7 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	host: '2600:1700:6159:5000:a41a:7c74:3089:340e',
+	host: '26.71.196.245',
 	port: 7777,
 	httpport: 7777,
 	altport: 0,

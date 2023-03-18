@@ -37,8 +37,8 @@ Config.customcolors = {
 Config.version = "0.11.2 (6c4a245f)";
 
 Config.routes = {
-	root: 'lizshowdownv2.strangled.net',
-	client: 'lizshowdownv2.strangled.net',
+	root: 'pokemonshowdown.com',
+	client: 'play.pokemonshowdown.com',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

@@ -20,10 +20,10 @@ Config.whitelist = [
 Config.defaultserver = {
 	id: 'showdown',
 	server: 'lizshowdownv2.strangled.net',
-	port: 8080,
+	port: 8000,
 	httpport: 8000,
-	altport: 8000,
-	registered: true
+	altport: 80,
+	registered: false
 };
 
 
@@ -34,10 +34,10 @@ Config.customcolors = {
 	'zarel': 'aeo'
 };
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (459bfe1f)";
+Config.version = "0.11.2 (7e469064)";
 
 Config.routes = {
-	root: 'lizshowdownv2.strangled.net',
+	root: 'pokemonshowdown.com',
 	client: 'lizshowdownv2.strangled.net',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',

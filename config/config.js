@@ -19,9 +19,9 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	server: 'http://127.0.0.1',
-	port: 8000,
-	httpport: 8000,
+	server: 'https://6cd1-2600-1700-6159-5000-e46d-5d68-af6-53f4.ngrok.io',
+	port: 8080,
+	httpport: 8080,
 	altport: 80,
 	registered: false
 };
@@ -38,7 +38,7 @@ Config.version = "0.11.2 (584b04f9)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'http://127.0.0.1:8000',
+	client: 'https://6cd1-2600-1700-6159-5000-e46d-5d68-af6-53f4.ngrok.io:8000',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

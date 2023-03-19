@@ -1,5 +1,5 @@
 {
-    "root": "http://127.0.0.1:8000",
+    "root": "pokemonshowdown.com",
     "client": "http://127.0.0.1:8000",
     "dex": "dex.pokemonshowdown.com",
     "replays": "replay.pokemonshowdown.com",

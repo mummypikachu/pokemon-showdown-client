@@ -1,6 +1,6 @@
 {
     "root": "pokemonshowdown.com",
-    "client": "https://6cd1-2600-1700-6159-5000-e46d-5d68-af6-53f4.ngrok.io:8000",
+    "client": "lizshowdown.unaux.com",
     "dex": "dex.pokemonshowdown.com",
     "replays": "replay.pokemonshowdown.com",
     "users": "pokemonshowdown.com/users"

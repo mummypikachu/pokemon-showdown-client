@@ -779,9 +779,9 @@ function toId() {
 			};
 			this.socket = constructSocket();
 
-			var socketopened = false;
+			var socketopened = true;
 			var altport = (Config.server.port === Config.server.altport);
-			var altprefix = false;
+			var altprefix = true;
 
 			this.socket.onopen = function () {
 				socketopened = true;

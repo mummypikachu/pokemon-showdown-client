@@ -1,6 +1,6 @@
 {
     "root": "pokemonshowdown.com",
-    "client": "99.93.10.109:8080",
+    "client": "192.168.1.66:8080",
     "dex": "dex.pokemonshowdown.com",
     "replays": "replay.pokemonshowdown.com",
     "users": "pokemonshowdown.com/users"

@@ -34,11 +34,11 @@ Config.customcolors = {
 	'zarel': 'aeo'
 };
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (ed2f7bfd)";
+Config.version = "0.11.2 (c32d9b38)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: '192.168.1.66',
+	client: 'play.pokemonshowdown.com',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

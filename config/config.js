@@ -19,7 +19,7 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	host: '192.168.1.66',
+	host: 'localhost',
 	port: 8000,
 	httpport: 8080,
 	altport: 80,
@@ -34,7 +34,7 @@ Config.customcolors = {
 	'zarel': 'aeo'
 };
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (8034d6a0)";
+Config.version = "0.11.2 (0db9e310)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',

@@ -19,7 +19,7 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	host: 'limitless-gorge-88432.herokuapp.com',
+	server: 'limitless-gorge-88432.herokuapp.com',
 	port: 80,
 	registered: false
 };
@@ -32,7 +32,7 @@ Config.customcolors = {
 	'zarel': 'aeo'
 };
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (521f718d)";
+Config.version = "0.11.2 (7045916f)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',

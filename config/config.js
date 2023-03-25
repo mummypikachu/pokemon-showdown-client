@@ -21,7 +21,8 @@ Config.defaultserver = {
 	id: 'showdown',
 	host: 'lizshowdownv2.strangled.net',
 	port: 8000,
-	registered: true
+    altport: 8080,	
+	registered: false
 };
 
 
@@ -32,7 +33,7 @@ Config.customcolors = {
 	'zarel': 'aeo'
 };
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (0681de76)";
+Config.version = "0.11.2 (9d389bfa)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',

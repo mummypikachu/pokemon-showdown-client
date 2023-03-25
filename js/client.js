@@ -784,7 +784,7 @@ function toId() {
 			var altprefix = true;
 
 			this.socket.onopen = function () {
-				socketopened = false;
+				socketopened = true;
 				if (altport && window.ga) {
 					ga('send', 'event', 'Alt port connection', Config.server.id);
 				}

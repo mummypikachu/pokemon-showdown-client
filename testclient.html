@@ -13,11 +13,11 @@
 		<link rel="stylesheet" href="style/font-awesome.css" />
 		<meta name="robots" content="noindex" />
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-		<script src="https://d032-2600-1700-6159-5000-8a6-7b-e79b-3762.ngrok.io/config/config.js"></script>
+		<script src="https://192.168.1.66:8080/config/config.js"></script>
 		<script>
 			function loadRemoteData(src) {
 				var scriptEl = document.createElement('script');
-				scriptEl.src = src.replace(/.*\/?data\//g, 'https://d032-2600-1700-6159-5000-8a6-7b-e79b-3762.ngrok.io/data/');
+				scriptEl.src = src.replace(/.*\/?data\//g, 'https://192.168.1.66:8080/data/');
 				document.head.appendChild(scriptEl);
 			}
 			Config.testclient = true;

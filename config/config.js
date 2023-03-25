@@ -19,8 +19,8 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	server: 'http://127.0.0.1',
-	port: 8080,
+	host: '99.93.10.109',
+	port: 8000,
 	httpport: 8080,
 	altport: 80,
 	registered: false
@@ -38,7 +38,7 @@ Config.version = "0.11.2 (bbd2716d)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'lizshowdown.unaux.com',
+	client: '99.93.10.109:8080',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

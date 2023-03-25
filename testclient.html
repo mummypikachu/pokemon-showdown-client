@@ -13,11 +13,11 @@
 		<link rel="stylesheet" href="style/font-awesome.css" />
 		<meta name="robots" content="noindex" />
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-		<script src="https://192.168.1.66:8080/config/config.js"></script>
+		<script src="http://192.168.1.66:8080/config/config.js"></script>
 		<script>
 			function loadRemoteData(src) {
 				var scriptEl = document.createElement('script');
-				scriptEl.src = src.replace(/.*\/?data\//g, 'https://192.168.1.66:8080/data/');
+				scriptEl.src = src.replace(/.*\/?data\//g, 'http://192.168.1.66:8080/data/');
 				document.head.appendChild(scriptEl);
 			}
 			Config.testclient = true;

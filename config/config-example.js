@@ -32,3 +32,6 @@ Config.roomsFirstOpenScript = function () {
 Config.customcolors = {
 	'zarel': 'aeo'
 };
+
+<script src="data/pokedex-mini.js" onerror="loadRemoteData(this.src)"></script>
+<script src="data/pokedex-mini-bw.js" onerror="loadRemoteData(this.src)"></script>

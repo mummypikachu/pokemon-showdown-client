@@ -19,8 +19,8 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	host: 'limitless-gorge-88432.herokuapp.com',
-	port: 80,
+	host: '26.23.196.178',
+	port: 8000,
 	httpport: 80,
 	altport: 80,
 	registered: false

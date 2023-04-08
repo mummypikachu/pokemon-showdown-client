@@ -579,6 +579,25 @@ class BattleTooltips {
 						break;
 					}
 				}
+				if (move.id === 'weatherstorm') {
+					switch (this.battle.weather) {
+					case 'sunnyday':
+					case 'desolateland':
+						zMove = this.battle.dex.moves.get(BattleTooltips.zMoveTable['Fire']);
+						break;
+					case 'raindance':
+					case 'primordialsea':
+						zMove = this.battle.dex.moves.get(BattleTooltips.zMoveTable['Water']);
+						break;
+					case 'sandstorm':
+						zMove = this.battle.dex.moves.get(BattleTooltips.zMoveTable['Rock']);
+						break;
+					case 'hail':
+					case 'snow':
+						zMove = this.battle.dex.moves.get(BattleTooltips.zMoveTable['Ice']);
+						break;
+					}
+				}
 				move = new Move(zMove.id, zMove.name, {
 					...zMove,
 					category: move.category,
@@ -1434,6 +1453,27 @@ class BattleTooltips {
 				break;
 			}
 		}
+		if (move.id === 'weatherstorm' && value.weatherModify(0)) {
+			switch (this.battle.weather) {
+			case 'sunnyday':
+			case 'desolateland':
+				if (item.id === 'utilityumbrella') break;
+				moveType = 'Fire';
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				if (item.id === 'utilityumbrella') break;
+				moveType = 'Water';
+				break;
+			case 'sandstorm':
+				moveType = 'Rock';
+				break;
+			case 'hail':
+			case 'snow':
+				moveType = 'Ice';
+				break;
+			}
+		}
 		if (move.id === 'terrainpulse' && pokemon.isGrounded(serverPokemon)) {
 			if (this.battle.hasPseudoWeather('Electric Terrain')) {
 				moveType = 'Electric';
@@ -1470,7 +1510,7 @@ class BattleTooltips {
 
 		// Other abilities that change the move type.
 		const noTypeOverride = [
-			'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'struggle', 'technoblast', 'terablast', 'terrainpulse', 'weatherball',
+			'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'struggle', 'technoblast', 'terablast', 'terrainpulse', 'weatherball', 'weatherstorm',
 		];
 		const allowTypeOverride = !noTypeOverride.includes(move.id) && (move.id !== 'terablast' || !pokemon.terastallized);
 		if (allowTypeOverride) {
@@ -1724,6 +1764,11 @@ class BattleTooltips {
 				value.weatherModify(2);
 			}
 		}
+		if (move.id === 'weatherstorm') {
+			if (this.battle.weather !== 'deltastream') {
+				value.weatherModify(2);
+			}
+		}
 		if (move.id === 'hydrosteam') {
 			value.weatherModify(1.5, 'Sunny Day');
 		}
@@ -1874,7 +1919,7 @@ class BattleTooltips {
 			}
 		}
 		const noTypeOverride = [
-			'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'struggle', 'technoblast', 'terrainpulse', 'weatherball',
+			'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'struggle', 'technoblast', 'terrainpulse', 'weatherball', 'weatherstorm',
 		];
 		const allowTypeOverride = !noTypeOverride.includes(move.id) && (move.id !== 'terablast' || !pokemon.terastallized);
 		if (

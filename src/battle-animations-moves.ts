@@ -19214,6 +19214,32 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'linear', 'explode');
 		},
 	},
+	weatherstorm: {
+		anim(scene, [attacker, defender]) {
+			scene.showEffect('iceball', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 1,
+			}, {
+				y: attacker.y + 90,
+				opacity: 0,
+			}, 'linear');
+			scene.showEffect('iceball', {
+				x: defender.x,
+				y: defender.y + 90,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 0,
+				time: 500,
+			}, {
+				y: defender.y,
+				opacity: 1,
+				time: 1000,
+			}, 'linear', 'explode');
+		},
+	},
 	flowertrick: {
 		anim(scene, [attacker, defender]) {
 			scene.backgroundEffect(`#000000`, 1000, 0.4);

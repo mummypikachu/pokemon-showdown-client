@@ -678,13 +678,6 @@ function toId() {
 				}
 			});
 
-			Storage.whenAppLoaded.load(this);
-
-			// load custom colors from loginserver
-			$.get('/config/colors.json', {}, function (data) {
-				Object.assign(Config.customcolors, data);
-			});
-
 			this.initializeConnection();
 		},
 		/**

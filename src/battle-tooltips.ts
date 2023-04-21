@@ -1129,6 +1129,9 @@ class BattleTooltips {
 					if (ability === 'orichalcumpulse') {
 						stats.atk = Math.floor(stats.atk * 1.3);
 					}
+					if (ability === 'infernalsurge') {
+						stats.atk = Math.floor(stats.atk * 1.3);
+					}
 					let allyActive = clientPokemon?.side.active;
 					if (allyActive) {
 						for (const ally of allyActive) {
@@ -1137,6 +1140,7 @@ class BattleTooltips {
 							if (allyAbility === 'Flower Gift' && (ally.getSpecies().baseSpecies === 'Cherrim' || this.battle.gen <= 4)) {
 								stats.atk = Math.floor(stats.atk * 1.5);
 								stats.spd = Math.floor(stats.spd * 1.5);
+								stats.spd = Math.floor(stats.spa * 1.5);
 							}
 						}
 					}
@@ -1192,6 +1196,9 @@ class BattleTooltips {
 				speedModifiers.push(2);
 			}
 			if (ability === 'hadronengine') {
+				stats.spa = Math.floor(stats.spa * 1.3);
+			}
+			if (ability === 'ampereoverdrive') {
 				stats.spa = Math.floor(stats.spa * 1.3);
 			}
 		}
@@ -2482,7 +2489,9 @@ class BattleStatGuesser {
 		if (itemid === 'assaultvest') {
 			specialBulk *= 1.5;
 		}
-
+		if (itemid === 'strikervest') {
+			physicalBulk *= 1.5;
+		}
 		let bulk = physicalBulk + specialBulk;
 		if (bulk < 46000 && stats.spe >= 70) isFast = true;
 		if (hasMove['trickroom']) isFast = false;

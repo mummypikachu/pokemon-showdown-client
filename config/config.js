@@ -32,15 +32,11 @@ Config.roomsFirstOpenScript = function () {
 
 
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (743c66d4)";
-
-Config.customcolors = {
-	'zarel': 'aeo'
-};
+Config.version = "0.11.2 (ae638184)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: '26.23.196.178',
+	client: '26.23.196.178:8080',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

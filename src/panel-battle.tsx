@@ -58,7 +58,7 @@ class BattlesPanel extends PSRoomPanel<BattlesRoom> {
 			<button class="button" style="float:right;font-size:10pt;margin-top:3px" name="close"><i class="fa fa-times"></i> Close</button>
 			<div class="roomlist">
 				<p>
-					<button class="button" name="refresh" onClick={this.refresh}><i class="fa fa-refresh"></i> Refresh</button> <span style={Dex.getPokemonIcon('meloetta-pirouette') + ';display:inline-block;vertical-align:middle'} class="picon" title="Meloetta is PS's mascot! The Pirouette forme is Fighting-type, and represents our battles."></span>
+					<button class="button" name="refresh" onClick={this.refresh}><i class="fa fa-refresh"></i> Refresh</button> <span style={Dex.getPokemonIcon('leavanny') + ';display:inline-block;vertical-align:middle'} class="picon" title="A T-Tar shivers when a Leavanny hits an Axe Kick. #TeamLeavanny"></span>
 				</p>
 
 				<p>

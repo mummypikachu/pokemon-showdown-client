@@ -957,10 +957,10 @@ p.or:after {
 	position: absolute;
 	left: -30px;
 	bottom: -5px;
-	background: url(https://play.pokemonshowdown.com/sprites/gen5/meloetta.png) center no-repeat;
+	background: url(https://play.pokemonshowdown.com/sprites/gen5/porygonz.png) center no-repeat;
 }
 .roomcounters button:hover .usercount {
-	background: url(https://play.pokemonshowdown.com/sprites/gen5ani/meloetta.gif) center no-repeat;
+	background: url(https://play.pokemonshowdown.com/sprites/gen5ani/porygonz.gif) center no-repeat;
 }
 .roomcounters .battlecount {
 	display: block;

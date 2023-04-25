@@ -137,14 +137,14 @@ class RoomsPanel extends PSRoomPanel {
 				<button class="button" data-href="/users" title="Find an online user">
 					<span
 						class="pixelated usercount"
-						title="Meloetta is PS's mascot! The Aria forme is about using its voice, and represents our chatrooms."
+						title="252+ SpA Choice Specs Adaptability Tera Normal Porygon-Z Hyper Beam vs. 252 HP / 252+ SpD Blissey on a critical hit: 661-778 (92.5 - 108.9%) -- 56.3% chance to OHKO. #TeamPorygon-Z"
 					></span>
 					<strong>{rooms.userCount || '-'}</strong> users online
 				</button> {}
 				<button class="button" data-href="/battles" title="Watch an active battle">
 					<span
 						class="pixelated battlecount"
-						title="Meloetta is PS's mascot! The Pirouette forme is Fighting-type, and represents our battles."
+						title="A T-Tar shivers when a Leavanny hits an Axe Kick. #TeamLeavanny"
 					></span>
 					<strong>{rooms.battleCount || '-'}</strong> active battles
 				</button>

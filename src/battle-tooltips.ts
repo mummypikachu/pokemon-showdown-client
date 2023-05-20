@@ -1892,6 +1892,9 @@ class BattleTooltips {
 		if (move.flags['pulse']) {
 			value.abilityModify(1.5, "Mega Launcher");
 		}
+		if (move.flags['bullet']) {
+			value.abilityModify(1.5, "Mega Launcher");
+		}
 		if (move.flags['bite']) {
 			value.abilityModify(1.5, "Strong Jaw");
 		}
@@ -1904,8 +1907,11 @@ class BattleTooltips {
 		if (this.battle.gen > 2 && serverPokemon.status === 'brn' && move.id !== 'facade' && move.category === 'Physical') {
 			if (!value.tryAbility("Guts")) value.modify(0.5, 'Burn');
 		}
-		if (['Rock', 'Ground', 'Steel'].includes(moveType) && this.battle.weather === 'sandstorm') {
+		if (this.battle.weather === 'sandstorm') {
 			if (value.tryAbility("Sand Force")) value.weatherModify(1.3, "Sandstorm", "Sand Force");
+		}
+		if (this.battle.weather === 'snow') {
+			if (value.tryAbility("Hail Power")) value.weatherModify(1.3, "Snow", "Hail Power");
 		}
 		if (move.secondaries) {
 			value.abilityModify(1.3, "Sheer Force");

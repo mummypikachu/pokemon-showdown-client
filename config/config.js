@@ -20,7 +20,7 @@ Config.whitelist = [
 Config.defaultserver = {
 	id: 'showdown',
 	host: 'limitless-gorge-88432.herokuapp.com',
-	port: 17695,
+	port: 0,
 	httpport: 80,
 	altport: 00,
 	registered: false
@@ -32,11 +32,11 @@ Config.roomsFirstOpenScript = function () {
 
 
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (4b748968)";
+Config.version = "0.11.2 (2b7ce1c3)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: '26.23.196.178:8080',
+	client: '99.93.10.109:8080',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

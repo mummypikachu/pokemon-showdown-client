@@ -182,7 +182,7 @@ const Dex = new class implements ModdedDex {
 	resourcePrefix = (() => {
 		let prefix = '';
 		if (window.document?.location?.protocol !== 'http:') prefix = 'https:';
-		return 'https://github.com/mummypikachu/sprites';
+		return 'https://raw.githubusercontent.com/mummypikachu/sprites/master/';
 	})();
 
 	fxPrefix = (() => {

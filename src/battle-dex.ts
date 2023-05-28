@@ -187,7 +187,7 @@ const Dex = new class implements ModdedDex {
 
 	fxPrefix = (() => {
 		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
-		return `${protocol}//${window.Config ? Config.routes.client : 'play.pokemonshowdown.com'}/fx/`;
+		return 'https://raw.githubusercontent.com/mummypikachu/sprites/master/fx/';
 	})();
 
 	loadedSpriteData = {xy: 1, bw: 0};

@@ -32,7 +32,7 @@ Config.roomsFirstOpenScript = function () {
 
 
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (dcf30105)";
+Config.version = "0.11.2 (e21717b8)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',

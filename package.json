@@ -9,6 +9,7 @@
     "url": "https://github.com/Zarel/Pokemon-Showdown-Client.git"
   },
   "scripts": {
+    "start": "http-server",
     "lint": "eslint --config=.eslintrc.js --cache --cache-file=eslint-cache/base js/ && eslint --config=build-tools/.eslintrc.js --cache --cache-file=eslint-cache/build build-tools/update build-tools/build-indexes && tslint --project .",
     "test": "npm run lint && tsc && node build && mocha test/*.js",
     "fix": "eslint --config=.eslintrc.js --fix js/ && eslint --config=build-tools/.eslintrc.js --fix build-tools/update build-tools/build-indexes",
@@ -23,6 +24,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "babel-plugin-remove-import-export": "^1.1.1",
     "google-auth-library": "^3.1.0",
+    "http-server": "^14.1.1",
     "image-size": "^0.7.2",
     "output-file-sync": "^2.0.1"
   },
@@ -32,9 +34,9 @@
     "eslint": "^5.15.1",
     "mocha": "^6.0.2",
     "preact": "^8.3.1",
+    "source-map": "^0.7.3",
     "tslint": "^5.13.0",
-    "typescript": "^4.3.2",
-    "source-map": "^0.7.3"
+    "typescript": "^4.3.2"
   },
   "private": true
 }

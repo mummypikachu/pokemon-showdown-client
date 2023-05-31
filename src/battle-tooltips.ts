@@ -1133,7 +1133,7 @@ class BattleTooltips {
 						stats.atk = Math.floor(stats.atk * 1.3);
 					}
 					if (ability === 'infernalsurge') {
-						stats.atk = Math.floor(stats.atk * 1.3);
+						stats.spa = Math.floor(stats.spa * 1.3);
 					}
 					let allyActive = clientPokemon?.side.active;
 					if (allyActive) {
@@ -1202,7 +1202,7 @@ class BattleTooltips {
 				stats.spa = Math.floor(stats.spa * 1.3);
 			}
 			if (ability === 'ampereoverdrive') {
-				stats.spa = Math.floor(stats.spa * 1.3);
+				stats.atk = Math.floor(stats.atk * 1.3);
 			}
 		}
 		if (item === 'choicespecs' && !clientPokemon?.volatiles['dynamax']) {

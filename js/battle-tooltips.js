@@ -1133,7 +1133,7 @@ if(ability==='orichalcumpulse'){
 stats.atk=Math.floor(stats.atk*1.3);
 }
 if(ability==='infernalsurge'){
-stats.atk=Math.floor(stats.atk*1.3);
+stats.spa=Math.floor(stats.spa*1.3);
 }
 var allyActive=clientPokemon==null?void 0:clientPokemon.side.active;
 if(allyActive){for(var _i24=0;_i24<
@@ -1202,7 +1202,7 @@ if(ability==='hadronengine'){
 stats.spa=Math.floor(stats.spa*1.3);
 }
 if(ability==='ampereoverdrive'){
-stats.spa=Math.floor(stats.spa*1.3);
+stats.atk=Math.floor(stats.atk*1.3);
 }
 }
 if(item==='choicespecs'&&!(clientPokemon!=null&&clientPokemon.volatiles['dynamax'])){

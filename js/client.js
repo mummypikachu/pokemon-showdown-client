@@ -216,9 +216,9 @@ function toId() {
 		 * domain in order to have access to the correct cookies.
 		 */
 		getActionPHP: function () {
-			var ret = 'https://play.pokemonshowdown.com/api/login?sid=test';
+			var ret = 'https://play.pokemonshowdown.com/api/login';
 			if (Config.testclient) {
-				ret = 'https://play.pokemonshowdown.com/api/login?sid=test';
+				ret = 'https://play.pokemonshowdown.com/api/login';
 				;
 			}
 			return (this.getActionPHP = function () {

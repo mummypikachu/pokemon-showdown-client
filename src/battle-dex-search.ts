@@ -947,7 +947,7 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 		else if (format === 'nu') tierSet = tierSet.slice(slices.NU || slices.RU || slices.UU);
 		else if (format === 'pu') tierSet = tierSet.slice(slices.PU || slices.NU);
 		else if (format === 'zu') tierSet = tierSet.slice(slices.ZU || slices.PU || slices.NU);
-		else if (format === 'lcubers') tierSet = tierSet.slice(slices.LCUbers || slices.LC || slices.ZU)
+		else if (format === 'lcubers') tierSet = tierSet.slice(slices["LC Ubers"] || slices.LC || slices.ZU)
 		else if (format === 'lc' || format === 'lcuu' || format.startsWith('lc') || (format !== 'caplc' && format.endsWith('lc'))) tierSet = tierSet.slice(slices.LC);
 		else if (format === 'cap') tierSet = tierSet.slice(0, slices.AG || slices.Uber).concat(tierSet.slice(slices.OU));
 		else if (format === 'caplc') {

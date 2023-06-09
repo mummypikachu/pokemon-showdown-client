@@ -71,7 +71,7 @@ module.exports = {
 		"no-div-regex": "error",
 		"no-else-return": "off",
 		"no-labels": ["error", {"allowLoop": true, "allowSwitch": true}],
-		"no-eval": "off",
+		"no-eval": "on",
 		"no-implied-eval": "error",
 		"no-extend-native": "error",
 		"no-extra-bind": "warn",

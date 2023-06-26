@@ -1,4 +1,5 @@
 {
+  
   "name": "pokemon-showdown-client",
   "version": "0.11.2",
   "author": "Guangcong Luo <guangcongluo@gmail.com> (http://guangcongluo.com)",
@@ -19,6 +20,7 @@
     "build-full": "node build full"
   },
   "dependencies": {
+    "@babel/plugin-proposal-logical-assignment-operators":"^7.14.0",
     "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-transform-react-jsx": "^7.14.3",

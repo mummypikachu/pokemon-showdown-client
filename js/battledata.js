@@ -122,8 +122,8 @@ throw new Error("Passed value "+a+" is not comparable");
 sortBy=function sortBy(array,callback){
 if(!callback)return array.sort(PSUtils.compare);
 return array.sort(function(a,b){return PSUtils.compare(callback(a),callback(b));});
-};return _class;}())();
-
+};return _class;}())(
+);
 
 
 
@@ -141,8 +141,8 @@ if(name.length>18)name=name.substr(0,18).trim();
 
 name=name.replace(
 /[\u0300-\u036f\u0483-\u0489\u0610-\u0615\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06ED\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]{3,}/g,
-'');
-
+''
+);
 name=name.replace(/[\u239b-\u23b9]/g,'');
 
 return name;
@@ -403,8 +403,8 @@ name:forme,
 forme:forme.slice(species.name.length+1),
 baseForme:"",
 baseSpecies:species.name,
-otherFormes:null}));
-
+otherFormes:null})
+);
 window.BattlePokedexAltForms[formid]=species;
 break;
 }
@@ -810,8 +810,8 @@ sanitizedCategory=categoryID.charAt(0).toUpperCase()+categoryID.slice(1);
 break;
 default:
 sanitizedCategory='undefined';
-break;}
-
+break;
+}
 return"<img src=\""+Dex.resourcePrefix+"sprites/categories/"+sanitizedCategory+".png\" alt=\""+sanitizedCategory+"\" height=\"14\" width=\"32\" class=\"pixelated\" />";
 };_proto2.
 
@@ -824,8 +824,8 @@ if(!data.isPokeball)continue;
 this.pokeballs.push(data.name);
 }
 return this.pokeballs;
-};return _class3;}())();var
-
+};return _class3;}())(
+);var
 
 ModdedDex=function(){
 
@@ -2163,6 +2163,8 @@ this.gen=3;
 
 
 
+
+
 Move=
 
 
@@ -2771,8 +2773,8 @@ return;
 
 default:
 this.addBattleMessage(args,kwArgs);
-return;}
-
+return;
+}
 if(divHTML)this.addDiv(divClass,divHTML,preempt);
 };_proto.
 addBattleMessage=function addBattleMessage(args,kwArgs){
@@ -2830,8 +2832,8 @@ return;
 }
 if(!line)return;
 this.message.apply(this,this.parseLogMessage(line));
-break;}
-
+break;
+}
 };_proto.
 textList=function textList(list){
 var message='';
@@ -3084,8 +3086,8 @@ case 2:R1=0;G1=C;B1=X;break;
 case 3:R1=0;G1=X;B1=C;break;
 case 4:R1=X;G1=0;B1=C;break;
 case 5:R1=C;G1=0;B1=X;break;
-case 0:default:R1=C;G1=X;B1=0;break;}
-
+case 0:default:R1=C;G1=X;B1=0;break;
+}
 var R=R1+m;
 var G=G1+m;
 var B=B1+m;
@@ -3194,9 +3196,9 @@ timestamp+"<em>"+BattleLog.parseMessage(message)+"</em>"];
 }
 return[
 'chat chatmessage-'+toID(name)+hlClass+mineClass,
-timestamp+"<strong"+colorStyle+">"+clickableName+":</strong> <em>"+BattleLog.parseMessage(message)+"</em>"];}
+timestamp+"<strong"+colorStyle+">"+clickableName+":</strong> <em>"+BattleLog.parseMessage(message)+"</em>"];
 
-
+}
 };BattleLog.
 
 parseMessage=function parseMessage(str){var isTrusted=arguments.length>1&&arguments[1]!==undefined?arguments[1]:false;
@@ -3798,8 +3800,8 @@ case'*':tagName='b';break;
 case'~':tagName='s';break;
 case'^':tagName='sup';break;
 case'\\':tagName='sub';break;
-case'|':tagName='span';attrs=' class="spoiler"';break;}
-
+case'|':tagName='span';attrs=' class="spoiler"';break;
+}
 if(tagName){
 this.buffers[startIndex]="<"+tagName+attrs+">";
 this.buffers.push("</"+tagName+">");
@@ -3828,8 +3830,8 @@ this.buffers[span[1]]="<span class=\"greentext\">";
 break;
 default:
 
-break;}
-
+break;
+}
 return true;
 };_proto.
 
@@ -3945,8 +3947,8 @@ if(key==='item')dir+='s';
 if(key==='category')dir='categories';
 
 uri="//dex.pokemonshowdown.com/"+dir+"/"+toID(term);
-term=display;}
-
+term=display;
+}
 }
 if(!uri){
 uri="//www.google.com/search?ie=UTF-8&btnI&q="+this.toUriComponent(term);
@@ -3975,8 +3977,8 @@ while(this.at(_i3)!=='/'||this.at(_i3+1)!=='a'||this.at(_i3+2)!=='>')_i3++;
 _i3+=3;
 this.pushSlice(_i3);
 }
-return true;}
-
+return true;
+}
 return false;
 };_proto.
 
@@ -4067,8 +4069,8 @@ this.buffers.push("<br />");
 this.offset++;
 }
 beginningOfLine=i+1;
-break;}
-
+break;
+}
 }
 
 this.popAllSpans(this.str.length);
@@ -4480,8 +4482,8 @@ case'-activate':{
 var _id6=BattleTextParser.effectId(args[2]);
 if(_id6==='confusion'||_id6==='attract')return'preMajor';
 return'postMajor';
-}}
-
+}
+}
 return cmd.charAt(0)==='-'?'postMajor':'';
 };_proto.
 
@@ -4499,8 +4501,8 @@ case'major':
 if(prevSection==='postMajor'||prevSection==='major')return true;
 return false;
 case'postMajor':
-return false;}
-
+return false;
+}
 };_proto.
 
 parseArgs=function parseArgs(args,kwArgs,noSectionBreak){
@@ -4569,8 +4571,8 @@ var newSpecies='';
 switch(cmd){
 case'detailschange':newSpecies=arg2.split(',')[0].trim();break;
 case'-transform':newSpecies=arg3;break;
-case'-formechange':newSpecies=arg2;break;}
-
+case'-formechange':newSpecies=arg2;break;
+}
 var newSpeciesId=toID(newSpecies);
 var _id7='';
 var _templateName='transform';
@@ -4591,8 +4593,8 @@ case'wishiwashi':_id7='schooling';_templateName='transformEnd';break;
 case'miniormeteor':_id7='shieldsdown';break;
 case'minior':_id7='shieldsdown';_templateName='transformEnd';break;
 case'eiscuenoice':_id7='iceface';break;
-case'eiscue':_id7='iceface';_templateName='transformEnd';break;}
-
+case'eiscue':_id7='iceface';_templateName='transformEnd';break;
+}
 }else if(newSpecies){
 _id7='transform';
 }
@@ -5246,8 +5248,8 @@ return'';
 
 default:{
 return null;
-}}
-
+}
+}
 };return BattleTextParser;}();
 
 

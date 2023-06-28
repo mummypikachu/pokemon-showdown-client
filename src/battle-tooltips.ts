@@ -768,6 +768,9 @@ class BattleTooltips {
 			if (move.flags.wind) {
 				text += `<p class="movetag">&#x2713; Wind <small>(activates Wind Power and Wind Rider)</small></p>`;
 			}
+			if (move.flags.punch && ability === 'striker') {
+				text += `<p class="movetag">&#x2713; Kick <small>(boosted by Striker)</small></p>`;
+			}
 		}
 		return text;
 	}
@@ -1887,7 +1890,7 @@ class BattleTooltips {
 			value.abilityModify(1.5, "Flare Boost");
 		}
 		if (move.flags['punch']) {
-			value.abilityModify(1.2, 'Iron Fist');
+			value.abilityModify(1.3, 'Iron Fist');
 		}
 		if (move.flags['pulse']) {
 			value.abilityModify(1.5, "Mega Launcher");
@@ -1897,6 +1900,9 @@ class BattleTooltips {
 		}
 		if (move.flags['bite']) {
 			value.abilityModify(1.5, "Strong Jaw");
+		}
+		if (move.flags['kick']) {
+			value.abilityModify(1.3, 'Striker');
 		}
 		if (value.value <= 60) {
 			value.abilityModify(1.5, "Technician");

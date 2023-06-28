@@ -364,8 +364,8 @@ break;
 default:
 
 Promise.resolve(new Error("unrecognized type"));
-buf="<p class=\"message-error\" style=\"white-space: pre-wrap\">"+new Error("unrecognized type").stack+"</p>";}
-
+buf="<p class=\"message-error\" style=\"white-space: pre-wrap\">"+new Error("unrecognized type").stack+"</p>";
+}
 
 this.placeTooltip(buf,elem,ownHeight,type);
 return true;
@@ -469,8 +469,8 @@ var boostText='';
 if(move.zMove.boost){
 var boosts=Object.keys(move.zMove.boost);
 boostText=boosts.map(function(stat){return(
-BattleTextParser.stat(stat)+' +'+move.zMove.boost[stat]);}).
-join(', ');
+BattleTextParser.stat(stat)+' +'+move.zMove.boost[stat]);}
+).join(', ');
 }
 return boostText;
 };_proto2.
@@ -549,8 +549,8 @@ move=this.battle.dex.moves.get(item.zMove);
 }else if(move.category==='Status'){
 move=new Move(move.id,"",Object.assign({},
 move,{
-name:'Z-'+move.name}));
-
+name:'Z-'+move.name})
+);
 zEffect=this.getStatusZMoveEffect(move);
 }else{
 var moveName=BattleTooltips.zMoveTable[item.zMoveType];
@@ -576,8 +576,8 @@ break;
 case'hail':
 case'snow':
 zMove=this.battle.dex.moves.get(BattleTooltips.zMoveTable['Ice']);
-break;}
-
+break;
+}
 }
 if(move.id==='weatherstorm'){
 switch(this.battle.weather){
@@ -595,14 +595,14 @@ break;
 case'hail':
 case'snow':
 zMove=this.battle.dex.moves.get(BattleTooltips.zMoveTable['Ice']);
-break;}
-
+break;
+}
 }
 move=new Move(zMove.id,zMove.name,Object.assign({},
 zMove,{
 category:move.category,
-basePower:movePower}));
-
+basePower:movePower})
+);
 }
 }else if(isZOrMax==='maxmove'){
 if(move.category==='Status'){
@@ -614,8 +614,8 @@ maxMove.basePower:move.maxMove.basePower;
 move=new Move(maxMove.id,maxMove.name,Object.assign({},
 maxMove,{
 category:move.category,
-basePower:basePower}));
-
+basePower:basePower})
+);
 }
 }
 
@@ -768,6 +768,9 @@ text+="<p class=\"movetag\">&#x2713; Slicing <small>(boosted by Sharpness)</smal
 if(move.flags.wind){
 text+="<p class=\"movetag\">&#x2713; Wind <small>(activates Wind Power and Wind Rider)</small></p>";
 }
+if(move.flags.punch&&ability==='striker'){
+text+="<p class=\"movetag\">&#x2713; Kick <small>(boosted by Striker)</small></p>";
+}
 }
 return text;
 };_proto2.
@@ -867,8 +870,8 @@ var supportsAbilities=this.battle.gen>2&&!this.battle.tier.includes("Let's Go");
 var abilityText='';
 if(supportsAbilities){
 abilityText=this.getPokemonAbilityText(
-clientPokemon,serverPokemon,isActive,!!illusionIndex&&illusionIndex>1);
-
+clientPokemon,serverPokemon,isActive,!!illusionIndex&&illusionIndex>1
+);
 }
 
 var itemText='';
@@ -1017,8 +1020,8 @@ stats[statName]=Math.floor(stats[statName]);
 }
 
 var ability=toID((_clientPokemon$effect=
-clientPokemon==null?void 0:clientPokemon.effectiveAbility(serverPokemon))!=null?_clientPokemon$effect:serverPokemon.ability||serverPokemon.baseAbility);
-
+clientPokemon==null?void 0:clientPokemon.effectiveAbility(serverPokemon))!=null?_clientPokemon$effect:serverPokemon.ability||serverPokemon.baseAbility
+);
 
 
 if(pokemon.status){
@@ -1463,8 +1466,8 @@ break;
 case'hail':
 case'snow':
 moveType='Ice';
-break;}
-
+break;
+}
 }
 if(move.id==='weatherstorm'&&value.weatherModify(0)){
 switch(this.battle.weather){
@@ -1484,8 +1487,8 @@ break;
 case'hail':
 case'snow':
 moveType='Ice';
-break;}
-
+break;
+}
 }
 if(move.id==='terrainpulse'&&pokemon.isGrounded(serverPokemon)){
 if(this.battle.hasPseudoWeather('Electric Terrain')){
@@ -1517,8 +1520,8 @@ moveType='Fire';
 break;
 case'Tauros-Paldea-Aqua':
 moveType='Water';
-break;}
-
+break;
+}
 }
 
 
@@ -1693,8 +1696,8 @@ value.modify(2,"Acrobatics + no item");
 if(['crushgrip','wringout'].includes(move.id)&&target){
 value.set(
 Math.floor(Math.floor((120*(100*Math.floor(target.hp*4096/target.maxhp))+2048-1)/4096)/100)||1,
-'approximate');
-
+'approximate'
+);
 }
 if(move.id==='brine'&&target&&target.hp*2<=target.maxhp){
 value.modify(2,'Brine + target below half HP');
@@ -1887,7 +1890,7 @@ if(pokemon.status==='brn'&&move.category==='Special'){
 value.abilityModify(1.5,"Flare Boost");
 }
 if(move.flags['punch']){
-value.abilityModify(1.2,'Iron Fist');
+value.abilityModify(1.3,'Iron Fist');
 }
 if(move.flags['pulse']){
 value.abilityModify(1.5,"Mega Launcher");
@@ -1897,6 +1900,9 @@ value.abilityModify(1.5,"Mega Launcher");
 }
 if(move.flags['bite']){
 value.abilityModify(1.5,"Strong Jaw");
+}
+if(move.flags['kick']){
+value.abilityModify(1.3,'Striker');
 }
 if(value.value<=60){
 value.abilityModify(1.5,"Technician");

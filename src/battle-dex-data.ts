@@ -1121,7 +1121,7 @@ interface MoveFlags {
 	protect?: 1 | 0;
 	/** Power is multiplied by 1.5 when used by a Pokemon with the Mega Launcher Ability. */
 	pulse?: 1 | 0;
-	/** Power is multiplied by 1.2 when used by a Pokemon with the Iron Fist Ability. */
+	/** Power is multiplied by 1.3 when used by a Pokemon with the Iron Fist Ability. */
 	punch?: 1 | 0;
 	/** If this move is successful, the user must recharge on the following turn and cannot make a move. */
 	recharge?: 1 | 0;
@@ -1135,6 +1135,8 @@ interface MoveFlags {
 	sound?: 1 | 0;
 	/** Activates the effects of the Wind Power and Wind Rider Abilities. */
 	wind?: 1 | 0;
+	/** Power is multiplied by 1.2 when used by a Pokemon with the Striker Ability. */
+	kick?: 1 | 0;
 }
 
 type MoveTarget = 'normal' | 'any' | 'adjacentAlly' | 'adjacentFoe' | 'adjacentAllyOrSelf' | // single-target

@@ -1183,6 +1183,9 @@ class BattleTooltips {
 		if (ability === 'marvelscale' && pokemon.status) {
 			stats.def = Math.floor(stats.def * 1.5);
 		}
+		if (ability === 'prismaticscales'  && weather === 'raindance' || weather === 'primordialsea') {
+			stats.def = Math.floor(stats.def * 2);
+		}
 		const isNFE = this.battle.dex.species.get(serverPokemon.speciesForme).evos?.some(evo => {
 			const evoSpecies = this.battle.dex.species.get(evo);
 			return !evoSpecies.isNonstandard ||
@@ -1983,6 +1986,16 @@ class BattleTooltips {
 					value.modify(1.3, 'Power Spot');
 				} else if (allyAbility === 'Steely Spirit' && moveType === 'Steel') {
 					value.modify(1.5, 'Steely Spirit');
+				} else if (allyAbility === 'Steelworker' && moveType === 'Steel') {
+					value.modify(1.5, 'Steelworker');
+				} else if (allyAbility === 'Below Zero' && moveType === 'Ice') {
+					value.modify(1.5, 'Below Zero');
+				} else if (allyAbility === 'Transistor' && moveType === 'Electric') {
+					value.modify(1.5, 'Transistor');
+				} else if (allyAbility === 'Rocky Payload' && moveType === 'Rock') {
+					value.modify(1.5, 'Rocky Payload');
+				} else if (allyAbility === 'Dragon\'s Maw' && moveType === 'Dragon') {
+					value.modify(1.5, 'Dragon\'s Maw');
 				}
 			}
 			for (const foe of pokemon.side.foe.active) {
@@ -1991,6 +2004,12 @@ class BattleTooltips {
 					auraBoosted = 'Fairy Aura';
 				} else if (foe.ability === 'Dark Aura' && moveType === 'Dark') {
 					auraBoosted = 'Dark Aura';
+				} else if (foe.ability === 'Fighting Aura' && moveType === 'Fighting') {
+					auraBoosted = 'Fighting Aura';
+				} else if (foe.ability === 'Hive Mind' && moveType === 'Bug') {
+					auraBoosted = 'Hive Mind';
+				} else if (foe.ability === 'Toxic Aura' && moveType === 'Poison') {
+					auraBoosted = 'Toxic Aura';
 				} else if (foe.ability === 'Aura Break') {
 					auraBroken = true;
 				}

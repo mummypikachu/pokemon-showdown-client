@@ -1137,6 +1137,8 @@ interface MoveFlags {
 	wind?: 1 | 0;
 	/** Power is multiplied by 1.2 when used by a Pokemon with the Striker Ability. */
 	kick?: 1 | 0;
+	/** Power is multiplied by 1.5 when used by a Pokemon with the Detonator Ability. */
+	explode?: 1 | 0;
 }
 
 type MoveTarget = 'normal' | 'any' | 'adjacentAlly' | 'adjacentFoe' | 'adjacentAllyOrSelf' | // single-target

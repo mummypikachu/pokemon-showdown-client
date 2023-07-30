@@ -768,8 +768,11 @@ class BattleTooltips {
 			if (move.flags.wind) {
 				text += `<p class="movetag">&#x2713; Wind <small>(activates Wind Power and Wind Rider)</small></p>`;
 			}
-			if (move.flags.punch && ability === 'striker') {
+			if (move.flags.kick && ability === 'striker') {
 				text += `<p class="movetag">&#x2713; Kick <small>(boosted by Striker)</small></p>`;
+			}
+			if (move.flags.explode && ability === 'detonator') {
+				text += `<p class="movetag">&#x2713; Explosion-like <small>(boosted by Detonator)</small></p>`;
 			}
 		}
 		return text;

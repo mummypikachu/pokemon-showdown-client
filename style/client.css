@@ -2133,6 +2133,40 @@ a.ilink.yours {
 		background: #E5E5E5;
 		color: black;
 }
+.special-actions {
+    text-align: center; /* Center the buttons horizontally */
+    margin-top: 10px;   /* Add spacing from the content above */
+}
+
+/* Common style for the special buttons */
+.special-button {
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin: 5px;        /* Add spacing between buttons */
+    font-size: 16px;    /* Adjust font size */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    background-color: #3498db; /* Button background color */
+    color: #fff;        /* Text color */
+}
+
+/* Style for the buttons when hovered */
+.special-button:hover {
+    background-color: #2980b9; /* Darker color on hover */
+}
+
+/* Additional styling for each button */
+#tera-button {
+    background-color: #e74c3c; /* Customize color */
+}
+
+#z-button {
+    background-color: #27ae60; /* Customize color */
+}
+
+#dynamax-button {
+    background-color: #f39c12; /* Customize color */
+}
 .allyparty,
 .switchmenu,
 .movemenu {

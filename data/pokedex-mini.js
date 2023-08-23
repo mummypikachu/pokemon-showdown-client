@@ -685,7 +685,7 @@ exports.BattlePokemonSprites = {
 	arceusgrass:{num:493,front:{w:82,h:114},back:{w:95,h:111}},
 	arceusground:{num:493,front:{w:82,h:114},back:{w:95,h:111}},
 	arceusice:{num:493,front:{w:82,h:114},back:{w:95,h:111}},
-	arceus:{num:493,front:{w:82,h:114},back:{w:95,h:111}},
+	arceusnormal:{num:493},
 	arceuspoison:{num:493,front:{w:82,h:114},back:{w:95,h:111}},
 	arceuspsychic:{num:493,front:{w:82,h:114},back:{w:95,h:111}},
 	arceusrock:{num:493,front:{w:82,h:114},back:{w:95,h:111}},

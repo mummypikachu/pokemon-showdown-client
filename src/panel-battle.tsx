@@ -339,7 +339,14 @@ class BattlePanel extends PSRoomPanel<BattleRoom> {
 		</div>;
 	}
 	renderMoveControls(request: BattleMoveRequest, choices: BattleChoiceBuilder) {
+		
+		
+		
+		
+		
 		const dex = this.props.room.battle.dex;
+
+
 		const pokemonIndex = choices.index();
 		const active = choices.currentMoveRequest();
 		if (!active) return <div class="message-error">Invalid pokemon</div>;

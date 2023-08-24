@@ -15,8 +15,8 @@ if (preg_match('/^([a-z0-9-_\.]*?)\.psim\.us$/', $host, $m)) {
 }
 
 $protocol = @$_REQUEST['protocol'] ?? 'http:';
-$portType = ($protocol === 'http:' ? 'port' : 'httpsport');
-if ($protocol === 'https:') $config['https'] = true;
+$portType = ($protocol === 'http:' ? 'port' : 'httpport');
+if ($protocol === 'http:') $config['http'] = true;
 
 if ($config['host'] !== 'showdown') {
 	include_once __DIR__ . '/config/servers.inc.php';
@@ -69,6 +69,7 @@ if ($config['host'] !== 'showdown') {
 						(isset($server['altport']) && $config['port'] === $server['altport'])
 					)) {
 					$path = isset($_REQUEST['path']) ? $_REQUEST['path'] : '';
+					$protocol = 'http:';
 					$config['redirect'] = $protocol . '//' . $server['id'] . '.psim.us/' . rawurlencode($path);
 					break;
 				}
@@ -104,7 +105,7 @@ header('P3P: CP="NOI CUR ADM DEV COM NAV STA OUR IND"');
 var configHost = <?php echo json_encode($config['host']) ?>;
 var config = <?php echo json_encode(json_encode($config)) ?>;
 var yourOrigin = <?php echo json_encode($protocol . '//' . $host) ?>;
-var myOrigin = 'https://<?php echo $psconfig['routes']['client'] ?>';
+var myOrigin = 'http://<?php echo $psconfig['routes']['client'] ?>';
 
 function postReply (message) {
 	if (window.parent.postMessage === postReply) return;

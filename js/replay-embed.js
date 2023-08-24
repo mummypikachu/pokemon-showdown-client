@@ -28,27 +28,27 @@ function requireScript(url) {
 	document.head.appendChild(scriptEl);
 }
 
-linkStyle('https://showdown-server.herokuapp.com/style/font-awesome.css?');
-linkStyle('https://showdown-server.herokuapp.com/style/battle.css?a7');
-linkStyle('https://showdown-server.herokuapp.com/style/replay.css?a7');
-linkStyle('https://showdown-server.herokuapp.com/style/utilichart.css?a7');
+linkStyle('https://sigmatic-showdown.win:8080/style/font-awesome.css?');
+linkStyle('https://sigmatic-showdown.win:8080/style/battle.css?a7');
+linkStyle('https://sigmatic-showdown.win:8080/style/replay.css?a7');
+linkStyle('https://sigmatic-showdown.win:8080/style/utilichart.css?a7');
 
-requireScript('https://showdown-server.herokuapp.com/js/lib/ps-polyfill.js');
-requireScript('https://showdown-server.herokuapp.com/config/config.js?a7');
-requireScript('https://showdown-server.herokuapp.com/js/lib/jquery-1.11.0.min.js');
-requireScript('https://showdown-server.herokuapp.com/js/lib/html-sanitizer-minified.js');
-requireScript('https://showdown-server.herokuapp.com/js/battle-sound.js');
-requireScript('https://showdown-server.herokuapp.com/js/battledata.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/pokedex-mini.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/pokedex-mini-bw.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/graphics.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/pokedex.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/moves.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/abilities.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/items.js?a7');
-requireScript('https://showdown-server.herokuapp.com/data/teambuilder-tables.js?a7');
-requireScript('https://showdown-server.herokuapp.com/js/battle-tooltips.js?a7');
-requireScript('https://showdown-server.herokuapp.com/js/battle.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/js/lib/ps-polyfill.js');
+requireScript('https://sigmatic-showdown.win:8080/config/config.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/js/lib/jquery-1.11.0.min.js');
+requireScript('https://sigmatic-showdown.win:8080/js/lib/html-sanitizer-minified.js');
+requireScript('https://sigmatic-showdown.win:8080/js/battle-sound.js');
+requireScript('https://sigmatic-showdown.win:8080/js/battledata.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/pokedex-mini.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/pokedex-mini-bw.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/graphics.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/pokedex.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/moves.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/abilities.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/items.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/data/teambuilder-tables.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/js/battle-tooltips.js?a7');
+requireScript('https://sigmatic-showdown.win:8080/js/battle.js?a7');
 
 var Replays = {
 	battle: null,

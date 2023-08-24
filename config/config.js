@@ -32,11 +32,11 @@ Config.roomsFirstOpenScript = function () {
 
 
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (9762b41a)";
+Config.version = "0.11.2 (01c1518e/6e393be7)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'sigmatic-showdown.win',
+	client: 'sigmatic-showdown.win:8080',
 	dex: 'sigmatic-dex.herokuapp.com/testclient.html',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

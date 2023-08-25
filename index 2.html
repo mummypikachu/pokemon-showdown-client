@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<!--
+           .............
+       ,...................
+     ,..................========
+    ....~=##############=======+
+   ...##################=======.
+  ..=######+...,    +##=======,..
+  ..=###### ., .....  +=====+,....
+     ###########~,..  ======
+  .....##############~=====+....., pokemonshowdown.com
+  ..........###########====......
+    ............#######,==......
+  =###.,........+#####+ .......
+  ####################~......,
+  #################+======,
+     ++++++++++++ =======+
+
+Viewing source? We're open source! Check us out on GitHub!
+https://github.com/Zarel/Pokemon-Showdown
+https://github.com/Zarel/Pokemon-Showdown-Client (you are here)
+
+Also visit us in the Dev chatroom:
+https://psim.us/dev
+
+-->
+<meta charset="UTF-8" />
+<meta id="viewport" name="viewport" content="width=device-width" />
+<title>Showdown!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link rel="shortcut icon" href="//sigmatic-showdown.win:8080/favicon.ico" id="dynamic-favicon" />
+<link rel="icon" sizes="128x128" href="//sigmatic-showdown.win:8080/favicon-128.png" />
+<link rel="stylesheet" href="//sigmatic-showdown.win:8080/style/battle.css?a449ec4f" />
+<link rel="stylesheet" href="//sigmatic-showdown.win:8080/style/client.css?3ee638be" />
+<link rel="stylesheet" href="//sigmatic-showdown.win:8080/style/sim-types.css?b35a1b5f" />
+<link rel="stylesheet" href="//sigmatic-showdown.win:8080/style/utilichart.css?dbb7f7f2" />
+<link rel="stylesheet" href="//sigmatic-showdown.win:8080/style/font-awesome.css?95545b00" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="manifest" href="/manifest.json" />
+<!--[if lte IE 8]><script>document.location.replace('http://pokemonshowdown.com/autodownload/win');</script><![endif]-->
+
+<!-- head custom -->
+
+<div id="header" class="header">
+	<img class="logo" src="//sigmatic-showdown.win:8080/pokemonshowdownbeta.png" srcset="//play.pokemonshowdown.com/pokemonshowdownbeta@2x.png 2x" alt="Pok&eacute;mon Showdown! (beta)" width="146" height="44" /><div class="maintabbarbottom"></div>
+</div>
+<div class="ps-room scrollable" id="mainmenu"><div class="mainmenuwrapper">
+	<div class="leftmenu">
+		<div class="activitymenu">
+			<div class="pmbox">
+				<div class="pm-window news-embed" data-newsid="<!-- newsid -->">
+					<h3><button class="closebutton" tabindex="-1"><i class="fa fa-times-circle"></i></button><button class="minimizebutton" tabindex="-1"><i class="fa fa-minus-circle"></i></button>News</h3>
+					<div class="pm-log" style="max-height:none">
+						<!-- news -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mainmenu">
+			<div id="loading-message" class="mainmessage">Initializing... <noscript>FAILED<br /><br />Pok&eacute;mon Showdown requires JavaScript.</noscript></div>
+		</div>
+	</div>
+	<div class="rightmenu">
+	</div>
+	<div class="mainmenufooter">
+		<div class="bgcredit"></div>
+		<small><a href="//sigmatic-dex.herokuapp.com/testclient.html/" target="_blank">Pok&eacute;dex</a> | <a href="//replay.pokemonshowdown.com/" target="_blank">Replays</a> | <a href="//pokemonshowdown.com/rules" target="_blank">Rules</a> | <a href="//pokemonshowdown.com/credits" target="_blank">Credits</a> | <a href="http://smogon.com/forums/" target="_blank">Forum</a></small>
+	</div>
+</div></div>
+<script>
+	var LM = document.getElementById('loading-message');
+	LM.innerHTML += ' DONE<br />Loading libraries...';
+</script>
+<script nomodule src="//sigmatic-showdown.win:8080/js/lib/ps-polyfill.js"></script>
+<script src="//sigmatic-showdown.win:8080/config/config.js?35ff00a7"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/jquery-2.1.4.min.js"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/jquery-cookie.js"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/autoresize.jquery.min.js?52413642"></script>
+<script src="//sigmatic-showdown.win:8080/js/battle-sound.js?5103ad06"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/html-css-sanitizer-minified.js?38f3f7d3"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/lodash.core.js?f87de26d"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/backbone.js?6faf9dcf"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/d3.v3.min.js"></script>
+
+<script>
+	LM.innerHTML += ' DONE<br />Loading data...';
+</script>
+
+<script src="//sigmatic-showdown.win:8080/js/battledata.js?5038318e"></script>
+<script src="//sigmatic-showdown.win:8080/js/storage.js?ae384107"></script>
+<script src="//sigmatic-showdown.win:8080/data/pokedex-mini.js?4ee7002f"></script>
+<script src="//sigmatic-showdown.win:8080/data/typechart.js?bf3303f2"></script>
+<script src="//sigmatic-showdown.win:8080/js/battle.js?7cc161c4"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/sockjs-1.4.0-nwjsfix.min.js"></script>
+<script src="//sigmatic-showdown.win:8080/js/lib/color-thief.min.js"></script>
+
+<script>
+	LM.innerHTML += ' DONE<br />Loading client...';
+</script>
+
+<script src="//sigmatic-showdown.win:8080/js/client.js?7e922607"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-topbar.js?3be4e2bd"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-mainmenu.js?f3cc185e"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-teambuilder.js?0bfa4c20"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-ladder.js?07314358"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-chat.js?8659f268"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-chat-tournament.js?87141ce2"></script>
+<script src="//sigmatic-showdown.win:8080/js/battle-tooltips.js?077b1d40"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-battle.js?5df200b5"></script>
+<script src="//sigmatic-showdown.win:8080/js/client-rooms.js?93212d6f"></script>
+<script src="//sigmatic-showdown.win:8080/data/graphics.js?9eb5cdae"></script>
+
+<script>
+	var app = new App();
+</script>
+
+<script src="//sigmatic-showdown.win:8080/data/pokedex.js?9177909f"></script>
+<script src="//sigmatic-showdown.win:8080/data/moves.js?b5d4e73d"></script>
+<script src="//sigmatic-showdown.win:8080/data/items.js?14c35d88"></script>
+<script src="//sigmatic-showdown.win:8080/data/abilities.js?8d94a248"></script>
+
+<script src="//sigmatic-showdown.win:8080/data/search-index.js?c48354bb"></script>
+<script src="//sigmatic-showdown.win:8080/data/teambuilder-tables.js?5f537cd1"></script>
+<script src="//sigmatic-showdown.win:8080/js/battle-dex-search.js?5e11304f"></script>
+<script src="//sigmatic-showdown.win:8080/js/search.js?cc2d2685"></script>
+
+<script src="//sigmatic-showdown.win:8080/data/aliases.js?679e31f2" async="async"></script>

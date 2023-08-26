@@ -846,8 +846,8 @@ buf2+='</div>';
 side.totalPokemon=side.pokemon.length;
 if(textBuf){
 this.log.addDiv('chat battle-history',
-'<strong>'+BattleLog.escapeHTML(side.name)+'\'s team:</strong> <em style="color:#445566;display:block;">'+BattleLog.escapeHTML(textBuf)+'</em>');
-
+'<strong>'+BattleLog.escapeHTML(side.name)+'\'s team:</strong> <em style="color:#445566;display:block;">'+BattleLog.escapeHTML(textBuf)+'</em>'
+);
 }
 this.$sprites[spriteIndex].html(buf+buf2);
 
@@ -1195,7 +1195,6 @@ z:side.z,
 opacity:0.5,
 scale:0.2
 },this);
-
 var rock2=new Sprite(BattleEffects.rock2,{
 display:'block',
 x:x+side.leftof(-20),
@@ -1342,8 +1341,41 @@ scale:0.7
 },this);
 this.$spritesFront[spriteIndex].append(web.$el);
 this.sideConditions[siden][id]=[web];
-break;}
+break;
 
+case'glacierstream':
+var icicle=new Sprite(BattleEffects.icicle,{
+display:'block',
+x:x+side.leftof(-40),
+y:y-10,
+z:side.z,
+opacity:0.5,
+scale:0.2
+},this);
+
+var icicle2=new Sprite(BattleEffects.icicle2,{
+display:'block',
+x:x+side.leftof(30),
+y:y-20,
+z:side.z,
+opacity:0.5,
+scale:0.2
+},this);
+
+var icicle3=new Sprite(BattleEffects.icicle3,{
+display:'block',
+x:x+side.leftof(10),
+y:y-20,
+z:side.z,
+opacity:0.5,
+scale:0.2
+},this);
+
+
+this.$spritesFront[spriteIndex].append(icicle.$el);
+this.$spritesFront[spriteIndex].append(icicle2.$el);
+this.$spritesFront[spriteIndex].append(icicle3.$el);
+}
 };_proto.
 removeSideCondition=function removeSideCondition(siden,id){
 if(!this.animating)return;
@@ -1365,8 +1397,8 @@ this.addSideCondition(siden,_id4,true);
 
 typeAnim=function typeAnim(pokemon,types){
 var result=BattleLog.escapeHTML(types).split('/').map(function(type){return(
-'<img src="'+Dex.resourcePrefix+'sprites/types/'+type+'.png" alt="'+type+'" class="pixelated" />');}).
-join(' ');
+'<img src="'+Dex.resourcePrefix+'sprites/types/'+type+'.png" alt="'+type+'" class="pixelated" />');}
+).join(' ');
 this.resultAnim(pokemon,result,'neutral');
 };_proto.
 resultAnim=function resultAnim(pokemon,result,type){
@@ -1610,8 +1642,8 @@ break;
 case 15:
 default:
 this.bgm=BattleSound.loadBgm('audio/sm-rival.mp3',11389,62158,this.bgm);
-break;}
-
+break;
+}
 
 this.updateBgm();
 };_proto.
@@ -2168,8 +2200,8 @@ this.x=(slot*-75+18)*(this.isFrontSprite?1:-1);
 break;
 case 2:
 this.x=(slot*-70+20)*(this.isFrontSprite?1:-1);
-break;}
-
+break;
+}
 this.y=this.isFrontSprite?slot*7:slot*-10;
 if(this.isFrontSprite)statbarOffset=17*slot;
 if(this.isFrontSprite&&!moreActive&&this.sp.pixelated)statbarOffset=15;

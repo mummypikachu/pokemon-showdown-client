@@ -163,8 +163,8 @@ case'team':
 if(request.maxTeamSize)return request.maxTeamSize;
 return 1;
 case'wait':
-return 0;}
-
+return 0;
+}
 };_proto.
 currentMoveRequest=function currentMoveRequest(){
 if(this.request.requestType!=='move')return null;
@@ -246,8 +246,8 @@ break;
 case'switch':
 while(this.choices.length<request.forceSwitch.length&&!request.forceSwitch[this.choices.length]){
 this.choices.push('pass');
-}}
-
+}
+}
 };_proto.
 
 getChosenMove=function getChosenMove(choice,pokemonIndex){
@@ -279,7 +279,9 @@ if(request.requestType!=='move'){
 throw new Error("You must switch in a Pok\xE9mon, not move.");
 }
 var moveRequest=request.active[index];
-choice=choice.slice(5);
+var originalChoice=choice.slice(5);
+choice=originalChoice;
+
 var current={
 choiceType:'move',
 move:0,
@@ -436,8 +438,8 @@ case'switch':
 case'team':
 return choice.choiceType+" "+choice.targetPokemon;
 case'shift':
-return"shift";}
-
+return"shift";
+}
 };BattleChoiceBuilder.
 
 
@@ -473,8 +475,8 @@ battle.parseHealth(serverPokemon.condition,serverPokemon);
 
 if(request.active){
 request.active=request.active.map(
-function(active,i){return request.side.pokemon[i].fainted?null:active;});for(var _i9=0,_request$active2=
-
+function(active,i){return request.side.pokemon[i].fainted?null:active;}
+);for(var _i9=0,_request$active2=
 request.active;_i9<_request$active2.length;_i9++){var active=_request$active2[_i9];
 if(!active)continue;for(var _i11=0,_active$moves2=
 active.moves;_i11<_active$moves2.length;_i11++){var move=_active$moves2[_i11];

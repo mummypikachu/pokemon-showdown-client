@@ -1195,7 +1195,6 @@ export class BattleScene implements BattleSceneStub {
 				opacity: 0.5,
 				scale: 0.2,
 			}, this);
-
 			const rock2 = new Sprite(BattleEffects.rock2, {
 				display: 'block',
 				x: x + side.leftof(-20),
@@ -1222,7 +1221,7 @@ export class BattleScene implements BattleSceneStub {
 				opacity: 0.5,
 				scale: 0.2,
 			}, this);
-
+			
 			this.$spritesFront[spriteIndex].append(rock1.$el!);
 			this.$spritesFront[spriteIndex].append(rock2.$el!);
 			this.$spritesFront[spriteIndex].append(rock3.$el!);
@@ -1343,6 +1342,39 @@ export class BattleScene implements BattleSceneStub {
 			this.$spritesFront[spriteIndex].append(web.$el!);
 			this.sideConditions[siden][id] = [web];
 			break;
+
+			case 'glacierstream':
+			const icicle = new Sprite(BattleEffects.icicle, {
+				display: 'block',
+				x: x + side.leftof(-40),
+				y: y - 10,
+				z: side.z,
+				opacity: 0.5,
+				scale: 0.2,
+			}, this);
+
+			const icicle2 = new Sprite(BattleEffects.icicle2, {
+				display: 'block',
+				x: x + side.leftof(30),
+				y: y - 20,
+				z: side.z,
+				opacity: 0.5,
+				scale: 0.2,
+			}, this);
+
+			const icicle3 = new Sprite(BattleEffects.icicle3, {
+				display: 'block',
+				x: x + side.leftof(10),
+				y: y - 20,
+				z: side.z,
+				opacity: 0.5,
+				scale: 0.2,
+			}, this);
+
+
+			this.$spritesFront[spriteIndex].append(icicle.$el!);
+			this.$spritesFront[spriteIndex].append(icicle2.$el!);
+			this.$spritesFront[spriteIndex].append(icicle3.$el!);
 		}
 	}
 	removeSideCondition(siden: number, id: ID) {

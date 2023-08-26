@@ -279,10 +279,12 @@ class BattleChoiceBuilder {
 				throw new Error(`You must switch in a Pokémon, not move.`);
 			}
 			const moveRequest = request.active[index]!;
-			choice = choice.slice(5);
+			const originalChoice = choice.slice(5); // Store the original choice without trimming
+			choice = originalChoice; // Use the trimmed choice for further processing
+		
 			let current: BattleMoveChoice = {
 				choiceType: 'move',
-				move: 0,
+				move: 0, // Set a default value (could be adjusted based on your data)
 				targetLoc: 0,
 				mega: false,
 				ultra: false,

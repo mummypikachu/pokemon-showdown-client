@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replays</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="pfx-panel">
+        <div class="pfx-body pfx-body-padded">
+            <h1>Upload replays</h1>
+            <p>
+                To upload a replay, click "Share" or use the command <code>/savereplay</code> in a Pokémon Showdown battle!
+            </p>
+            <h1>Search replays</h1>
+            <form action="/search/" method="get" data-target="replace">
+                <p style="text-align:center">
+                    <label><input type="text" name="user" class="textbox" placeholder="Username" size="24" /></label>
+                    <button type="submit"><strong>Search for user</strong></button>
+                </p>
+            </form>
+            <form action="/search/" method="get" data-target="replace">
+                <p style="text-align:center">
+                    <label><input type="text" name="format" class="textbox" placeholder="Format" size="24" /></label>
+                    <button type="submit"><strong>Search by format</strong></button>
+                </p>
+            </form>
+            <h1>Featured replays</h1>
+            <ul class="linklist" style="max-width:480px;margin:0 auto;text-align:center">
+                <!-- ... Featured replays list ... -->
+            </ul>
+            <h1>Recent replays</h1>
+            <ul class="linklist" style="max-width:480px;margin:0 auto;text-align:center" id="recentReplays">
+                <!-- ... Recent replays list will be added using JavaScript ... -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Simulated data for featured replays
+        const featuredReplays = [
+            { format: "oumonotype", p1: "kdarewolf", p2: "Onox", description: "Protean + prediction" },
+            // Add other featured replays here...
+        ];
+
+        // Function to add featured replays to the list
+        function addFeaturedReplays() {
+            const featuredList = document.querySelector('.linklist');
+            featuredReplays.forEach(replay => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a href="/${replay.format}" data-target="push">
+                        <small>[${replay.format}]<br /></small>
+                        <strong>${replay.p1}</strong> vs. <strong>${replay.p2}</strong>
+                        <small><br />${replay.description}</small>
+                    </a>`;
+                featuredList.appendChild(listItem);
+            });
+        }
+
+        // Simulated data for recent replays
+        const recentReplays = [
+            // ... Add recent replay data here ...
+        ];
+
+        // Function to add recent replays to the list
+        function addRecentReplays() {
+            const recentList = document.getElementById('recentReplays');
+            recentReplays.forEach(replay => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a href="/${replay.id}" data-target="push">
+                        <small>[${replay.format}]<br /></small>
+                        <strong>${replay.p1}</strong> vs. <strong>${replay.p2}</strong>
+                    </a>`;
+                recentList.appendChild(listItem);
+            });
+        }
+
+        // Add featured and recent replays when the page loads
+        window.addEventListener('load', () => {
+            addFeaturedReplays();
+            addRecentReplays();
+        });
+
+        // Your other JavaScript code can go here
+    </script>
+</body>
+</html>

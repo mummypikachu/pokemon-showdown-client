@@ -1395,7 +1395,7 @@ exports.BattlePokemonSprites = {
 	miraidon:{num:1008},
 	walkingwake:{num:1009},
 	ironleaves:{num:1010},
-	quartzeon:{num:470},
+	quartzeon:{num:1011},
 	missingno:{num:10110},
 	syclar:{num:-1},
 	syclant:{num:-2},

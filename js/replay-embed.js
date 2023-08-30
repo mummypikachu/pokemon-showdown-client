@@ -28,27 +28,27 @@ function requireScript(url) {
 	document.head.appendChild(scriptEl);
 }
 
-linkStyle('https://sigmatic-showdown.win:8080/style/font-awesome.css?');
-linkStyle('https://sigmatic-showdown.win:8080/style/battle.css?a7');
-linkStyle('https://sigmatic-showdown.win:8080/style/replay.css?a7');
-linkStyle('https://sigmatic-showdown.win:8080/style/utilichart.css?a7');
+linkStyle('http://sigmatic-showdown.win:8080/style/font-awesome.css?');
+linkStyle('http://sigmatic-showdown.win:8080/style/battle.css?a7');
+linkStyle('http://sigmatic-showdown.win:8080/style/replay.css?a7');
+linkStyle('http://sigmatic-showdown.win:8080/style/utilichart.css?a7');
 
-requireScript('https://sigmatic-showdown.win:8080/js/lib/ps-polyfill.js');
-requireScript('https://sigmatic-showdown.win:8080/config/config.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/js/lib/jquery-1.11.0.min.js');
-requireScript('https://sigmatic-showdown.win:8080/js/lib/html-sanitizer-minified.js');
-requireScript('https://sigmatic-showdown.win:8080/js/battle-sound.js');
-requireScript('https://sigmatic-showdown.win:8080/js/battledata.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/pokedex-mini.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/pokedex-mini-bw.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/graphics.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/pokedex.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/moves.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/abilities.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/items.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/data/teambuilder-tables.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/js/battle-tooltips.js?a7');
-requireScript('https://sigmatic-showdown.win:8080/js/battle.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/js/lib/ps-polyfill.js');
+requireScript('http://sigmatic-showdown.win:8080/config/config.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/js/lib/jquery-1.11.0.min.js');
+requireScript('http://sigmatic-showdown.win:8080/js/lib/html-sanitizer-minified.js');
+requireScript('http://sigmatic-showdown.win:8080/js/battle-sound.js');
+requireScript('http://sigmatic-showdown.win:8080/js/battledata.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/pokedex-mini.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/pokedex-mini-bw.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/graphics.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/pokedex.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/moves.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/abilities.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/items.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/data/teambuilder-tables.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/js/battle-tooltips.js?a7');
+requireScript('http://sigmatic-showdown.win:8080/js/battle.js?a7');
 
 var Replays = {
 	battle: null,

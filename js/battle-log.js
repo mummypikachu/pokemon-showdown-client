@@ -235,8 +235,8 @@ return;
 
 default:
 this.addBattleMessage(args,kwArgs);
-return;}
-
+return;
+}
 if(divHTML)this.addDiv(divClass,divHTML,preempt);
 };_proto.
 addBattleMessage=function addBattleMessage(args,kwArgs){
@@ -294,8 +294,8 @@ return;
 }
 if(!line)return;
 this.message.apply(this,this.parseLogMessage(line));
-break;}
-
+break;
+}
 };_proto.
 textList=function textList(list){
 var message='';
@@ -548,8 +548,8 @@ case 2:R1=0;G1=C;B1=X;break;
 case 3:R1=0;G1=X;B1=C;break;
 case 4:R1=X;G1=0;B1=C;break;
 case 5:R1=C;G1=0;B1=X;break;
-case 0:default:R1=C;G1=X;B1=0;break;}
-
+case 0:default:R1=C;G1=X;B1=0;break;
+}
 var R=R1+m;
 var G=G1+m;
 var B=B1+m;
@@ -658,9 +658,9 @@ timestamp+"<em>"+BattleLog.parseMessage(message)+"</em>"];
 }
 return[
 'chat chatmessage-'+toID(name)+hlClass+mineClass,
-timestamp+"<strong"+colorStyle+">"+clickableName+":</strong> <em>"+BattleLog.parseMessage(message)+"</em>"];}
+timestamp+"<strong"+colorStyle+">"+clickableName+":</strong> <em>"+BattleLog.parseMessage(message)+"</em>"];
 
-
+}
 };BattleLog.
 
 parseMessage=function parseMessage(str){var isTrusted=arguments.length>1&&arguments[1]!==undefined?arguments[1]:false;
@@ -1041,7 +1041,7 @@ buf+='</div>\n';
 buf+='<div class="battle-log battle-log-inline"><div class="inner">'+battle.scene.log.elem.innerHTML+'</div></div>\n';
 buf+='</div>\n';
 buf+='<script>\n';
-buf+="let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src=\"https://"+Config.routes.client+"/js/replay-embed.js?version'+daily+'\"></'+'script>');\n";
+buf+="let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src=\"http://"+Config.routes.client+"/js/replay-embed.js?version'+daily+'\"></'+'script>');\n";
 buf+='</script>\n';
 return buf;
 };BattleLog.

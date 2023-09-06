@@ -1,82 +1,34 @@
 <?php
 $config = array();
+// Define your configuration directly in the script
+$psconfig = array(
+    'routes' => array(
+        'client' => 'sigmatic-showdown.win:8080',
+        // Other route configurations
+    ),
+    // Other configuration settings
+);
 
-require_once __DIR__ . '/config/config.inc.php';
+// Rest of your script
+
+
 
 $host = strtolower(strval(@$_REQUEST['host']));
 if (preg_match('/^([a-z0-9-_\.]*?)\.psim\.us$/', $host, $m)) {
-	$config['host'] = $m[1];
-	if ($config['host'] === 'logs') die; // not authorised
-	if ($config['host'] === 'sim') die; // not authorised
-} else if ($host === $psconfig['routes']['client']) {
-	$config['host'] = 'showdown';
-} else {
-	die; // not authorised
+    $config['host'] = $m[1];
+    if ($config['host'] === 'logs') {
+        die; // not authorized
+    }
+    if ($config['host'] === 'sim') {
+        die; // not authorized
+    }
 }
+
 
 $protocol = @$_REQUEST['protocol'] ?? 'http:';
 $portType = ($protocol === 'http:' ? 'port' : 'httpport');
 if ($protocol === 'http:') $config['http'] = true;
 
-if ($config['host'] !== 'showdown') {
-	include_once __DIR__ . '/config/servers.inc.php';
-
-	$hyphenpos = strrpos($config['host'], '-');
-	if ($hyphenpos) {
-		$postfix = substr($config['host'], $hyphenpos + 1);
-		if ($postfix === 'afd') {
-			$config['afd'] = true;
-			$config['host'] = substr($config['host'], 0, $hyphenpos);
-		} else if (ctype_digit($postfix)) {
-			$config['port'] = intval(substr($config['host'], $hyphenpos + 1));
-			$config['host'] = substr($config['host'], 0, $hyphenpos);
-		}
-	}
-
-	$config['id'] = $config['host'];
-	if (isset($PokemonServers[$config['host']])) {
-		$server =& $PokemonServers[$config['host']];
-		if (@$server['banned']) {
-			$config['banned'] = true;
-		} else {
-			$config['host'] = $server['server'];
-			if (!isset($config['port'])) {
-				$config['port'] = $server[$portType] ?? 443;
-			} else if ($config['port'] !== ($server[$portType] ?? 443)) {
-				$config['id'] .= ':' . $config['port'];
-			}
-			if (isset($server['altport'])) $config['altport'] = $server['altport'];
-			$config['registered'] = true;
-
-			// $yourip = $_SERVER['REMOTE_ADDR'];
-			$yourip = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-			if (substr($config['host'].':', 0, strlen($yourip)+1) === $yourip.':') {
-				$config['host'] = 'localhost'.substr($config['host'],strlen($yourip));
-			}
-		}
-	} else {
-		if (isset($config['port'])) {
-			$config['id'] .= ':' . $config['port'];
-		} else {
-			$config['port'] = ($protocol === 'http:' ? 8000 : 443); // default port
-		}
-
-		// see if this is actually a registered server
-		if ($config['host'] !== 'localhost') {
-			foreach ($PokemonServers as &$server) {
-				if ($config['host'] === $server['server'] && (
-						$config['port'] === $server['port'] ||
-						(isset($server['altport']) && $config['port'] === $server['altport'])
-					)) {
-					$path = isset($_REQUEST['path']) ? $_REQUEST['path'] : '';
-					$protocol = 'http:';
-					$config['redirect'] = $protocol . '//' . $server['id'] . '.psim.us/' . rawurlencode($path);
-					break;
-				}
-			}
-		}
-	}
-}
 
 if (@$config['redirect']) {
 ?>

@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 include_once 'servers.lib.php';
 include '../style/wrapper.inc.php';

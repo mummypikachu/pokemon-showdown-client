@@ -116,7 +116,7 @@ exports.BattlePokemonSpritesBW = {
 	machop:{num:66,front:{w:50,h:50},back:{w:59,h:54}},
 	machoke:{num:67,front:{w:61,h:71},back:{w:63,h:73}},
 	machamp:{num:68,front:{w:63,h:77},back:{w:69,h:79}},
-	machampgmax:{num:68},
+	machampmega:{num:68},
 	bellsprout:{num:69,front:{w:41,h:44},back:{w:44,h:52}},
 	weepinbell:{num:70,front:{w:68,h:50},back:{w:72,h:54}},
 	victreebel:{num:71,front:{w:65,h:71},back:{w:69,h:70}},

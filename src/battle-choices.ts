@@ -128,6 +128,16 @@ class BattleChoiceBuilder {
 	constructor(request: BattleRequest) {
 		this.request = request;
 		this.fillPasses();
+		this.current = {
+			choiceType: 'move',
+			move: 0,
+			targetLoc: 0,
+			mega: false,
+			ultra: false,
+			max: false,
+			z: false,
+			tera: false,
+		  };
 	}
 
 	toString() {
@@ -428,20 +438,20 @@ class BattleChoiceBuilder {
 	 * Converts a choice from `BattleChoice` into string form
 	 */
 	stringChoice(choice: BattleChoice | null) {
-		if (!choice) return `pass`;
-		switch (choice.choiceType) {
-		case 'move':
-			const target = choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : ``;
-			const boost = `${choice.max ? ' max' : ''}${choice.mega ? ' mega' : ''}${choice.z ? ' zmove' : ''}${choice.tera ? ' terastallize' : ''}`;
-			return `move ${choice.move}${boost}${target}`;
-		case 'switch':
-		case 'team':
-			return `${choice.choiceType} ${choice.targetPokemon}`;
-		case 'shift':
-			return `shift`;
-		}
-	}
-
+    if (!choice) return `pass`;
+    switch (choice.choiceType) {
+      case 'move':
+        const target = choice.targetLoc ? ` ${choice.targetLoc > 0 ? '+' : ''}${choice.targetLoc}` : ``;
+        const boost = `${choice.max ? ' max' : ''}${choice.mega ? ' mega' : ''}${choice.z ? ' zmove' : ''}${choice.tera ? ' terastallize' : ''}`;
+        return `move ${choice.move}${boost}${target}`;
+      case 'switch':
+      case 'team':
+        return `${choice.choiceType} ${choice.targetPokemon}`;
+      case 'shift':
+        return `shift`;
+    }
+  }
+  
 	/**
 	 * The request sent from the server is actually really gross, but we'll have
 	 * to wait until we transition to the new client before fixing it in the

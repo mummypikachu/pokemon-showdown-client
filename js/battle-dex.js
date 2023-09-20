@@ -122,8 +122,8 @@ throw new Error("Passed value "+a+" is not comparable");
 sortBy=function sortBy(array,callback){
 if(!callback)return array.sort(PSUtils.compare);
 return array.sort(function(a,b){return PSUtils.compare(callback(a),callback(b));});
-};return _class;}())();
-
+};return _class;}())(
+);
 
 
 
@@ -141,8 +141,8 @@ if(name.length>18)name=name.substr(0,18).trim();
 
 name=name.replace(
 /[\u0300-\u036f\u0483-\u0489\u0610-\u0615\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06ED\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]{3,}/g,
-'');
-
+''
+);
 name=name.replace(/[\u239b-\u23b9]/g,'');
 
 return name;
@@ -179,13 +179,13 @@ statNamesExceptHP=['atk','def','spa','spd','spe'];this.
 
 pokeballs=null;this.
 
-resourcePrefix=function(){var _window$document,_window$document$loca;
+resourcePrefix=function(_window$document,_window$document$loca){
 var prefix='';
 if(((_window$document=window.document)==null?void 0:(_window$document$loca=_window$document.location)==null?void 0:_window$document$loca.protocol)!=='http:')prefix='https:';
 return'https://raw.githubusercontent.com/mummypikachu/sprites/master/';
 }();this.
 
-fxPrefix=function(){var _window$document2,_window$document2$loc;
+fxPrefix=function(_window$document2,_window$document2$loc){
 var protocol=((_window$document2=window.document)==null?void 0:(_window$document2$loc=_window$document2.location)==null?void 0:_window$document2$loc.protocol)!=='http:'?'https:':'';
 return'https://raw.githubusercontent.com/mummypikachu/sprites/master/fx/';
 }();this.
@@ -403,8 +403,8 @@ name:forme,
 forme:forme.slice(species.name.length+1),
 baseForme:"",
 baseSpecies:species.name,
-otherFormes:null}));
-
+otherFormes:null})
+);
 window.BattlePokedexAltForms[formid]=species;
 break;
 }
@@ -810,8 +810,8 @@ sanitizedCategory=categoryID.charAt(0).toUpperCase()+categoryID.slice(1);
 break;
 default:
 sanitizedCategory='undefined';
-break;}
-
+break;
+}
 return"<img src=\""+Dex.resourcePrefix+"sprites/categories/"+sanitizedCategory+".png\" alt=\""+sanitizedCategory+"\" height=\"14\" width=\"32\" class=\"pixelated\" />";
 };_proto2.
 
@@ -824,8 +824,8 @@ if(!data.isPokeball)continue;
 this.pokeballs.push(data.name);
 }
 return this.pokeballs;
-};return _class3;}())();var
-
+};return _class3;}())(
+);var
 
 ModdedDex=function(){
 

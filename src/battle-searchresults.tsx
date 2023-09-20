@@ -283,6 +283,7 @@ class PSSearchResults extends preact.Component<{search: DexSearch}> {
 		const search = this.props.search;
 		// very hardcode
 		const tierTable: {[id: string]: string} = {
+			lcubers: "LC Ubers",
 			uber: "Uber",
 			caplc: "CAP LC",
 			capnfe: "CAP NFE",

@@ -78,8 +78,8 @@ roomList=roomList.filter(function(room){return!start.includes(room);});
 
 var abbr=roomList.filter(function(room){return(
 toID(room.title.toLowerCase().replace(/\b([a-z0-9])[a-z0-9]*\b/g,'$1')).startsWith(searchid)||
-room.title.replace(/[^A-Z0-9]+/g,'').toLowerCase().startsWith(searchid));});
-
+room.title.replace(/[^A-Z0-9]+/g,'').toLowerCase().startsWith(searchid));}
+);
 
 var hidden=!exactMatch?[{title:this.search,desc:"(Private room?)"}]:[];
 
@@ -131,34 +131,34 @@ this.renderRoomList("Chat rooms",rooms.chat)];
 
 return preact.h(PSPanelWrapper,{room:this.props.room,scrollable:true},preact.h("div",{"class":"pad"},
 preact.h("button",{"class":"button",style:"float:right;font-size:10pt;margin-top:3px",onClick:this.hide},
-preact.h("i",{"class":"fa fa-caret-right"})," Hide"),
-
+preact.h("i",{"class":"fa fa-caret-right"})," Hide"
+),
 preact.h("div",{"class":"roomcounters"},
 preact.h("button",{"class":"button","data-href":"/users",title:"Find an online user"},
 preact.h("span",{
 "class":"pixelated usercount",
-title:"252+ SpA Choice Specs Adaptability Tera Normal Porygon-Z Hyper Beam vs. 252 HP / 252+ SpD Blissey on a critical hit: 661-778 (92.5 - 108.9%) -- 56.3% chance to OHKO. #TeamPorygon-Z"}),
-
-preact.h("strong",null,rooms.userCount||'-')," users online"),
-" ",
+title:"252+ SpA Choice Specs Adaptability Tera Normal Porygon-Z Hyper Beam vs. 252 HP / 252+ SpD Blissey on a critical hit: 661-778 (92.5 - 108.9%) -- 56.3% chance to OHKO. #TeamPorygon-Z"}
+),
+preact.h("strong",null,rooms.userCount||'-')," users online"
+)," ",
 preact.h("button",{"class":"button","data-href":"/battles",title:"Watch an active battle"},
 preact.h("span",{
 "class":"pixelated battlecount",
-title:"A T-Tar shivers when a Leavanny hits an Axe Kick. #TeamLeavanny"}),
-
-preact.h("strong",null,rooms.battleCount||'-')," active battles")),
-
-
+title:"A T-Tar shivers when a Leavanny hits an Axe Kick. #TeamLeavanny"}
+),
+preact.h("strong",null,rooms.battleCount||'-')," active battles"
+)
+),
 preact.h("div",null,
 preact.h("input",{
 type:"search",name:"roomsearch","class":"textbox",style:"width: 100%; max-width: 480px",
 placeholder:"Join or search for rooms",
-onInput:this.changeSearch,onKeyDown:this.keyDownSearch})),
-
-
+onInput:this.changeSearch,onKeyDown:this.keyDownSearch}
+)
+),
 PS.isOffline?preact.h("h2",null,"(offline)"):rooms.userCount===undefined&&preact.h("h2",null,"Connecting..."),
-roomList));
-
+roomList
+));
 };_proto.
 renderRoomList=function renderRoomList(title,rooms){
 if(!rooms||!rooms.length)return null;
@@ -174,13 +174,13 @@ preact.h("small",null,roomInfo.desc||''),
 roomInfo.subRooms&&preact.h("small",null,preact.h("br",null),
 preact.h("i",{"class":"fa fa-level-up fa-rotate-90"})," Subrooms: ",preact.h("strong",null,
 roomInfo.subRooms.map(function(roomName,i){return[
-preact.h("i",{"class":"fa fa-comment-o"})," "+roomName+(i===roomInfo.subRooms.length-1?"":", ")];})))));}));
-
-
-
-
-
-
+preact.h("i",{"class":"fa fa-comment-o"})," "+roomName+(i===roomInfo.subRooms.length-1?"":", ")];}
+)
+)
+)
+)
+);})
+);
 };return RoomsPanel;}(PSRoomPanel);
 
 

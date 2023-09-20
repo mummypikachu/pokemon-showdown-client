@@ -321,16 +321,18 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 	const NFE = GENS.map(num => num + 0.3);
 	const STADIUM = [2.04, 1.04];
 	const NATDEX = [9.1, 8.1];
+	const SADEX = [9.1, 8.1];
 	const OTHER = [9.2, 8.6, 8.4, 8.2, 8.1, -8.4, -8.6, 7.1];
 
 	// process.stdout.write("\n  ");
-	for (const genIdent of [...GENS, ...DOUBLES, ...VGC, ...NFE, ...STADIUM, ...OTHER, ...NATDEX]) {
+	for (const genIdent of [...GENS, ...DOUBLES, ...VGC, ...NFE, ...STADIUM, ...OTHER, ...NATDEX, ...SADEX]) {
 		const isLetsGo = (genIdent === 7.1);
 		const isBDSP = (genIdent === 8.6 || genIdent === -8.6);
 		const isMetBattle = ('' + genIdent).endsWith('.2');
 		const isNFE = ('' + genIdent).endsWith('.3');
 		const isDLC1 = (genIdent === 8.4 || genIdent === -8.4);
 		const isNatDex = ('' + genIdent).endsWith('.1') && genIdent > 8;
+		const isSaDex = ('' + genIdent).endsWith('.1') && genIdent > 8;
 		const isStadium = ('' + genIdent).endsWith('.04');
 		const isDoubles = (genIdent < 0);
 		const isVGC = ('' + genIdent).endsWith('.5');
@@ -413,6 +415,9 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 				if (isNatDex) {
 					return species.natDexTier;
 				}
+				if (isSaDex) {
+					return species.saDexTier;
+				}
 				return species.tier;
 			})();
 			overrideTier[species.id] = tier;
@@ -448,7 +453,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 					["(PU)", "NFE", "LC Ubers", "LC"].includes(species.tier)) {
 					zuBans[species.id] = 1;
 				}
-				const mono = Dex.formats.get(gen + (isNatDex ? 'nationaldex' : '') + 'monotype');
+				const mono = Dex.formats.get(gen + (isNatDex ? 'nationaldex' : '') || (isSaDex ? 'sigmadex' : '') + 'monotype');
 				if (Dex.formats.getRuleTable(mono).isBannedSpecies(species)) {
 					monotypeBans[species.id] = 1;
 				}
@@ -512,6 +517,13 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			BattleTeambuilderTable.zuBans = zuBans;
 			BattleTeambuilderTable.monotypeBans = monotypeBans;
 			BattleTeambuilderTable.formatSlices = formatSlices;
+		} else if (isSaDex) {
+				BattleTeambuilderTable['gen' + genNum + 'sadex'] = {};
+				BattleTeambuilderTable['gen' + genNum + 'sadex'].tiers = tiers;
+				BattleTeambuilderTable['gen' + genNum + 'sadex'].overrideTier = overrideTier;
+				BattleTeambuilderTable['gen' + genNum + 'sadex'].items = items;
+				BattleTeambuilderTable['gen' + genNum + 'sadex'].monotypeBans = monotypeBans;
+				BattleTeambuilderTable['gen' + genNum + 'sadex'].formatSlices = formatSlices;
 		} else {
 			BattleTeambuilderTable[gen] = {};
 			BattleTeambuilderTable[gen].overrideTier = overrideTier;
@@ -594,11 +606,20 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 					continue;
 				}
 			}
+			if (item.isNonstandard && !isMetBattle) {
+				if (isSaDex) {
+					if (item.isNonstandard !== "Past") continue;
+					if (!item.itemUser && !item.zMove) continue;
+				} else if (genNum !== 2) {
+					continue;
+				}
+			}
 			if (isMetBattle) {
 				const banlist = Dex.formats.getRuleTable(Dex.formats.get(gen + 'metronomebattle'));
 				if (banlist.isBanned('item:' + item.id)) continue;
 			}
 			switch (id) {
+			case 'beserkgene':
 			case 'leftovers':
 			case 'lifeorb':
 			case 'choiceband':
@@ -606,6 +627,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			case 'choicespecs':
 			case 'eviolite':
 			case 'assaultvest':
+		    case 'strikervest':
 			case 'focussash':
 			case 'powerherb':
 			case 'rockyhelmet':

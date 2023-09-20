@@ -1537,7 +1537,7 @@ export const BattleMoveAnims: AnimTable = {
 			let zstep = (defender.z - attacker.z) / 5;
 
 			const tatsugiriSprite = {
-				url: `https://${Config.routes.client}/sprites/gen5/tatsugiri${['-droopy', '-stretchy', ''][Math.floor(Math.random() * 3)]}.png`,
+				url: `https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen5/tatsugiri${['-droopy', '-stretchy', ''][Math.floor(Math.random() * 3)]}.png`,
 				w: 96,
 				h: 96,
 			};
@@ -22666,7 +22666,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	sheercold: { // Reminder: Improve this later
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
+			scene.backgroundEffect(`url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
 			scene.showEffect('icicle', {
 				x: defender.x,
 				y: defender.y,
@@ -22684,7 +22684,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	glaciallance: {
 		anim(scene, [attacker, ...defenders]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
+			scene.backgroundEffect(`url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-icecave.jpg')`, 1000, 0.6);
 			for (const defender of defenders) {
 				scene.showEffect('icicle', {
 					x: defender.x,
@@ -28549,7 +28549,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	plasmafists: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 1);
+			scene.backgroundEffect(`url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 1);
 			scene.backgroundEffect('#000000', 1000, 0.6);
 			scene.backgroundEffect('#FFFFFF', 300, 0.6, 1000);
 			scene.showEffect('electroball', {
@@ -33284,7 +33284,7 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	splinteredstormshards: {
 		anim(scene, [attacker, defender]) {
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-earthycave.jpg')`, 2700, 0.8, 300);
+			scene.backgroundEffect(`url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-earthycave.jpg')`, 2700, 0.8, 300);
 			scene.backgroundEffect('linear-gradient(#FFC720 15%, #421800)', 2700, 0.7);
 			scene.backgroundEffect('#ffffff', 400, 0.6, 2500);
 			scene.showEffect('rock3', {
@@ -34007,7 +34007,7 @@ export const BattleMoveAnims: AnimTable = {
 			}
 			const defender = defenders[1] || defenders[0];
 			scene.backgroundEffect('#000000', 300, 0.9);
-			scene.backgroundEffect(`url('https://${Config.routes.client}/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 0.7, 300);
+			scene.backgroundEffect(`url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-earthycave.jpg')`, 2000, 0.7, 300);
 			scene.backgroundEffect('linear-gradient(#FB5C1E 20%, #3F1D0F', 2000, 0.6, 300);
 			scene.backgroundEffect('#FFFFFF', 1000, 0.9, 2200);
 			scene.showEffect('shine', {

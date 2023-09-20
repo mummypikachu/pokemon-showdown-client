@@ -181,8 +181,8 @@ case'*':tagName='b';break;
 case'~':tagName='s';break;
 case'^':tagName='sup';break;
 case'\\':tagName='sub';break;
-case'|':tagName='span';attrs=' class="spoiler"';break;}
-
+case'|':tagName='span';attrs=' class="spoiler"';break;
+}
 if(tagName){
 this.buffers[startIndex]="<"+tagName+attrs+">";
 this.buffers.push("</"+tagName+">");
@@ -211,8 +211,8 @@ this.buffers[span[1]]="<span class=\"greentext\">";
 break;
 default:
 
-break;}
-
+break;
+}
 return true;
 };_proto.
 
@@ -328,8 +328,8 @@ if(key==='item')dir+='s';
 if(key==='category')dir='categories';
 
 uri="//dex.pokemonshowdown.com/"+dir+"/"+toID(term);
-term=display;}
-
+term=display;
+}
 }
 if(!uri){
 uri="//www.google.com/search?ie=UTF-8&btnI&q="+this.toUriComponent(term);
@@ -358,8 +358,8 @@ while(this.at(_i3)!=='/'||this.at(_i3+1)!=='a'||this.at(_i3+2)!=='>')_i3++;
 _i3+=3;
 this.pushSlice(_i3);
 }
-return true;}
-
+return true;
+}
 return false;
 };_proto.
 
@@ -450,8 +450,8 @@ this.buffers.push("<br />");
 this.offset++;
 }
 beginningOfLine=i+1;
-break;}
-
+break;
+}
 }
 
 this.popAllSpans(this.str.length);

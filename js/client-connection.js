@@ -57,7 +57,7 @@ this.socket.send(msg);
 
 PS.connection=new PSConnection();
 
-var PSLoginServer=new(function(){function _class(){}var _proto2=_class.prototype;_proto2.
+var PSLoginServer=new(function(){function _class2(){}var _proto2=_class2.prototype;_proto2.
 query=function query(data){
 var url='/~~'+PS.server.id+'/action.php';
 if(location.pathname.endsWith('.html')){
@@ -69,12 +69,12 @@ data.sid=POKEMON_SHOWDOWN_TESTCLIENT_KEY.replace(/\%2C/g,',');
 }
 }
 return Net(url).get({method:data?'POST':'GET',body:data}).then(
-function(res){return res?JSON.parse(res.slice(1)):null;})["catch"](
-
-function(){return null;});
-
-};return _class;}())();var
-
+function(res){return res?JSON.parse(res.slice(1)):null;}
+)["catch"](
+function(){return null;}
+);
+};return _class2;}())(
+);var
 
 
 
@@ -155,8 +155,8 @@ if(!body)body=opts.body;
 return this.get(Object.assign({},
 opts,{
 method:'POST',
-body:body}));
-
+body:body})
+);
 };return NetRequest;}();
 
 

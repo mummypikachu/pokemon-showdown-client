@@ -1537,7 +1537,7 @@ var ystep=(defender.y-attacker.y)/5;
 var zstep=(defender.z-attacker.z)/5;
 
 var tatsugiriSprite={
-url:"https://"+Config.routes.client+"/sprites/gen5/tatsugiri"+['-droopy','-stretchy',''][Math.floor(Math.random()*3)]+".png",
+url:"https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen5/tatsugiri"+['-droopy','-stretchy',''][Math.floor(Math.random()*3)]+".png",
 w:96,
 h:96
 };
@@ -22666,7 +22666,7 @@ opacity:0.3
 },
 sheercold:{
 anim:function(scene,_ref340){var attacker=_ref340[0],defender=_ref340[1];
-scene.backgroundEffect("url('https://"+Config.routes.client+"/sprites/gen6bgs/bg-icecave.jpg')",1000,0.6);
+scene.backgroundEffect("url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-icecave.jpg')",1000,0.6);
 scene.showEffect('icicle',{
 x:defender.x,
 y:defender.y,
@@ -22684,7 +22684,7 @@ time:800
 },
 glaciallance:{
 anim:function(scene,_ref341){var attacker=_ref341[0],defenders=_ref341.slice(1);
-scene.backgroundEffect("url('https://"+Config.routes.client+"/sprites/gen6bgs/bg-icecave.jpg')",1000,0.6);for(var _i54=0;_i54<
+scene.backgroundEffect("url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-icecave.jpg')",1000,0.6);for(var _i54=0;_i54<
 defenders.length;_i54++){var defender=defenders[_i54];
 scene.showEffect('icicle',{
 x:defender.x,
@@ -28549,7 +28549,7 @@ time:100
 },
 plasmafists:{
 anim:function(scene,_ref406){var attacker=_ref406[0],defender=_ref406[1];
-scene.backgroundEffect("url('https://"+Config.routes.client+"/sprites/gen6bgs/bg-earthycave.jpg')",2000,1);
+scene.backgroundEffect("url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-earthycave.jpg')",2000,1);
 scene.backgroundEffect('#000000',1000,0.6);
 scene.backgroundEffect('#FFFFFF',300,0.6,1000);
 scene.showEffect('electroball',{
@@ -33284,7 +33284,7 @@ time:300
 },
 splinteredstormshards:{
 anim:function(scene,_ref431){var attacker=_ref431[0],defender=_ref431[1];
-scene.backgroundEffect("url('https://"+Config.routes.client+"/sprites/gen6bgs/bg-earthycave.jpg')",2700,0.8,300);
+scene.backgroundEffect("url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-earthycave.jpg')",2700,0.8,300);
 scene.backgroundEffect('linear-gradient(#FFC720 15%, #421800)',2700,0.7);
 scene.backgroundEffect('#ffffff',400,0.6,2500);
 scene.showEffect('rock3',{
@@ -34007,7 +34007,7 @@ time:200
 }
 var defender=defenders[1]||defenders[0];
 scene.backgroundEffect('#000000',300,0.9);
-scene.backgroundEffect("url('https://"+Config.routes.client+"/sprites/gen6bgs/bg-earthycave.jpg')",2000,0.7,300);
+scene.backgroundEffect("url('https://raw.githubusercontent.com/mummypikachu/sprites/master/sprites/gen6bgs/bg-earthycave.jpg')",2000,0.7,300);
 scene.backgroundEffect('linear-gradient(#FB5C1E 20%, #3F1D0F',2000,0.6,300);
 scene.backgroundEffect('#FFFFFF',1000,0.9,2200);
 scene.showEffect('shine',{

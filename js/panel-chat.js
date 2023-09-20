@@ -307,10 +307,10 @@ rows:1,
 onInput:this.update,
 onKeyDown:this.keyDown,
 style:{resize:'none',width:'100%',height:'16px',padding:'2px 3px 1px 3px'},
-placeholder:PS.focusPreview(this.props.room)})));
-
-
-
+placeholder:PS.focusPreview(this.props.room)}
+)
+)
+);
 };return ChatTextEntry;}(preact.Component);var
 
 
@@ -363,30 +363,30 @@ var tinyLayout=room.width<450;
 
 var challengeTo=room.challengingFormat?preact.h("div",{"class":"challenge"},
 preact.h(TeamForm,{format:room.challengingFormat,onSubmit:null},
-preact.h("button",{name:"cmd",value:"/cancelchallenge","class":"button"},"Cancel"))):
-
-room.challengeMenuOpen?preact.h("div",{"class":"challenge"},
+preact.h("button",{name:"cmd",value:"/cancelchallenge","class":"button"},"Cancel")
+)
+):room.challengeMenuOpen?preact.h("div",{"class":"challenge"},
 preact.h(TeamForm,{onSubmit:this.makeChallenge},
 preact.h("button",{type:"submit","class":"button"},preact.h("strong",null,"Challenge"))," ",
-preact.h("button",{name:"cmd",value:"/cancelchallenge","class":"button"},"Cancel"))):
-
-null;
+preact.h("button",{name:"cmd",value:"/cancelchallenge","class":"button"},"Cancel")
+)
+):null;
 
 var challengeFrom=room.challengedFormat?preact.h("div",{"class":"challenge"},
 preact.h(TeamForm,{format:room.challengedFormat,onSubmit:this.acceptChallenge},
 preact.h("button",{type:"submit","class":"button"},preact.h("strong",null,"Accept"))," ",
-preact.h("button",{name:"cmd",value:"/reject","class":"button"},"Reject"))):
-
-null;
+preact.h("button",{name:"cmd",value:"/reject","class":"button"},"Reject")
+)
+):null;
 
 return preact.h(PSPanelWrapper,{room:room},
 preact.h("div",{"class":"tournament-wrapper hasuserlist"}),
 preact.h(ChatLog,{"class":"chat-log",room:this.props.room,onClick:this.focusIfNoSelection,left:tinyLayout?0:146},
-challengeTo||challengeFrom&&[challengeTo,challengeFrom]),
-
+challengeTo||challengeFrom&&[challengeTo,challengeFrom]
+),
 preact.h(ChatTextEntry,{room:this.props.room,onMessage:this.send,onKey:this.onKey,left:tinyLayout?0:146}),
-preact.h(ChatUserList,{room:this.props.room,minimized:tinyLayout}));
-
+preact.h(ChatUserList,{room:this.props.room,minimized:tinyLayout})
+);
 };return ChatPanel;}(PSRoomPanel);var
 
 
@@ -410,8 +410,8 @@ render=function render(){
 var room=this.props.room;
 var userList=Object.entries(room.users);
 PSUtils.sortBy(userList,function(_ref){var id=_ref[0],name=_ref[1];return(
-[PS.server.getGroup(name.charAt(0)).order,!name.endsWith('@!'),id]);});
-
+[PS.server.getGroup(name.charAt(0)).order,!name.endsWith('@!'),id]);}
+);
 return preact.h("ul",{"class":'userlist'+(this.props.minimized?this.state.expanded?' userlist-maximized':' userlist-minimized':''),style:{left:this.props.left||0}},
 preact.h("li",{"class":"userlist-count",onClick:this.toggleExpanded},preact.h("small",null,room.userCount," users")),
 userList.map(function(_ref2){var userid=_ref2[0],name=_ref2[1];
@@ -426,18 +426,18 @@ color=BattleLog.usernameColor(userid);
 }
 return preact.h("li",{key:userid},preact.h("button",{"class":"userbutton username","data-name":name},
 preact.h("em",{"class":"group"+(['leadership','staff'].includes(group.type)?' staffgroup':'')},
-groupSymbol),
-
+groupSymbol
+),
 group.type==='leadership'?
 preact.h("strong",null,preact.h("em",{style:{color:color}},name.substr(1))):
 group.type==='staff'?
 preact.h("strong",{style:{color:color}},name.substr(1)):
 
-preact.h("span",{style:{color:color}},name.substr(1))));
+preact.h("span",{style:{color:color}},name.substr(1))
 
-
-}));
-
+));
+})
+);
 };return ChatUserList;}(preact.Component);var
 
 
@@ -467,8 +467,8 @@ _this8.props.room.removeUser(tokens[1]);
 break;
 case'name':case'n':case'N':
 _this8.props.room.renameUser(tokens[1],tokens[2]);
-break;}
-
+break;
+}
 if(!_this8.props.noSubscription)_this8.log.add(tokens);
 });
 this.setControlsJSX(this.props.children);

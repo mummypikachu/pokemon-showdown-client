@@ -161,8 +161,8 @@ PS.closePopup();
 focus=function focus(){};_proto2.
 render=function render(){
 return preact.h(PSPanelWrapper,{room:this.props.room},
-preact.h("div",{"class":"mainmessage"},preact.h("p",null,"Loading...")));
-
+preact.h("div",{"class":"mainmessage"},preact.h("p",null,"Loading..."))
+);
 };return PSRoomPanel;}(preact.Component);
 
 
@@ -179,8 +179,8 @@ return preact.h("div",{id:"room-"+room.id,"class":"mini-window-contents ps-room-
 if(room.location!=='left'&&room.location!=='right'){
 var _style=PSMain.getPopupStyle(room,props.width);
 return preact.h("div",{"class":"ps-popup",id:"room-"+room.id,style:_style},
-props.children);
-
+props.children
+);
 }
 var style=PSMain.posStyle(room);
 return preact.h("div",{
@@ -188,8 +188,8 @@ return preact.h("div",{
 id:"room-"+room.id,
 style:style},
 
-props.children);
-
+props.children
+);
 }var
 
 PSMain=function(_preact$Component2){_inheritsLoose(PSMain,_preact$Component2);
@@ -344,8 +344,8 @@ case'send':
 case'cmd':
 var room=this.getRoom(elem)||PS.mainmenu;
 room.send(elem.value,elem.name==='send');
-return true;}
-
+return true;
+}
 return false;
 };PSMain.
 containingRoomid=function containingRoomid(elem){
@@ -489,8 +489,8 @@ if(room.location==='popup'&&room.parentElem){
 return preact.h(Panel,{key:room.id,room:room});
 }
 return preact.h("div",{key:room.id,"class":"ps-overlay"},
-preact.h(Panel,{room:room}));
-
+preact.h(Panel,{room:room})
+);
 };_proto3.
 render=function render(){var _this5=this;
 var rooms=[];
@@ -503,8 +503,8 @@ rooms.push(this.renderRoom(room));
 return preact.h("div",{"class":"ps-frame"},
 preact.h(PSHeader,{style:{top:0,left:0,right:0,height:'50px'}}),
 rooms,
-PS.popups.map(function(roomid){return _this5.renderPopup(PS.rooms[roomid]);}));
-
+PS.popups.map(function(roomid){return _this5.renderPopup(PS.rooms[roomid]);})
+);
 };return PSMain;}(preact.Component);
 
 

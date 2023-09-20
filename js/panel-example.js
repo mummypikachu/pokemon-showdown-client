@@ -20,8 +20,8 @@ ExamplePanel=function(_PSRoomPanel){_inheritsLoose(ExamplePanel,_PSRoomPanel);fu
 render=function render(){
 var room=this.props.room;
 return preact.h(PSPanelWrapper,{room:room},
-preact.h("div",{"class":"mainmessage"},preact.h("p",null,"Loading...")));
-
+preact.h("div",{"class":"mainmessage"},preact.h("p",null,"Loading..."))
+);
 };return ExamplePanel;}(PSRoomPanel);
 
 
@@ -36,8 +36,8 @@ ExampleViewPanel=function(_PSRoomPanel2){_inheritsLoose(ExampleViewPanel,_PSRoom
 render=function render(){
 var room=this.props.room;
 return preact.h(PSPanelWrapper,{room:room},
-preact.h("div",{"class":"mainmessage"},preact.h("p",null,"Loading...")));
-
+preact.h("div",{"class":"mainmessage"},preact.h("p",null,"Loading..."))
+);
 };return ExampleViewPanel;}(PSRoomPanel);
 
 

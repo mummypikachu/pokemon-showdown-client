@@ -236,6 +236,7 @@
 				pu: "PU",
 				zu: "(PU)",
 				nfe: "NFE",
+				lcubers: "LC Ubers",
 				lc: "LC",
 				cap: "CAP",
 				caplc: "CAP LC",
@@ -243,7 +244,12 @@
 				uubl: "UUBL",
 				rubl: "RUBL",
 				nubl: "NUBL",
-				publ: "PUBL"
+				publ: "PUBL",
+				saou: "SA OU",
+				sauubl: "SA UUBL",
+				sauu: "SA UU",
+				sarubl: "SA RUBL",
+				saru: "SA RU",
 			};
 			var tier = {name: tierTable[id]};
 			return this.renderTierRow(tier, matchStart, matchLength, errorMessage);
@@ -353,6 +359,7 @@
 				}
 				var unreleasedHidden = pokemon.unreleasedHidden;
 				if (unreleasedHidden === 'Past' && (this.mod === 'natdex' || gen < 8)) unreleasedHidden = false;
+				if (unreleasedHidden === 'Past' && (this.mod === 'sadex' || gen < 8)) unreleasedHidden = false;
 				if (abilities['S']) {
 					if (abilities['H']) {
 						buf += '<span class="col twoabilitycol' + (unreleasedHidden ? ' unreleasedhacol' : '') + '">' + (abilities['H'] || '') + '<br />(' + abilities['S'] + ')</span>';

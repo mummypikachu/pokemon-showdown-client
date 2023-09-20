@@ -139,8 +139,8 @@ return'r';
 getHPColorClass=function getHPColorClass(){
 switch(this.getHPColor()){
 case'y':return'hpbar hpbar-yellow';
-case'r':return'hpbar hpbar-red';}
-
+case'r':return'hpbar hpbar-red';
+}
 return'hpbar';
 };Pokemon.
 getPixelRange=function getPixelRange(pixels,color){
@@ -522,8 +522,8 @@ return!this.getTypeList(serverPokemon).includes('Flying');
 effectiveAbility=function effectiveAbility(serverPokemon){
 if(this.fainted||this.volatiles['gastroacid'])return'';
 var ability=this.side.battle.dex.abilities.get(
-(serverPokemon==null?void 0:serverPokemon.ability)||this.ability||(serverPokemon==null?void 0:serverPokemon.baseAbility)||'');
-
+(serverPokemon==null?void 0:serverPokemon.ability)||this.ability||(serverPokemon==null?void 0:serverPokemon.baseAbility)||''
+);
 if(this.side.battle.ngasActive()&&!ability.isPermanent){
 return'';
 }
@@ -724,8 +724,8 @@ this.sideConditions[condition]=['Sea of Fire',1,4,0];
 break;
 default:
 this.sideConditions[condition]=[effect.name,1,0,0];
-break;}
-
+break;
+}
 this.battle.scene.addSideCondition(this.n,condition);
 };_proto2.
 removeSideCondition=function removeSideCondition(condition){
@@ -1580,8 +1580,8 @@ pokemon.removeTurnstatus('focuspunch');
 break;
 case'attract':
 this.scene.resultAnim(pokemon,'Immobilized','neutral');
-break;}
-
+break;
+}
 this.scene.animReset(pokemon);
 };_proto3.
 
@@ -1675,8 +1675,8 @@ break;
 case'bind':
 case'wrap':
 this.scene.runOtherAnim('bound',[poke]);
-break;}
-
+break;
+}
 }else{
 if(this.dex.moves.get(this.lastMove).category!=='Status'){
 poke.timesAttacked++;
@@ -1734,8 +1734,8 @@ var side=this.sides[siden];
 _poke.fainted=false;
 _poke.status='';
 this.scene.updateSidebar(side);
-break;}
-
+break;
+}
 }
 this.scene.runOtherAnim('heal',[_poke]);
 this.scene.healAnim(_poke,Pokemon.getFormattedRange(_range,0,' to '));
@@ -1852,8 +1852,8 @@ switch(_effect4.id){
 case'spectralthief':
 
 this.scene.runOtherAnim('spectralthiefboost',[_ofpoke3,_poke6]);
-break;}
-
+break;
+}
 }
 this.log(args,kwArgs);
 break;
@@ -2009,8 +2009,8 @@ default:
 if(_poke15){
 this.scene.resultAnim(_poke15,'Failed','neutral');
 }
-break;}
-
+break;
+}
 this.scene.animReset(_poke15);
 this.log(args,kwArgs);
 break;
@@ -2046,8 +2046,8 @@ _poke16.item='Protective Pads';
 break;
 case'abilityshield':
 _poke16.item='Ability Shield';
-break;}
-
+break;
+}
 this.log(args,kwArgs);
 break;
 }
@@ -2116,8 +2116,8 @@ this.scene.runStatusAnim('frz',[_poke20]);
 break;
 default:
 this.scene.updateStatbar(_poke20);
-break;}
-
+break;
+}
 this.log(args,kwArgs);
 break;
 }
@@ -2134,8 +2134,8 @@ case'sacredfire':
 case'scald':
 case'steameruption':
 kwArgs.thaw='.';
-break;}
-
+break;
+}
 }
 if(_poke21){
 _poke21.status='';
@@ -2160,8 +2160,8 @@ this.scene.resultAnim(_poke21,'Thawed','good');
 break;
 default:
 _poke21.removeVolatile('confusion');
-this.scene.resultAnim(_poke21,'Cured','good');}
-
+this.scene.resultAnim(_poke21,'Cured','good');
+}
 }
 this.log(args,kwArgs);
 break;
@@ -2234,14 +2234,14 @@ case'trick':
 _poke23.itemEffect='tricked';
 
 default:
-break;}
-
+break;
+}
 }else{
 switch(item.id){
 case'airballoon':
 this.scene.resultAnim(_poke23,'Balloon','good');
-break;}
-
+break;
+}
 }
 this.log(args,kwArgs);
 break;
@@ -2287,8 +2287,8 @@ _poke24.prevItemEffect='consumed';
 break;
 case'incinerate':
 _poke24.prevItemEffect='incinerated';
-break;}
-
+break;
+}
 }else{
 switch(_item2.id){
 case'airballoon':
@@ -2308,8 +2308,8 @@ _poke24.prevItemEffect='held up';
 break;
 default:
 _poke24.prevItemEffect='consumed';
-break;}
-
+break;
+}
 }
 this.log(args,kwArgs);
 break;
@@ -2351,8 +2351,8 @@ this.activateAbility(_poke25,ability.name);
 break;
 default:
 this.activateAbility(_poke25,ability.name);
-break;}
-
+break;
+}
 }else{
 this.activateAbility(_poke25,ability.name);
 }
@@ -2632,8 +2632,8 @@ this.scene.resultAnim(_poke32,'Light Screen','good');
 break;
 case'reflect':
 this.scene.resultAnim(_poke32,'Reflect','good');
-break;}
-
+break;
+}
 if(!(_effect15.id==='typechange'&&_poke32.terastallized)){
 _poke32.addVolatile(_effect15.id);
 }
@@ -2737,8 +2737,8 @@ this.scene.runOtherAnim('doomdesirehit',[_poke33]);
 if(_effect16.name==='Future Sight'){
 this.scene.runOtherAnim('futuresighthit',[_poke33]);
 }
-}}
-
+}
+}
 }
 this.scene.updateStatbar(_poke33);
 this.log(args,kwArgs);
@@ -2787,8 +2787,8 @@ break;
 case'beakblast':
 this.scene.runOtherAnim('bidecharge',[_poke34]);
 this.scene.resultAnim(_poke34,'Beak Blast','neutral');
-break;}
-
+break;
+}
 this.scene.updateStatbar(_poke34);
 this.log(args,kwArgs);
 break;
@@ -2803,8 +2803,8 @@ this.scene.resultAnim(_poke35,'Grudge','neutral');
 break;
 case'destinybond':
 this.scene.resultAnim(_poke35,'Destiny Bond','neutral');
-break;}
-
+break;
+}
 this.scene.updateStatbar(_poke35);
 this.log(args,kwArgs);
 break;
@@ -2939,8 +2939,8 @@ break;
 default:
 if(kwArgs.broken){
 this.scene.resultAnim(_poke36,'Protection broken','bad');
-}}
-
+}
+}
 this.log(args,kwArgs);
 break;
 }
@@ -2964,8 +2964,8 @@ case'grasspledge':
 case'firepledge':
 case'waterpledge':
 this.scene.updateWeather();
-break;}
-
+break;
+}
 this.log(args,kwArgs);
 break;
 }
@@ -3021,8 +3021,8 @@ if(this.seeking!==null)break;for(var _i56=0,_this$getAllActive10=
 this.getAllActive();_i56<_this$getAllActive10.length;_i56++){var _active=_this$getAllActive10[_i56];
 this.scene.runOtherAnim('gravity',[_active]);
 }
-break;}
-
+break;
+}
 this.log(args,kwArgs);
 break;
 }
@@ -3038,8 +3038,8 @@ var _effect25=Dex.getEffect(args[1]);
 switch(_effect25.id){
 case'perishsong':
 this.scene.updateStatbars();
-break;}
-
+break;
+}
 this.log(args,kwArgs);
 break;
 }
@@ -3365,8 +3365,8 @@ this.farSide.active=[null,null,null];
 break;
 default:for(var _i62=0,_this$sides6=
 this.sides;_i62<_this$sides6.length;_i62++){var side=_this$sides6[_i62];side.active=[null];}
-break;}
-
+break;
+}
 if(!this.pokemonControlled)this.pokemonControlled=this.nearSide.active.length;
 this.scene.updateGen();
 this.scene.resetSides();

@@ -142,8 +142,8 @@ Dex.abilities.get(parts[3]).name;
 
 
 set.moves=parts[4].split(',').map(function(moveid){return(
-Dex.moves.get(moveid).name);});
-
+Dex.moves.get(moveid).name);}
+);
 
 
 set.nature=parts[5];
@@ -547,12 +547,12 @@ function TeamFolder(props){
 if(props.cur){
 return preact.h("div",{"class":"folder cur"},preact.h("div",{"class":"folderhack3"},
 preact.h("div",{"class":"folderhack1"}),preact.h("div",{"class":"folderhack2"}),
-preact.h("div",{"class":"selectFolder","data-value":props.value},props.children)));
-
+preact.h("div",{"class":"selectFolder","data-value":props.value},props.children)
+));
 }
 return preact.h("div",{"class":"folder"},
-preact.h("div",{"class":"selectFolder","data-value":props.value},props.children));
-
+preact.h("div",{"class":"selectFolder","data-value":props.value},props.children)
+);
 }
 
 function TeamBox(props){
@@ -565,8 +565,8 @@ if(!team.packedTeam){
 icons=preact.h("em",null,"(empty team)");
 }else{
 icons=PSTeambuilder.packedTeamNames(team.packedTeam).map(function(species){return(
-preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(species)}));});
-
+preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(species)}));}
+);
 }
 team.iconCache=icons;
 }
@@ -584,12 +584,12 @@ preact.h("em",null,"Select a team")];
 }
 if(props.button){
 return preact.h("button",{"class":"team",value:team?team.key:''},
-contents);
-
+contents
+);
 }
 return preact.h("div",{"data-href":props.noLink?'':"/team-"+(team?team.key:''),"class":"team",draggable:true},
-contents);
-
+contents
+);
 }var
 
 
@@ -630,8 +630,8 @@ render=function render(){var _this3=this;
 var room=this.props.room;
 if(!room.parentElem){
 return preact.h(PSPanelWrapper,{room:room},
-preact.h("p",null,"Error: You tried to open a team selector, but you have nothing to select a team for."));
-
+preact.h("p",null,"Error: You tried to open a team selector, but you have nothing to select a team for.")
+);
 }
 var baseFormat=room.parentElem.getAttribute('data-format')||Dex.modid;
 var isFirstLoad=this.format===null;
@@ -672,22 +672,22 @@ var hasOtherGens=genList.length>1||genList[0]!==baseGen;
 
 teamList.push(preact.h("p",null,
 baseFormat.length>4&&preact.h("button",{"class":'button'+(baseFormat===this.format?' disabled':''),onClick:this.setFormat,name:"format",value:baseFormat},
-preact.h("i",{"class":"fa fa-folder-o"})," [",baseFormat.slice(0,4),"] ",baseFormat.slice(4)),
-" ",preact.h("button",{"class":'button'+(baseGen===this.format?' disabled':''),onClick:this.setFormat,name:"format",value:baseGen},
-preact.h("i",{"class":"fa fa-folder-o"})," [",baseGen,"] ",preact.h("em",null,"(uncategorized)")),
-" ",preact.h("button",{"class":'button'+(baseGen===this.gen?' disabled':''),onClick:this.setFormat,name:"gen",value:baseGen},
-preact.h("i",{"class":"fa fa-folder-o"})," [",baseGen,"] ",preact.h("em",null,"(all)")),
-" ",hasOtherGens&&!this.gen&&preact.h("button",{"class":"button",onClick:this.setFormat,name:"gen",value:baseGen},"Other gens")));
-
+preact.h("i",{"class":"fa fa-folder-o"})," [",baseFormat.slice(0,4),"] ",baseFormat.slice(4)
+)," ",preact.h("button",{"class":'button'+(baseGen===this.format?' disabled':''),onClick:this.setFormat,name:"format",value:baseGen},
+preact.h("i",{"class":"fa fa-folder-o"})," [",baseGen,"] ",preact.h("em",null,"(uncategorized)")
+)," ",preact.h("button",{"class":'button'+(baseGen===this.gen?' disabled':''),onClick:this.setFormat,name:"gen",value:baseGen},
+preact.h("i",{"class":"fa fa-folder-o"})," [",baseGen,"] ",preact.h("em",null,"(all)")
+)," ",hasOtherGens&&!this.gen&&preact.h("button",{"class":"button",onClick:this.setFormat,name:"gen",value:baseGen},"Other gens")
+));
 
 if(hasOtherGens&&this.gen){
 teamList.push(preact.h("h2",null,"Other gens"));
 teamList.push(preact.h("p",null,genList.sort().map(function(gen){return[
 preact.h("button",{"class":'button'+(gen===_this3.gen?' disabled':''),onClick:_this3.setFormat,name:"gen",value:gen},
-preact.h("i",{"class":"fa fa-folder-o"})," [",gen,"] ",preact.h("em",null,"(all)")),
-
-" "];})));
-
+preact.h("i",{"class":"fa fa-folder-o"})," [",gen,"] ",preact.h("em",null,"(all)")
+),
+" "];}
+)));
 }
 
 var isEmpty=true;
@@ -695,33 +695,33 @@ for(var _folder in teamBuckets){
 if(_folder&&(this.gen||this.format)){
 teamList.push(preact.h("h2",null,
 preact.h("i",{"class":"fa fa-folder-open"})," ",_folder," + ",
-preact.h("i",{"class":"fa fa-folder-open-o"})," ",this.format||this.gen));
-
+preact.h("i",{"class":"fa fa-folder-open-o"})," ",this.format||this.gen
+));
 }else if(_folder){
 teamList.push(preact.h("h2",null,
-preact.h("i",{"class":"fa fa-folder-open"})," ",_folder));
-
+preact.h("i",{"class":"fa fa-folder-open"})," ",_folder
+));
 }else if(this.gen||this.format){
 teamList.push(preact.h("h2",null,
-preact.h("i",{"class":"fa fa-folder-open-o"})," ",this.format||this.gen));
-
+preact.h("i",{"class":"fa fa-folder-open-o"})," ",this.format||this.gen
+));
 }else{
 teamList.push(preact.h("h2",null,
-preact.h("i",{"class":"fa fa-folder-open-o"})," Teams not in any folders"));
-
+preact.h("i",{"class":"fa fa-folder-open-o"})," Teams not in any folders"
+));
 }
 teamList.push(preact.h("ul",{"class":"teamdropdown",onClick:this.click},
 teamBuckets[_folder].map(function(team){return preact.h("li",{key:team.key,style:"display:inline-block"},
-preact.h(TeamBox,{team:team,button:true}));})));
-
-
+preact.h(TeamBox,{team:team,button:true})
+);})
+));
 isEmpty=false;
 }
 
 return preact.h(PSPanelWrapper,{room:room,width:width},
 teamList,
-isEmpty&&preact.h("p",null,preact.h("em",null,"No teams found")));
-
+isEmpty&&preact.h("p",null,preact.h("em",null,"No teams found"))
+);
 };return TeamDropdownPanel;}(PSRoomPanel);var
 
 
@@ -766,8 +766,8 @@ render=function render(){var _this5=this;
 var room=this.props.room;
 if(!room.parentElem){
 return preact.h(PSPanelWrapper,{room:room},
-preact.h("p",null,"Error: You tried to open a format selector, but you have nothing to select a format for."));
-
+preact.h("p",null,"Error: You tried to open a format selector, but you have nothing to select a format for.")
+);
 }
 
 var formatsLoaded=!!window.BattleFormats;
@@ -780,8 +780,8 @@ break;
 }
 if(!formatsLoaded){
 return preact.h(PSPanelWrapper,{room:room},
-preact.h("p",null,"Loading..."));
-
+preact.h("p",null,"Loading...")
+);
 }
 
 
@@ -826,16 +826,16 @@ return preact.h(PSPanelWrapper,{room:room,width:width},
 columns.map(function(column){return preact.h("ul",{"class":"options",onClick:_this5.click},
 column.map(function(format){return format.id?
 preact.h("li",null,preact.h("button",{value:format.name,"class":"option"},
-format.name.replace('[Gen 8 ','[').replace('[Gen 9] ','').replace('[Gen 7 ','['))):
-
+format.name.replace('[Gen 8 ','[').replace('[Gen 9] ','').replace('[Gen 7 ','[')
+)):
 
 preact.h("li",null,preact.h("h3",null,
-format.section));}));}),
-
-
-
-preact.h("div",{style:"float: left"}));
-
+format.section
+));}
+)
+);}),
+preact.h("div",{style:"float: left"})
+);
 };return FormatDropdownPanel;}(PSRoomPanel);
 
 

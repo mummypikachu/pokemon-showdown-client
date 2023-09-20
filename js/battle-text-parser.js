@@ -384,8 +384,8 @@ case'-activate':{
 var _id6=BattleTextParser.effectId(args[2]);
 if(_id6==='confusion'||_id6==='attract')return'preMajor';
 return'postMajor';
-}}
-
+}
+}
 return cmd.charAt(0)==='-'?'postMajor':'';
 };_proto.
 
@@ -403,8 +403,8 @@ case'major':
 if(prevSection==='postMajor'||prevSection==='major')return true;
 return false;
 case'postMajor':
-return false;}
-
+return false;
+}
 };_proto.
 
 parseArgs=function parseArgs(args,kwArgs,noSectionBreak){
@@ -473,8 +473,8 @@ var newSpecies='';
 switch(cmd){
 case'detailschange':newSpecies=arg2.split(',')[0].trim();break;
 case'-transform':newSpecies=arg3;break;
-case'-formechange':newSpecies=arg2;break;}
-
+case'-formechange':newSpecies=arg2;break;
+}
 var newSpeciesId=toID(newSpecies);
 var _id7='';
 var _templateName='transform';
@@ -495,8 +495,8 @@ case'wishiwashi':_id7='schooling';_templateName='transformEnd';break;
 case'miniormeteor':_id7='shieldsdown';break;
 case'minior':_id7='shieldsdown';_templateName='transformEnd';break;
 case'eiscuenoice':_id7='iceface';break;
-case'eiscue':_id7='iceface';_templateName='transformEnd';break;}
-
+case'eiscue':_id7='iceface';_templateName='transformEnd';break;
+}
 }else if(newSpecies){
 _id7='transform';
 }
@@ -1150,8 +1150,8 @@ return'';
 
 default:{
 return null;
-}}
-
+}
+}
 };return BattleTextParser;}();
 
 

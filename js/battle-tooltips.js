@@ -1067,8 +1067,8 @@ var speedModifiers=[];
 
 
 if(item==='lightball'&&speciesName==='Pikachu'&&this.battle.gen!==4){
-if(this.battle.gen>4)stats.atk*=2;
-stats.spa*=2;
+if(this.battle.gen>4)stats.atk*=1.3;
+stats.spa*=1.3;
 }
 
 if(item==='thickclub'){
@@ -1196,7 +1196,7 @@ evoSpecies.isNonstandard===((_this4$battle$dex$spe=_this4.battle.dex.species.get
 
 evoSpecies.isNonstandard==="Unobtainable";
 });
-if(item==='eviolite'&&isNFE){
+if(item==='eviolite'&&isNFE||item==='eviolite'&&species==='Dipplin'){
 stats.def=Math.floor(stats.def*1.5);
 stats.spd=Math.floor(stats.spd*1.5);
 }
@@ -1239,10 +1239,10 @@ break;
 }
 }
 if(item==='assaultvest'){
-stats.spd=Math.floor(stats.spd*1.5);
+stats.spd=Math.floor(stats.spd*1.3);
 }
 if(item==='strikervest'){
-stats.def=Math.floor(stats.def*1.5);
+stats.def=Math.floor(stats.def*1.3);
 }
 if(item==='deepseascale'&&species==='Clamperl'){
 stats.spd*=2;
@@ -1473,6 +1473,10 @@ case'hail':
 case'snow':
 moveType='Ice';
 break;
+case'windy':
+case'deltastream':
+moveType='Flying';
+break;
 }
 }
 if(move.id==='weatherstorm'&&value.weatherModify(0)){
@@ -1493,6 +1497,10 @@ break;
 case'hail':
 case'snow':
 moveType='Ice';
+break;
+case'windy':
+case'deltastream':
+moveType='Flying';
 break;
 }
 }
@@ -1782,12 +1790,15 @@ value.modify(2,'Wake-Up Slap + Sleep');
 }
 }
 if(move.id==='weatherball'){
-if(this.battle.weather!=='deltastream'){
+if(this.battle.weather){
 value.weatherModify(2);
 }
 }
+if(move.id==='screenbash'){
+value.setRange(50,200);
+}
 if(move.id==='weatherstorm'){
-if(this.battle.weather!=='deltastream'){
+if(this.battle.weather){
 value.weatherModify(2);
 }
 }
@@ -1811,6 +1822,13 @@ if(
 move.id==='watershuriken'&&pokemon.getSpeciesForme()==='Greninja-Ash'&&pokemon.ability==='Battle Bond')
 {
 value.set(20,'Battle Bond');
+}
+if(
+move.id==='cometpunch'&&pokemon.getSpecies().toString()==='Ledian')
+
+{
+value.set(20,'Ledian');
+moveType='Bug';
 }
 
 if(move.id==='electroball'&&target){

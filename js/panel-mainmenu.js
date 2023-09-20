@@ -276,16 +276,16 @@ var ladderRoomEntries=Object.entries(PS.rooms).filter(function(entry){return ent
 ladderRoomEntries.length;_i6++){var _ref=ladderRoomEntries[_i6];var ladderRoom=_ref[1];
 ladderRoom.update(response);
 }
-break;}
-
+break;
+}
 };return MainMenuRoom;}(PSRoom);var
 
 
 NewsPanel=function(_PSRoomPanel){_inheritsLoose(NewsPanel,_PSRoomPanel);function NewsPanel(){return _PSRoomPanel.apply(this,arguments)||this;}var _proto2=NewsPanel.prototype;_proto2.
 render=function render(){
 return preact.h(PSPanelWrapper,{room:this.props.room,scrollable:true},
-preact.h("div",{"class":"mini-window-body",dangerouslySetInnerHTML:{__html:PS.newsHTML}}));
-
+preact.h("div",{"class":"mini-window-body",dangerouslySetInnerHTML:{__html:PS.newsHTML}})
+);
 };return NewsPanel;}(PSRoomPanel);var
 
 
@@ -313,11 +313,11 @@ preact.h("div",{"class":"mini-window"},
 preact.h("h3",{draggable:true,onDragStart:_this4.handleDragStart,"data-roomid":roomid},
 preact.h("button",{"class":"closebutton",name:"closeRoom",value:roomid,"aria-label":"Close",tabIndex:-1},preact.h("i",{"class":"fa fa-times-circle"})),
 preact.h("button",{"class":"minimizebutton",tabIndex:-1},preact.h("i",{"class":"fa fa-minus-circle"})),
-room.title),
-
-_this4.renderMiniRoom(room)));
-
-
+room.title
+),
+_this4.renderMiniRoom(room)
+)
+);
 });
 };_proto3.
 renderSearchButton=function renderSearchButton(){
@@ -330,28 +330,28 @@ preact.h("p",{"class":"error"},preact.h("strong",null,"Pok\xE9mon Showdown is of
 
 preact.h("p",null,
 preact.h("div",{style:{textAlign:'center'}},
-preact.h("img",{width:"96",height:"96",src:"//"+Config.routes.client+"/sprites/gen5/teddiursa.png",alt:""})),
-"Bear with us as we freak out."),
+preact.h("img",{width:"96",height:"96",src:"//"+Config.routes.client+"/sprites/gen5/teddiursa.png",alt:""})
+),"Bear with us as we freak out."
 
-
-preact.h("p",null,"(We'll be back up in a few hours.)"));
-
+),
+preact.h("p",null,"(We'll be back up in a few hours.)")
+);
 }
 
 if(!PS.user.userid||PS.isOffline){
 return preact.h(TeamForm,{"class":"menugroup",onSubmit:this.submit},
 preact.h("button",{"class":"mainmenu1 big button disabled",name:"search"},
-preact.h("em",null,PS.isOffline?"Disconnected":"Connecting...")));
-
-
+preact.h("em",null,PS.isOffline?"Disconnected":"Connecting...")
+)
+);
 }
 
 return preact.h(TeamForm,{"class":"menugroup",onSubmit:this.submit},
 preact.h("button",{"class":"mainmenu1 big button",name:"search"},
 preact.h("strong",null,"Battle!"),preact.h("br",null),
-preact.h("small",null,"Find a random opponent")));
-
-
+preact.h("small",null,"Find a random opponent")
+)
+);
 };_proto3.
 render=function render(){
 var onlineButton=' button'+(PS.isOffline?' disabled':'');
@@ -359,31 +359,31 @@ return preact.h(PSPanelWrapper,{room:this.props.room,scrollable:true},
 preact.h("div",{"class":"mainmenuwrapper"},
 preact.h("div",{"class":"leftmenu"},
 preact.h("div",{"class":"activitymenu"},
-this.renderMiniRooms()),
-
+this.renderMiniRooms()
+),
 preact.h("div",{"class":"mainmenu"},
 this.renderSearchButton(),
 
 preact.h("div",{"class":"menugroup"},
 preact.h("p",null,preact.h("button",{"class":"mainmenu2 button",name:"joinRoom",value:"teambuilder"},"Teambuilder")),
-preact.h("p",null,preact.h("button",{"class":"mainmenu3"+onlineButton,name:"joinRoom",value:"ladder"},"Ladder"))),
-
+preact.h("p",null,preact.h("button",{"class":"mainmenu3"+onlineButton,name:"joinRoom",value:"ladder"},"Ladder"))
+),
 
 preact.h("div",{"class":"menugroup"},
 preact.h("p",null,preact.h("button",{"class":"mainmenu4"+onlineButton,name:"joinRoom",value:"battles"},"Watch a battle")),
-preact.h("p",null,preact.h("button",{"class":"mainmenu5"+onlineButton,name:"finduser"},"Find a user"))))),
-
-
-
+preact.h("p",null,preact.h("button",{"class":"mainmenu5"+onlineButton,name:"finduser"},"Find a user"))
+)
+)
+),
 preact.h("div",{"class":"rightmenu",style:{display:PS.leftRoomWidth?'none':'block'}},
 preact.h("div",{"class":"menugroup"},
 PS.server.id==='showdown'?
 preact.h("p",null,preact.h("button",{"class":"mainmenu1"+onlineButton,name:"joinRoom",value:"rooms"},"Join chat")):
 
-preact.h("p",null,preact.h("button",{"class":"mainmenu1"+onlineButton,name:"joinRoom",value:"lobby"},"Join lobby chat")))),
+preact.h("p",null,preact.h("button",{"class":"mainmenu1"+onlineButton,name:"joinRoom",value:"lobby"},"Join lobby chat"))
 
-
-
+)
+),
 preact.h("div",{"class":"mainmenufooter"},
 preact.h("div",{"class":"bgcredit"}),
 preact.h("small",null,
@@ -391,11 +391,11 @@ preact.h("a",{href:"//"+Config.routes.dex+"/",target:"_blank"},"Pok\xE9dex")," |
 preact.h("a",{href:"//"+Config.routes.replays+"/",target:"_blank"},"Replays")," | ",
 preact.h("a",{href:"//"+Config.routes.root+"/rules",target:"_blank"},"Rules")," | ",
 preact.h("a",{href:"//"+Config.routes.dex+"/credits",target:"_blank"},"Credits")," | ",
-preact.h("a",{href:"//smogon.com/forums/",target:"_blank"},"Forum")))));
-
-
-
-
+preact.h("a",{href:"//smogon.com/forums/",target:"_blank"},"Forum")
+)
+)
+)
+);
 };return MainMenuPanel;}(PSRoomPanel);var
 
 
@@ -418,8 +418,8 @@ return preact.h("button",{
 name:"format",value:this.format,
 "class":"select formatselect","data-href":"/formatdropdown",onChange:this.change},
 
-this.format);
-
+this.format
+);
 };return FormatDropdown;}(preact.Component);var
 
 
@@ -450,10 +450,10 @@ preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(null)}),
 preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(null)}),
 preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(null)}),
 preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(null)}),
-preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(null)}))));
-
-
-
+preact.h("span",{"class":"picon",style:Dex.getPokemonIcon(null)})
+)
+)
+);
 }
 if(teamFormat!==this.teamFormat){
 this.teamFormat=teamFormat;
@@ -464,8 +464,8 @@ return preact.h("button",{
 name:"team",value:this.teamKey,
 "class":"select teamselect","data-href":"/teamdropdown","data-format":teamFormat,onChange:this.change},
 
-PS.roomTypes['teamdropdown']&&preact.h(TeamBox,{team:team,noLink:true}));
-
+PS.roomTypes['teamdropdown']&&preact.h(TeamBox,{team:team,noLink:true})
+);
 };return TeamDropdown;}(preact.Component);var
 
 
@@ -489,17 +489,17 @@ return preact.h("form",{"class":this.props["class"],onSubmit:this.submit},
 preact.h("p",null,
 preact.h("label",{"class":"label"},"Format:",
 preact.h("br",null),
-preact.h(FormatDropdown,{onChange:this.changeFormat,format:this.props.format}))),
-
-
+preact.h(FormatDropdown,{onChange:this.changeFormat,format:this.props.format})
+)
+),
 preact.h("p",null,
 preact.h("label",{"class":"label"},"Team:",
 preact.h("br",null),
-preact.h(TeamDropdown,{format:this.state.format}))),
-
-
-preact.h("p",null,this.props.children));
-
+preact.h(TeamDropdown,{format:this.state.format})
+)
+),
+preact.h("p",null,this.props.children)
+);
 };return TeamForm;}(preact.Component);
 
 

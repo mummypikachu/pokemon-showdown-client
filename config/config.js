@@ -19,7 +19,7 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'showdown',
-	host: 'sigmatic-showdown.win',
+	host: '99.93.10.109',
 	port: 8000,
 	httpport: 80,
 	altport: 0,
@@ -32,11 +32,11 @@ Config.roomsFirstOpenScript = function () {
 
 
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (3ebbe6c9)";
+Config.version = "0.11.2 (2cffb1d9)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'sigmatic-showdown.win:8080',
+	client: '99.93.10.109:8080',
 	dex: 'sigmatic-dex.herokuapp.com/testclient.html',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

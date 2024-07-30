@@ -1,6 +1,6 @@
 {
     "root": "pokemonshowdown.com",
-	"client": "sigmatic-showdown.win:8080",
+	"client": "99.93.10.109:8080",
     "dex": "sigmatic-dex.herokuapp.com/testclient.html",
     "replays": "replay.pokemonshowdown.com",
     "users": "pokemonshowdown.com/users"

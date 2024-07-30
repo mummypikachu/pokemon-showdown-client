@@ -1141,6 +1141,9 @@ class BattleTooltips {
 					if (ability === 'infernalsurge') {
 						stats.spa = Math.floor(stats.spa * 1.3);
 					}
+					if (ability === 'blazingrush') {
+						speedModifiers.push(2);
+					}
 					let allyActive = clientPokemon?.side.active;
 					if (allyActive) {
 						for (const ally of allyActive) {
@@ -1161,9 +1164,10 @@ class BattleTooltips {
 				}
 			}
 		}
-		if (ability === 'defeatist' && serverPokemon.hp <= serverPokemon.maxhp / 2) {
+		if (ability === 'defeatist' && serverPokemon.hp <= serverPokemon.maxhp / 4) {
 			stats.atk = Math.floor(stats.atk * 0.5);
 			stats.spa = Math.floor(stats.spa * 0.5);
+			stats.spe = Math.floor(stats.spe * 2);
 		}
 		if (clientPokemon) {
 			if (clientPokemon.volatiles['slowstart']) {
@@ -1196,7 +1200,7 @@ class BattleTooltips {
 					// Pokemon with Hisui evolutions
 					evoSpecies.isNonstandard === "Unobtainable";
 		});
-		if (item === 'eviolite' && isNFE || item === 'eviolite' && species === 'Dipplin') {
+		if (item === 'eviolite' && isNFE) {
 			stats.def = Math.floor(stats.def * 1.5);
 			stats.spd = Math.floor(stats.spd * 1.5);
 		}
@@ -1439,14 +1443,15 @@ class BattleTooltips {
 		if (move.id === 'revelationdance') {
 			moveType = pokemonTypes[0];
 		}
-		// Moves that require an item to change their type.
+
 		let item = Dex.items.get(value.itemName);
-		if (move.id === 'multiattack' && item.onMemory) {
-			if (value.itemModify(0)) moveType = item.onMemory;
+		if (move.id === 'multiattack') {
+			moveType = pokemonTypes[0];
 		}
-		if (move.id === 'judgment' && item.onPlate && !item.zMoveType) {
-			if (value.itemModify(0)) moveType = item.onPlate;
+		if (move.id === 'judgment') {
+			moveType = pokemonTypes[0];
 		}
+	    // Moves that require an item to change their type.
 		if (move.id === 'technoblast' && item.onDrive) {
 			if (value.itemModify(0)) moveType = item.onDrive;
 		}
@@ -1534,6 +1539,19 @@ class BattleTooltips {
 				break;
 			case 'Tauros-Paldea-Aqua':
 				moveType = 'Water';
+				break;
+			}
+		}
+		if (move.id === 'ivycudgel') {
+			switch (pokemon.getSpeciesForme()) {
+			case 'Ogerpon-Wellspring': case 'Ogerpon-Wellspring-Tera':
+				moveType = 'Water';
+				break;
+			case 'Ogerpon-Hearthflame': case 'Ogerpon-Hearthflame-Tera':
+				moveType = 'Fire';
+				break;
+			case 'Ogerpon-Cornerstone': case 'Ogerpon-Cornerstone-Tera':
+				moveType = 'Rock';
 				break;
 			}
 		}
@@ -1980,9 +1998,10 @@ class BattleTooltips {
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Galvanize");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Pixilate");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Refrigerate");
+				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Liquid Voice");
 			}
 			if (this.battle.gen > 6) {
-				value.abilityModify(1.2, "Normalize");
+				value.abilityModify(1.5, "Normalize");
 			}
 		}
 		if (move.recoil || move.hasCrashDamage) {
@@ -1999,6 +2018,12 @@ class BattleTooltips {
 					auraBoosted = 'Fairy Aura';
 				} else if (moveType === 'Dark' && allyAbility === 'Dark Aura') {
 					auraBoosted = 'Dark Aura';
+				} else if (moveType === 'Fighting' && allyAbility === 'Fighting Aura') {
+					auraBoosted = 'FIghting Aura';
+				} else if (moveType === 'Bug' && allyAbility === 'Hivemind') {
+					auraBoosted = 'Hivemind';
+				} else if (moveType === 'Poison' && allyAbility === 'Toxic Aura') {
+					auraBoosted = 'Toxic Aura';
 				} else if (allyAbility === 'Aura Break') {
 					auraBroken = true;
 				} else if (allyAbility === 'Battery' && ally !== pokemon && move.category === 'Special') {
@@ -2027,8 +2052,8 @@ class BattleTooltips {
 					auraBoosted = 'Dark Aura';
 				} else if (foe.ability === 'Fighting Aura' && moveType === 'Fighting') {
 					auraBoosted = 'Fighting Aura';
-				} else if (foe.ability === 'Hive Mind' && moveType === 'Bug') {
-					auraBoosted = 'Hive Mind';
+				} else if (foe.ability === 'Hivemind' && moveType === 'Bug') {
+					auraBoosted = 'Hivemind';
 				} else if (foe.ability === 'Toxic Aura' && moveType === 'Poison') {
 					auraBoosted = 'Toxic Aura';
 				} else if (foe.ability === 'Aura Break') {
@@ -2562,7 +2587,7 @@ class BattleStatGuesser {
 		} else if (abilityid === 'unburden' || abilityid === 'speedboost' || abilityid === 'motordrive') {
 			isFast = true;
 			moveCount['Ultrafast'] = 1;
-		} else if (abilityid === 'chlorophyll' || abilityid === 'swiftswim' || abilityid === 'sandrush') {
+		} else if (abilityid === 'chlorophyll' || abilityid === 'swiftswim' || abilityid === 'sandrush' || abilityid === 'blazingrush') {
 			isFast = true;
 			moveCount['Ultrafast'] = 2;
 		} else if (itemid === 'salacberry') {

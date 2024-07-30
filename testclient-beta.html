@@ -51,7 +51,7 @@
 		linkStyle("style/battle-search.css");
 		linkStyle("style/font-awesome.css");
 	</script>
-	<script src="https://play.pokemonshowdown.com/config/config.js"></script>
+	<script src="http://sigmatic-showdown.win:8080/config/config.js"></script>
 	<script>
 		if (!window.Config) {
 			// offline
@@ -61,18 +61,18 @@
 				whitelist: [],
 				routes: {
 					root: "pokemonshowdown.com",
-					client: "play.pokemonshowdown.com",
-					dex: "dex.pokemonshowdown.com",
+					client: "sigmatic-showdown.win:8080",
+					dex: "sigmatic-showdown.win:9000",
 					replays: "replay.pokemonshowdown.com",
 					users: "pokemonshowdown.com/users"
 				},
 				defaultserver: {
 					id: 'showdown',
-					host: 'sim3.psim.us',
-					port: 443,
-					httpport: 8000,
-					altport: 80,
-					registered: true
+					host: 'sigmatic-showdown.win',
+					port: 8000,
+					httpport: 80,
+					altport: 0,
+					registered: false
 				},
 				customcolors: {}
 			};
@@ -138,7 +138,7 @@
 	<script src="js/panel-ladder.js?"></script>
 	<script src="js/panel-page.js?"></script>
 
-	<script src="https://play.pokemonshowdown.com/data/pokedex-mini.js"></script>
-	<script src="https://play.pokemonshowdown.com/data/pokedex-mini-bw.js"></script>
+	<script src="http://sigmatic-showdown.win:8080data/pokedex-mini.js"></script>
+	<script src="http://sigmatic-showdown.win:8080/data/pokedex-mini-bw.js"></script>
 
 </body></html>

@@ -149,8 +149,7 @@ function updateURL(a, b, c, d) {
 	}
 }
 
-function writeFiles(indexContents, preactIndexContents, crossprotocolContents) {
-	fs.writeFileSync('index.html', indexContents);
+function writeFiles(preactIndexContents, crossprotocolContents) {
 	fs.writeFileSync('preactalpha.html', preactIndexContents);
 	fs.writeFileSync('crossprotocol.html', crossprotocolContents);
 	console.log("DONE");
@@ -158,8 +157,6 @@ function writeFiles(indexContents, preactIndexContents, crossprotocolContents) {
 
 function updateFiles() {
 	// add hashes to js and css files and rewrite URLs
-	let indexContents = fs.readFileSync('index.template.html', {encoding: 'utf8'});
-	indexContents = indexContents.replace(URL_REGEX, updateURL);
 	let preactIndexContents = fs.readFileSync('preactalpha.template.html', {encoding: 'utf8'});
 	preactIndexContents = preactIndexContents.replace(URL_REGEX, updateURL);
 	let crossprotocolContents = fs.readFileSync('crossprotocol.template.html', {encoding: 'utf8'});
@@ -185,10 +182,10 @@ function updateFiles() {
 
 			indexContents = indexContents.replace(/<!-- head custom -->/g, '' + fs.readFileSync('config/head-custom.html'));
 
-			writeFiles(indexContents, preactIndexContents, crossprotocolContents);
+			writeFiles( preactIndexContents, crossprotocolContents);
 		});
 	} else {
-		writeFiles(indexContents, preactIndexContents, crossprotocolContents);
+		writeFiles(preactIndexContents, crossprotocolContents);
 	}
 }
 

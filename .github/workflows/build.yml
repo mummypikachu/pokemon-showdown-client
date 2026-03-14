@@ -1,0 +1,19 @@
+# .github/workflows/build.yml
+name: Build Client on Push
+
+on:
+  push:
+    branches:
+      - main  # trigger on main branch commits
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build-full

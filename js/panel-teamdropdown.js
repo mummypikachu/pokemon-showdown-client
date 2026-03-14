@@ -1,4 +1,4 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Team Selector Panel
  *
  * @author Guangcong Luo <guangcongluo@gmail.com>
@@ -18,15 +18,15 @@ if(buf)buf+=']';
 buf+=set.name||set.species;
 
 
-var _id=toID(set.species);
-buf+='|'+(toID(set.name||set.species)===_id?'':_id);
+var id=toID(set.species);
+buf+='|'+(toID(set.name||set.species)===id?'':id);
 
 
 buf+='|'+toID(set.item);
 
 
-_id=toID(set.ability);
-buf+='|'+(_id||'-');
+id=toID(set.ability);
+buf+='|'+(id||'-');
 
 
 buf+='|';
@@ -257,8 +257,8 @@ if(set.nature){
 text+=set.nature+" Nature  \n";
 }
 first=true;
-if(set.ivs){for(var _i10=0,_Dex$statNames4=
-Dex.statNames;_i10<_Dex$statNames4.length;_i10++){var _stat=_Dex$statNames4[_i10];
+if(set.ivs){for(var _i0=0,_Dex$statNames4=
+Dex.statNames;_i0<_Dex$statNames4.length;_i0++){var _stat=_Dex$statNames4[_i0];
 if(set.ivs[_stat]===undefined||isNaN(set.ivs[_stat])||set.ivs[_stat]===31)continue;
 if(first){
 text+="IVs: ";
@@ -294,8 +294,8 @@ text+="\n";
 return text;
 };PSTeambuilder.
 exportTeam=function exportTeam(sets){
-var text='';for(var _i12=0;_i12<
-sets.length;_i12++){var set=sets[_i12];
+var text='';for(var _i10=0;_i10<
+sets.length;_i10++){var set=sets[_i10];
 
 text+=PSTeambuilder.exportSet(set);
 }
@@ -363,8 +363,8 @@ set.gigantamax=true;
 }else if(line.startsWith('EVs: ')){
 line=line.slice(5);
 var evLines=line.split('/');
-set.evs={hp:0,atk:0,def:0,spa:0,spd:0,spe:0};for(var _i14=0;_i14<
-evLines.length;_i14++){var evLine=evLines[_i14];
+set.evs={hp:0,atk:0,def:0,spa:0,spd:0,spe:0};for(var _i12=0;_i12<
+evLines.length;_i12++){var evLine=evLines[_i12];
 evLine=evLine.trim();
 var spaceIndex=evLine.indexOf(' ');
 if(spaceIndex===-1)continue;
@@ -376,8 +376,8 @@ set.evs[statid]=statval;
 }else if(line.startsWith('IVs: ')){
 line=line.slice(5);
 var ivLines=line.split(' / ');
-set.ivs={hp:31,atk:31,def:31,spa:31,spd:31,spe:31};for(var _i16=0;_i16<
-ivLines.length;_i16++){var ivLine=ivLines[_i16];
+set.ivs={hp:31,atk:31,def:31,spa:31,spd:31,spe:31};for(var _i14=0;_i14<
+ivLines.length;_i14++){var ivLine=ivLines[_i14];
 ivLine=ivLine.trim();
 var _spaceIndex=ivLine.indexOf(' ');
 if(_spaceIndex===-1)continue;
@@ -423,8 +423,8 @@ while(lines.length&&!lines[lines.length-1])lines.pop();
 
 if(lines.length===1&&lines[0].includes('|')){
 return this.unpackTeam(lines[0]);
-}for(var _i18=0;_i18<
-lines.length;_i18++){var line=lines[_i18];
+}for(var _i16=0;_i16<
+lines.length;_i16++){var line=lines[_i16];
 line=line.trim();
 if(line===''||line==='---'){
 curSet=null;
@@ -458,9 +458,9 @@ var sets=null;
 var curSet=null;
 
 while(lines.length&&!lines[0])lines.shift();
-while(lines.length&&!lines[lines.length-1])lines.pop();for(var _i20=0;_i20<
+while(lines.length&&!lines[lines.length-1])lines.pop();for(var _i18=0;_i18<
 
-lines.length;_i20++){var line=lines[_i20];
+lines.length;_i18++){var line=lines[_i18];
 line=line.trim();
 if(line===''||line==='---'){
 curSet=null;
@@ -596,7 +596,7 @@ contents
 
 
 
-TeamDropdownPanel=function(_PSRoomPanel){_inheritsLoose(TeamDropdownPanel,_PSRoomPanel);function TeamDropdownPanel(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this.
+TeamDropdownPanel=function(_PSRoomPanel){function TeamDropdownPanel(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this.
 gen='';_this.
 format=null;_this.
 
@@ -625,7 +625,7 @@ curTarget=curTarget.parentElement;
 if(!target)return;
 
 _this.chooseParentValue(target.value);
-};return _this;}var _proto=TeamDropdownPanel.prototype;_proto.getTeams=function getTeams(){var _this2=this;if(!this.format&&!this.gen)return PS.teams.list;return PS.teams.list.filter(function(team){if(_this2.gen&&!team.format.startsWith(_this2.gen))return false;if(_this2.format&&team.format!==_this2.format)return false;return true;});};_proto.
+};return _this;}_inheritsLoose(TeamDropdownPanel,_PSRoomPanel);var _proto=TeamDropdownPanel.prototype;_proto.getTeams=function getTeams(){var _this2=this;if(!this.format&&!this.gen)return PS.teams.list;return PS.teams.list.filter(function(team){if(_this2.gen&&!team.format.startsWith(_this2.gen))return false;if(_this2.format&&team.format!==_this2.format)return false;return true;});};_proto.
 render=function render(){var _this3=this;
 var room=this.props.room;
 if(!room.parentElem){
@@ -654,8 +654,8 @@ var width=307;
 if(availableWidth>636)width=613;
 if(availableWidth>945)width=919;
 
-var teamBuckets={};for(var _i22=0,_teams2=
-teams;_i22<_teams2.length;_i22++){var team=_teams2[_i22];
+var teamBuckets={};for(var _i20=0,_teams2=
+teams;_i20<_teams2.length;_i20++){var team=_teams2[_i20];
 var list=teamBuckets[team.folder]||(teamBuckets[team.folder]=[]);
 list.push(team);
 }
@@ -663,8 +663,8 @@ list.push(team);
 var teamList=[];
 
 var baseGen=baseFormat.slice(0,4);
-var genList=[];for(var _i24=0,_PS$teams$list2=
-PS.teams.list;_i24<_PS$teams$list2.length;_i24++){var _team=_PS$teams$list2[_i24];
+var genList=[];for(var _i22=0,_PS$teams$list2=
+PS.teams.list;_i22<_PS$teams$list2.length;_i22++){var _team=_PS$teams$list2[_i22];
 var gen=_team.format.slice(0,4);
 if(gen&&!genList.includes(gen))genList.push(gen);
 }
@@ -691,15 +691,15 @@ preact.h("i",{"class":"fa fa-folder-o"})," [",gen,"] ",preact.h("em",null,"(all)
 }
 
 var isEmpty=true;
-for(var _folder in teamBuckets){
-if(_folder&&(this.gen||this.format)){
+for(var folder in teamBuckets){
+if(folder&&(this.gen||this.format)){
 teamList.push(preact.h("h2",null,
-preact.h("i",{"class":"fa fa-folder-open"})," ",_folder," + ",
+preact.h("i",{"class":"fa fa-folder-open"})," ",folder," + ",
 preact.h("i",{"class":"fa fa-folder-open-o"})," ",this.format||this.gen
 ));
-}else if(_folder){
+}else if(folder){
 teamList.push(preact.h("h2",null,
-preact.h("i",{"class":"fa fa-folder-open"})," ",_folder
+preact.h("i",{"class":"fa fa-folder-open"})," ",folder
 ));
 }else if(this.gen||this.format){
 teamList.push(preact.h("h2",null,
@@ -711,7 +711,7 @@ preact.h("i",{"class":"fa fa-folder-open-o"})," Teams not in any folders"
 ));
 }
 teamList.push(preact.h("ul",{"class":"teamdropdown",onClick:this.click},
-teamBuckets[_folder].map(function(team){return preact.h("li",{key:team.key,style:"display:inline-block"},
+teamBuckets[folder].map(function(team){return preact.h("li",{key:team.key,style:"display:inline-block"},
 preact.h(TeamBox,{team:team,button:true})
 );})
 ));
@@ -746,7 +746,7 @@ isEmpty&&preact.h("p",null,preact.h("em",null,"No teams found"))
 
 
 
-FormatDropdownPanel=function(_PSRoomPanel2){_inheritsLoose(FormatDropdownPanel,_PSRoomPanel2);function FormatDropdownPanel(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_PSRoomPanel2.call.apply(_PSRoomPanel2,[this].concat(args))||this;_this4.
+FormatDropdownPanel=function(_PSRoomPanel2){function FormatDropdownPanel(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_PSRoomPanel2.call.apply(_PSRoomPanel2,[this].concat(args))||this;_this4.
 gen='';_this4.
 format=null;_this4.
 click=function(e){
@@ -761,7 +761,7 @@ curTarget=curTarget.parentElement;
 if(!target)return;
 
 _this4.chooseParentValue(target.value);
-};return _this4;}var _proto2=FormatDropdownPanel.prototype;_proto2.
+};return _this4;}_inheritsLoose(FormatDropdownPanel,_PSRoomPanel2);var _proto2=FormatDropdownPanel.prototype;_proto2.
 render=function render(){var _this5=this;
 var room=this.props.room;
 if(!room.parentElem){
@@ -802,8 +802,8 @@ return true;
 var curSection='';
 var curColumnNum=0;
 var curColumn=[];
-var columns=[curColumn];for(var _i26=0;_i26<
-formats.length;_i26++){var format=formats[_i26];
+var columns=[curColumn];for(var _i24=0;_i24<
+formats.length;_i24++){var format=formats[_i24];
 if(format.column!==curColumnNum){
 if(curColumn.length){
 curColumn=[];

@@ -1,4 +1,4 @@
-function _assertThisInitialized(self){if(self===void 0){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Client main
  *
  * Dependencies: client-core
@@ -27,7 +27,7 @@ var PSPrefsDefaults={};var
 
 
 
-PSPrefs=function(_PSStreamModel){_inheritsLoose(PSPrefs,_PSStreamModel);
+PSPrefs=function(_PSStreamModel){
 
 
 
@@ -63,11 +63,11 @@ PSPrefs=function(_PSStreamModel){_inheritsLoose(PSPrefs,_PSStreamModel);
 function PSPrefs(){var _this;
 _this=_PSStreamModel.call(this)||this;_this.theme='light';_this.nogif=null;_this.showjoins=null;_this.onepanel=false;_this.mute=false;_this.effectvolume=50;_this.musicvolume=50;_this.notifvolume=50;_this.storageEngine='';_this.storage={};_this.origin="https://"+Config.routes.client;
 
-for(var _key in _assertThisInitialized(_this)){
-var value=_assertThisInitialized(_this)[_key];
-if(['storage','subscriptions','origin','storageEngine'].includes(_key))continue;
+for(var key in _this){
+var value=_this[key];
+if(['storage','subscriptions','origin','storageEngine'].includes(key))continue;
 if(typeof value==='function')continue;
-PSPrefsDefaults[_key]=value;
+PSPrefsDefaults[key]=value;
 }
 
 
@@ -77,7 +77,7 @@ _this.storageEngine='localStorage';
 _this.load(JSON.parse(localStorage.getItem('showdown_prefs'))||{},true);
 }
 }catch(_unused){}return _this;
-}var _proto=PSPrefs.prototype;_proto.
+}_inheritsLoose(PSPrefs,_PSStreamModel);var _proto=PSPrefs.prototype;_proto.
 
 
 
@@ -160,7 +160,7 @@ if(!window.BattleFormats)window.BattleFormats={};var
 
 
 
-PSTeams=function(_PSStreamModel2){_inheritsLoose(PSTeams,_PSStreamModel2);
+PSTeams=function(_PSStreamModel2){
 
 
 
@@ -171,7 +171,7 @@ _this2=_PSStreamModel2.call(this)||this;_this2.usesLocalLadder=false;_this2.list
 try{
 _this2.unpackAll(localStorage.getItem('showdown_teams'));
 }catch(_unused2){}return _this2;
-}var _proto2=PSTeams.prototype;_proto2.
+}_inheritsLoose(PSTeams,_PSStreamModel2);var _proto2=PSTeams.prototype;_proto2.
 teambuilderFormat=function teambuilderFormat(format){
 var ruleSepIndex=format.indexOf('@@@');
 if(ruleSepIndex>=0)format=format.slice(0,ruleSepIndex);
@@ -273,13 +273,13 @@ key:''
 
 
 
-PSUser=function(_PSModel){_inheritsLoose(PSUser,_PSModel);function PSUser(){var _this3;for(var _len=arguments.length,args=new Array(_len),_key2=0;_key2<_len;_key2++){args[_key2]=arguments[_key2];}_this3=_PSModel.call.apply(_PSModel,[this].concat(args))||this;_this3.
+PSUser=function(_PSModel){function PSUser(){var _this3;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this3=_PSModel.call.apply(_PSModel,[this].concat(args))||this;_this3.
 name="";_this3.
 group='';_this3.
 userid="";_this3.
 named=false;_this3.
 registered=false;_this3.
-avatar="1";return _this3;}var _proto3=PSUser.prototype;_proto3.
+avatar="1";return _this3;}_inheritsLoose(PSUser,_PSModel);var _proto3=PSUser.prototype;_proto3.
 setName=function setName(fullName,named,avatar){
 var loggingIn=!this.named&&named;
 var _BattleTextParser$par=BattleTextParser.parseNameParts(fullName),name=_BattleTextParser$par.name,group=_BattleTextParser$par.group;
@@ -441,7 +441,7 @@ return this.groups[(symbol||' ').charAt(0)]||this.defaultGroup;
 
 
 
-PSRoom=function(_PSStreamModel3){_inheritsLoose(PSRoom,_PSStreamModel3);
+PSRoom=function(_PSStreamModel3){
 
 
 
@@ -487,7 +487,7 @@ if(options.parentElem)_this4.parentElem=options.parentElem;
 if(_this4.location!=='popup'&&_this4.location!=='semimodal-popup')_this4.parentElem=null;
 if(options.rightPopup)_this4.rightPopup=true;
 if(options.connected)_this4.connected=true;return _this4;
-}var _proto5=PSRoom.prototype;_proto5.
+}_inheritsLoose(PSRoom,_PSStreamModel3);var _proto5=PSRoom.prototype;_proto5.
 notify=function notify(options){
 if(options.noAutoDismiss&&!options.id){
 throw new Error("Must specify id for manual dismissing");
@@ -565,9 +565,9 @@ this.connected=false;
 };return PSRoom;}(PSStreamModel);var
 
 
-PlaceholderRoom=function(_PSRoom){_inheritsLoose(PlaceholderRoom,_PSRoom);function PlaceholderRoom(){var _this5;for(var _len2=arguments.length,args=new Array(_len2),_key3=0;_key3<_len2;_key3++){args[_key3]=arguments[_key3];}_this5=_PSRoom.call.apply(_PSRoom,[this].concat(args))||this;_this5.
+PlaceholderRoom=function(_PSRoom2){function PlaceholderRoom(){var _this5;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this5=_PSRoom2.call.apply(_PSRoom2,[this].concat(args))||this;_this5.
 queue=[];_this5.
-classType='placeholder';return _this5;}var _proto6=PlaceholderRoom.prototype;_proto6.
+classType='placeholder';return _this5;}_inheritsLoose(PlaceholderRoom,_PSRoom2);var _proto6=PlaceholderRoom.prototype;_proto6.
 receiveLine=function receiveLine(args){
 this.queue.push(args);
 };return PlaceholderRoom;}(PSRoom);
@@ -585,7 +585,7 @@ this.queue.push(args);
 
 
 
-var PS=new(function(_PSModel2){_inheritsLoose(_class8,_PSModel2);
+var PS=new(function(_PSModel2){
 
 
 
@@ -692,7 +692,7 @@ var PS=new(function(_PSModel2){_inheritsLoose(_class8,_PSModel2);
 
 
 
-function _class8(){var _document$querySelect;var _this6;
+function _class(){var _document$querySelect;var _this6;
 _this6=_PSModel2.call(this)||this;_this6.down=false;_this6.prefs=new PSPrefs();_this6.teams=new PSTeams();_this6.user=new PSUser();_this6.server=new PSServer();_this6.connection=null;_this6.connected=false;_this6.isOffline=false;_this6.router=null;_this6.rooms={};_this6.roomTypes={};_this6.leftRoomList=[];_this6.rightRoomList=[];_this6.miniRoomList=[];_this6.popups=[];_this6.leftRoom=null;_this6.rightRoom=null;_this6.room=null;_this6.activePanel=null;_this6.onePanelMode=false;_this6.leftRoomWidth=0;_this6.mainmenu=null;_this6.dragging=null;_this6.arrowKeysUsed=false;_this6.newsHTML=((_document$querySelect=document.querySelector('.news-embed .pm-log'))==null?void 0:_document$querySelect.innerHTML)||'';
 
 _this6.addRoom({
@@ -714,7 +714,7 @@ title:"News"
 
 _this6.updateLayout();
 window.addEventListener('resize',function(){return _this6.updateLayout();});return _this6;
-}var _proto7=_class8.prototype;_proto7.
+}_inheritsLoose(_class,_PSModel2);var _proto7=_class.prototype;_proto7.
 
 
 
@@ -805,16 +805,16 @@ switch(args[0]){
 case'init':{
 isInit=true;
 room=PS.rooms[roomid2];
-var _type=args[1];
+var type=args[1];
 if(!room){
 this.addRoom({
 id:roomid2,
-type:_type,
+type:type,
 connected:true
 },roomid==='staff'||roomid==='upperstaff');
 room=PS.rooms[roomid2];
 }else{
-room.type=_type;
+room.type=type;
 room.connected=true;
 this.updateRoomTypes();
 }
@@ -1177,6 +1177,6 @@ this.update();
 leave=function leave(roomid){
 var room=PS.rooms[roomid];
 if(room)this.removeRoom(room);
-};return _class8;}(PSModel))(
+};return _class;}(PSModel))(
 );
 //# sourceMappingURL=client-main.js.map

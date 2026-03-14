@@ -919,12 +919,12 @@ text+=this.renderStats(clientPokemon,serverPokemon,!isActive);
 if(serverPokemon&&!isActive){
 
 text+="<p class=\"section\">";
-var battlePokemon=clientPokemon||this.battle.findCorrespondingPokemon(pokemon);for(var _i10=0,_serverPokemon$moves2=
-serverPokemon.moves;_i10<_serverPokemon$moves2.length;_i10++){var _moveid=_serverPokemon$moves2[_i10];
-var move=Dex.moves.get(_moveid);
+var battlePokemon=clientPokemon||this.battle.findCorrespondingPokemon(pokemon);for(var _i0=0,_serverPokemon$moves2=
+serverPokemon.moves;_i0<_serverPokemon$moves2.length;_i0++){var moveid=_serverPokemon$moves2[_i0];
+var move=Dex.moves.get(moveid);
 var moveName="&#8226; "+move.name;
-if(battlePokemon!=null&&battlePokemon.moveTrack){for(var _i12=0,_battlePokemon$moveTr2=
-battlePokemon.moveTrack;_i12<_battlePokemon$moveTr2.length;_i12++){var row=_battlePokemon$moveTr2[_i12];
+if(battlePokemon!=null&&battlePokemon.moveTrack){for(var _i10=0,_battlePokemon$moveTr2=
+battlePokemon.moveTrack;_i10<_battlePokemon$moveTr2.length;_i10++){var row=_battlePokemon$moveTr2[_i10];
 if(moveName===row[0]){
 moveName=this.getPPUseText(row,true);
 break;
@@ -936,8 +936,8 @@ text+=moveName+"<br />";
 text+='</p>';
 }else if(!this.battle.hardcoreMode&&clientPokemon!=null&&clientPokemon.moveTrack.length){
 
-text+="<p class=\"section\">";for(var _i14=0,_clientPokemon$moveTr2=
-clientPokemon.moveTrack;_i14<_clientPokemon$moveTr2.length;_i14++){var _row=_clientPokemon$moveTr2[_i14];
+text+="<p class=\"section\">";for(var _i12=0,_clientPokemon$moveTr2=
+clientPokemon.moveTrack;_i12<_clientPokemon$moveTr2.length;_i12++){var _row=_clientPokemon$moveTr2[_i12];
 text+=this.getPPUseText(_row)+"<br />";
 }
 if(clientPokemon.moveTrack.filter(function(_ref){var moveName=_ref[0];
@@ -962,8 +962,8 @@ showFieldTooltip=function showFieldTooltip(){
 var scene=this.battle.scene;
 var buf="<table style=\"border: 0; border-collapse: collapse; vertical-align: top; padding: 0; width: 100%\"><tr>";
 
-var atLeastOne=false;for(var _i16=0,_this$battle$sides4=
-this.battle.sides;_i16<_this$battle$sides4.length;_i16++){var side=_this$battle$sides4[_i16];
+var atLeastOne=false;for(var _i14=0,_this$battle$sides4=
+this.battle.sides;_i14<_this$battle$sides4.length;_i14++){var side=_this$battle$sides4[_i14];
 var sideConditions=scene.sideConditionsLeft(side,true);
 if(sideConditions)atLeastOne=true;
 buf+="<td><p class=\"section\"><strong>"+BattleLog.escapeHTML(side.name)+"</strong>"+(sideConditions||"<br />(no conditions)")+"</p></td>";
@@ -986,8 +986,8 @@ return"<p>"+buf+"</p>";
 
 pokemonHasClones=function pokemonHasClones(pokemon){
 var side=pokemon.side;
-if(side.battle.speciesClause)return false;for(var _i18=0,_side$pokemon4=
-side.pokemon;_i18<_side$pokemon4.length;_i18++){var ally=_side$pokemon4[_i18];
+if(side.battle.speciesClause)return false;for(var _i16=0,_side$pokemon4=
+side.pokemon;_i16<_side$pokemon4.length;_i16++){var ally=_side$pokemon4[_i16];
 if(pokemon!==ally&&pokemon.searchid===ally.searchid){
 return true;
 }
@@ -998,8 +998,8 @@ return false;
 calculateModifiedStats=function calculateModifiedStats(clientPokemon,serverPokemon){var _clientPokemon$effect,_clientPokemon$volati,_this$battle$dex$spec,_this4=this;
 var stats=Object.assign({},serverPokemon.stats);
 var pokemon=clientPokemon||serverPokemon;
-var isPowerTrick=clientPokemon==null?void 0:clientPokemon.volatiles['powertrick'];for(var _i20=0,_Dex$statNamesExceptH2=
-Dex.statNamesExceptHP;_i20<_Dex$statNamesExceptH2.length;_i20++){var statName=_Dex$statNamesExceptH2[_i20];
+var isPowerTrick=clientPokemon==null?void 0:clientPokemon.volatiles['powertrick'];for(var _i18=0,_Dex$statNamesExceptH2=
+Dex.statNamesExceptHP;_i18<_Dex$statNamesExceptH2.length;_i18++){var statName=_Dex$statNamesExceptH2[_i18];
 var sourceStatName=statName;
 if(isPowerTrick){
 if(statName==='atk')sourceStatName='def';
@@ -1040,8 +1040,8 @@ stats.spe=Math.floor(stats.spe*1.5);
 }
 
 
-if(this.battle.gen<=1){for(var _i22=0,_Dex$statNamesExceptH4=
-Dex.statNamesExceptHP;_i22<_Dex$statNamesExceptH4.length;_i22++){var _statName=_Dex$statNamesExceptH4[_i22];
+if(this.battle.gen<=1){for(var _i20=0,_Dex$statNamesExceptH4=
+Dex.statNamesExceptHP;_i20<_Dex$statNamesExceptH4.length;_i20++){var _statName=_Dex$statNamesExceptH4[_i20];
 if(stats[_statName]>999)stats[_statName]=999;
 }
 return stats;
@@ -1145,8 +1145,8 @@ if(ability==='blazingrush'){
 speedModifiers.push(2);
 }
 var allyActive=clientPokemon==null?void 0:clientPokemon.side.active;
-if(allyActive){for(var _i24=0;_i24<
-allyActive.length;_i24++){var ally=allyActive[_i24];
+if(allyActive){for(var _i22=0;_i22<
+allyActive.length;_i22++){var ally=allyActive[_i22];
 if(!ally||ally.fainted)continue;
 var allyAbility=this.getAllyAbility(ally);
 if(allyAbility==='Flower Gift'&&(ally.getSpecies().baseSpecies==='Cherrim'||this.battle.gen<=4)){
@@ -1176,8 +1176,8 @@ speedModifiers.push(0.5);
 }
 if(ability==='unburden'&&clientPokemon.volatiles['itemremoved']&&!item){
 speedModifiers.push(2);
-}for(var _i26=0,_Dex$statNamesExceptH6=
-Dex.statNamesExceptHP;_i26<_Dex$statNamesExceptH6.length;_i26++){var _statName2=_Dex$statNamesExceptH6[_i26];
+}for(var _i24=0,_Dex$statNamesExceptH6=
+Dex.statNamesExceptHP;_i24<_Dex$statNamesExceptH6.length;_i24++){var _statName2=_Dex$statNamesExceptH6[_i24];
 if(clientPokemon.volatiles['protosynthesis'+_statName2]||clientPokemon.volatiles['quarkdrive'+_statName2]){
 if(_statName2==='spe'){
 speedModifiers.push(1.5);
@@ -1231,8 +1231,8 @@ stats.spd=Math.floor(stats.spd*1.5);
 if(clientPokemon&&(ability==='plus'||ability==='minus')){
 var _allyActive=clientPokemon.side.active;
 if(_allyActive.length>1){
-var abilityName=ability==='plus'?'Plus':'Minus';for(var _i28=0;_i28<
-_allyActive.length;_i28++){var _ally=_allyActive[_i28];
+var abilityName=ability==='plus'?'Plus':'Minus';for(var _i26=0;_i26<
+_allyActive.length;_i26++){var _ally=_allyActive[_i26];
 if(!_ally||_ally===clientPokemon||_ally.fainted)continue;
 var _allyAbility=this.getAllyAbility(_ally);
 if(_allyAbility!=='Plus'&&_allyAbility!=='Minus')continue;
@@ -1288,8 +1288,8 @@ if(sideConditions['grasspledge']){
 speedModifiers.push(0.25);
 }
 
-var chainedSpeedModifier=1;for(var _i30=0;_i30<
-speedModifiers.length;_i30++){var modifier=speedModifiers[_i30];
+var chainedSpeedModifier=1;for(var _i28=0;_i28<
+speedModifiers.length;_i28++){var modifier=speedModifiers[_i28];
 chainedSpeedModifier*=modifier;
 }
 
@@ -1320,8 +1320,8 @@ var modifiedStats=this.calculateModifiedStats(clientPokemon,serverPokemon);
 var buf='<p>';
 
 if(!short){
-var hasModifiedStat=false;for(var _i32=0,_Dex$statNamesExceptH8=
-Dex.statNamesExceptHP;_i32<_Dex$statNamesExceptH8.length;_i32++){var statName=_Dex$statNamesExceptH8[_i32];
+var hasModifiedStat=false;for(var _i30=0,_Dex$statNamesExceptH8=
+Dex.statNamesExceptHP;_i30<_Dex$statNamesExceptH8.length;_i30++){var statName=_Dex$statNamesExceptH8[_i30];
 if(this.battle.gen===1&&statName==='spd')continue;
 var statLabel=this.battle.gen===1&&statName==='spa'?'spc':statName;
 buf+=statName==='atk'?'<small>':'<small> / ';
@@ -1335,9 +1335,9 @@ if(!hasModifiedStat)return buf;
 
 buf+='<p><small>(After stat modifiers:)</small></p>';
 buf+='<p>';
-}for(var _i34=0,_Dex$statNamesExceptH10=
+}for(var _i32=0,_Dex$statNamesExceptH0=
 
-Dex.statNamesExceptHP;_i34<_Dex$statNamesExceptH10.length;_i34++){var _statName3=_Dex$statNamesExceptH10[_i34];
+Dex.statNamesExceptHP;_i32<_Dex$statNamesExceptH0.length;_i32++){var _statName3=_Dex$statNamesExceptH0[_i32];
 if(this.battle.gen===1&&_statName3==='spd')continue;
 var _statLabel=this.battle.gen===1&&_statName3==='spa'?'spc':_statName3;
 buf+=_statName3==='atk'?'<small>':'<small> / ';
@@ -1377,10 +1377,10 @@ return bullet+" "+move.name+" <small>("+(maxpp-ppUsed)+"/"+maxpp+")</small>";
 return bullet+" "+move.name+" "+(showKnown?' <small>(revealed)</small>':'');
 };_proto2.
 
-ppUsed=function ppUsed(move,pokemon){for(var _i36=0,_pokemon$moveTrack2=
-pokemon.moveTrack;_i36<_pokemon$moveTrack2.length;_i36++){var _ref2=_pokemon$moveTrack2[_i36];var moveName=_ref2[0];var ppUsed=_ref2[1];
+ppUsed=function ppUsed(move,pokemon){for(var _i34=0,_pokemon$moveTrack2=
+pokemon.moveTrack;_i34<_pokemon$moveTrack2.length;_i34++){var _ref2=_pokemon$moveTrack2[_i34];var moveName=_ref2[0];var _ppUsed=_ref2[1];
 if(moveName.charAt(0)==='*')moveName=moveName.substr(1);
-if(move.name===moveName)return ppUsed;
+if(move.name===moveName)return _ppUsed;
 }
 return 0;
 };_proto2.
@@ -1647,9 +1647,9 @@ var accuracyModifiers=[];
 if(this.battle.hasPseudoWeather('Gravity')){
 accuracyModifiers.push(6840);
 value.modify(5/3,"Gravity");
-}for(var _i38=0,_pokemon$side$active2=
+}for(var _i36=0,_pokemon$side$active2=
 
-pokemon.side.active;_i38<_pokemon$side$active2.length;_i38++){var active=_pokemon$side$active2[_i38];
+pokemon.side.active;_i36<_pokemon$side$active2.length;_i36++){var active=_pokemon$side$active2[_i36];
 if(!active||active.fainted)continue;
 var ability=this.getAllyAbility(active);
 if(ability==='Victory Star'){
@@ -1672,8 +1672,8 @@ value.itemModify(1.1,"Wide Lens");
 }
 
 
-var chain=4096;for(var _i40=0;_i40<
-accuracyModifiers.length;_i40++){var mod=accuracyModifiers[_i40];
+var chain=4096;for(var _i38=0;_i38<
+accuracyModifiers.length;_i38++){var mod=accuracyModifiers[_i38];
 if(mod!==4096){
 chain=chain*mod+2048>>12;
 }
@@ -1767,8 +1767,8 @@ if(move.id==='lastrespects'){
 value.set(Math.min(50+50*pokemon.side.faintCounter));
 }
 if(move.id==='punishment'&&target){
-var boostCount=0;for(var _i42=0,_Object$values2=
-Object.values(target.boosts);_i42<_Object$values2.length;_i42++){var boost=_Object$values2[_i42];
+var boostCount=0;for(var _i40=0,_Object$values2=
+Object.values(target.boosts);_i40<_Object$values2.length;_i40++){var boost=_Object$values2[_i40];
 if(boost>0)boostCount+=boost;
 }
 value.set(Math.min(60+20*boostCount,200));
@@ -1779,8 +1779,8 @@ value.modify(2,'Smelling Salts + Paralysis');
 }
 }
 if(['storedpower','powertrip'].includes(move.id)&&target){
-var _boostCount=0;for(var _i44=0,_Object$values4=
-Object.values(pokemon.boosts);_i44<_Object$values4.length;_i44++){var _boost=_Object$values4[_i44];
+var _boostCount=0;for(var _i42=0,_Object$values4=
+Object.values(pokemon.boosts);_i42<_Object$values4.length;_i42++){var _boost=_Object$values4[_i42];
 if(_boost>0)_boostCount+=_boost;
 }
 value.set(20+20*_boostCount);
@@ -2010,8 +2010,8 @@ value.abilityModify(1.2,'Reckless');
 
 if(move.category!=='Status'){
 var auraBoosted='';
-var auraBroken=false;for(var _i46=0,_pokemon$side$active4=
-pokemon.side.active;_i46<_pokemon$side$active4.length;_i46++){var ally=_pokemon$side$active4[_i46];
+var auraBroken=false;for(var _i44=0,_pokemon$side$active4=
+pokemon.side.active;_i44<_pokemon$side$active4.length;_i44++){var ally=_pokemon$side$active4[_i44];
 if(!ally||ally.fainted)continue;
 var allyAbility=this.getAllyAbility(ally);
 if(moveType==='Fairy'&&allyAbility==='Fairy Aura'){
@@ -2043,8 +2043,8 @@ value.modify(1.5,'Rocky Payload');
 }else if(allyAbility==='Dragon\'s Maw'&&moveType==='Dragon'){
 value.modify(1.5,'Dragon\'s Maw');
 }
-}for(var _i48=0,_pokemon$side$foe$act2=
-pokemon.side.foe.active;_i48<_pokemon$side$foe$act2.length;_i48++){var foe=_pokemon$side$foe$act2[_i48];
+}for(var _i46=0,_pokemon$side$foe$act2=
+pokemon.side.foe.active;_i46<_pokemon$side$foe$act2.length;_i46++){var foe=_pokemon$side$foe$act2[_i46];
 if(!foe||foe.fainted)continue;
 if(foe.ability==='Fairy Aura'&&moveType==='Fairy'){
 auraBoosted='Fairy Aura';
@@ -2229,8 +2229,8 @@ return this.battle.dex.species.get(pokemon.speciesForme).types;
 return pokemon.getTypeList(undefined,preterastallized);
 };_proto2.
 pokemonHasType=function pokemonHasType(pokemon,type,types){
-if(!types)types=this.getPokemonTypes(pokemon);for(var _i50=0,_types2=
-types;_i50<_types2.length;_i50++){var curType=_types2[_i50];
+if(!types)types=this.getPokemonTypes(pokemon);for(var _i48=0,_types2=
+types;_i48<_types2.length;_i48++){var curType=_types2[_i48];
 if(curType===type)return true;
 }
 return false;
@@ -2259,8 +2259,8 @@ if(clientPokemon.baseAbility){
 abilityData.baseAbility=clientPokemon.baseAbility;
 }
 }else{
-var _speciesForme=clientPokemon.getSpeciesForme()||(serverPokemon==null?void 0:serverPokemon.speciesForme)||'';
-var species=this.battle.dex.species.get(_speciesForme);
+var speciesForme=clientPokemon.getSpeciesForme()||(serverPokemon==null?void 0:serverPokemon.speciesForme)||'';
+var species=this.battle.dex.species.get(speciesForme);
 if(species.exists&&species.abilities){
 abilityData.possibilities=[species.abilities['0']];
 if(species.abilities['1'])abilityData.possibilities.push(species.abilities['1']);

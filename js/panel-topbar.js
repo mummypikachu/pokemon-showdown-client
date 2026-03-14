@@ -1,4 +1,4 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Topbar Panel
  *
  * Topbar view - handles the topbar and some generic popups.
@@ -33,7 +33,7 @@ window.addEventListener('dragover',function(e){
 e.preventDefault();
 });var
 
-PSHeader=function(_preact$Component){_inheritsLoose(PSHeader,_preact$Component);function PSHeader(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this.
+PSHeader=function(_preact$Component){function PSHeader(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this.
 handleDragEnter=function(e){
 console.log('dragenter '+e.dataTransfer.dropEffect);
 e.preventDefault();
@@ -69,7 +69,7 @@ var roomid=PS.router.extractRoomID(e.currentTarget.href);
 if(!roomid)return;
 
 PS.dragging={type:'room',roomid:roomid};
-};return _this;}var _proto=PSHeader.prototype;_proto.
+};return _this;}_inheritsLoose(PSHeader,_preact$Component);var _proto=PSHeader.prototype;_proto.
 dragOnto=function dragOnto(fromRoom,toRoomList,toIndex){
 
 if(fromRoom===''||fromRoom==='rooms')return;
@@ -256,7 +256,7 @@ preact.render(preact.h(PSMain,null),document.body,document.getElementById('ps-fr
 
 
 
-UserRoom=function(_PSRoom){_inheritsLoose(UserRoom,_PSRoom);
+UserRoom=function(_PSRoom){
 
 
 
@@ -268,10 +268,10 @@ _this3.isSelf=_this3.userid===PS.user.userid;
 _this3.name=options.username||_this3.userid;
 if(/[a-zA-Z0-9]/.test(_this3.name.charAt(0)))_this3.name=' '+_this3.name;
 PS.send("|/cmd userdetails "+_this3.userid);return _this3;
-}return UserRoom;}(PSRoom);var
+}_inheritsLoose(UserRoom,_PSRoom);return UserRoom;}(PSRoom);var
 
 
-UserPanel=function(_PSRoomPanel){_inheritsLoose(UserPanel,_PSRoomPanel);function UserPanel(){return _PSRoomPanel.apply(this,arguments)||this;}var _proto2=UserPanel.prototype;_proto2.
+UserPanel=function(_PSRoomPanel){function UserPanel(){return _PSRoomPanel.apply(this,arguments)||this;}_inheritsLoose(UserPanel,_PSRoomPanel);var _proto2=UserPanel.prototype;_proto2.
 render=function render(){
 var room=this.props.room;
 var user=PS.mainmenu.userdetailsCache[room.userid]||{userid:room.userid,avatar:'[loading]'};
@@ -390,7 +390,7 @@ Model:UserRoom,
 Component:UserPanel
 };var
 
-VolumePanel=function(_PSRoomPanel2){_inheritsLoose(VolumePanel,_PSRoomPanel2);function VolumePanel(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_PSRoomPanel2.call.apply(_PSRoomPanel2,[this].concat(args))||this;_this4.
+VolumePanel=function(_PSRoomPanel2){function VolumePanel(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_PSRoomPanel2.call.apply(_PSRoomPanel2,[this].concat(args))||this;_this4.
 setVolume=function(e){
 var slider=e.currentTarget;
 PS.prefs.set(slider.name,Number(slider.value));
@@ -400,7 +400,7 @@ setMute=function(e){
 var checkbox=e.currentTarget;
 PS.prefs.set('mute',!!checkbox.checked);
 PS.update();
-};return _this4;}var _proto3=VolumePanel.prototype;_proto3.
+};return _this4;}_inheritsLoose(VolumePanel,_PSRoomPanel2);var _proto3=VolumePanel.prototype;_proto3.
 componentDidMount=function componentDidMount(){var _this5=this;
 _PSRoomPanel2.prototype.componentDidMount.call(this);
 this.subscriptions.push(PS.prefs.subscribe(function(){
@@ -449,12 +449,12 @@ PS.roomTypes['volume']={
 Component:VolumePanel
 };var
 
-OptionsPanel=function(_PSRoomPanel3){_inheritsLoose(OptionsPanel,_PSRoomPanel3);function OptionsPanel(){var _this6;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this6=_PSRoomPanel3.call.apply(_PSRoomPanel3,[this].concat(args))||this;_this6.
+OptionsPanel=function(_PSRoomPanel3){function OptionsPanel(){var _this6;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this6=_PSRoomPanel3.call.apply(_PSRoomPanel3,[this].concat(args))||this;_this6.
 setTheme=function(e){
 var theme=e.currentTarget.value;
 PS.prefs.set('theme',theme);
 _this6.forceUpdate();
-};return _this6;}var _proto4=OptionsPanel.prototype;_proto4.
+};return _this6;}_inheritsLoose(OptionsPanel,_PSRoomPanel3);var _proto4=OptionsPanel.prototype;_proto4.
 render=function render(){
 var room=this.props.room;
 return preact.h(PSPanelWrapper,{room:room},

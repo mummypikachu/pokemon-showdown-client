@@ -488,8 +488,8 @@ request.active=request.active.map(
 function(active,i){return request.side.pokemon[i].fainted?null:active;}
 );for(var _i9=0,_request$active2=
 request.active;_i9<_request$active2.length;_i9++){var active=_request$active2[_i9];
-if(!active)continue;for(var _i11=0,_active$moves2=
-active.moves;_i11<_active$moves2.length;_i11++){var move=_active$moves2[_i11];
+if(!active)continue;for(var _i1=0,_active$moves2=
+active.moves;_i1<_active$moves2.length;_i1++){var move=_active$moves2[_i1];
 if(move.move)move.name=move.move;
 move.id=toID(move.name);
 }
@@ -497,15 +497,15 @@ if(active.maxMoves){
 if(active.maxMoves.maxMoves){
 active.canGigantamax=active.maxMoves.gigantamax;
 active.maxMoves=active.maxMoves.maxMoves;
-}for(var _i13=0,_active$maxMoves2=
-active.maxMoves;_i13<_active$maxMoves2.length;_i13++){var _move=_active$maxMoves2[_i13];
+}for(var _i11=0,_active$maxMoves2=
+active.maxMoves;_i11<_active$maxMoves2.length;_i11++){var _move=_active$maxMoves2[_i11];
 if(_move.move)_move.name=Dex.moves.get(_move.move).name;
 _move.id=toID(_move.name);
 }
 }
 if(active.canZMove){
-active.zMoves=active.canZMove;for(var _i15=0,_active$zMoves2=
-active.zMoves;_i15<_active$zMoves2.length;_i15++){var _move2=_active$zMoves2[_i15];
+active.zMoves=active.canZMove;for(var _i13=0,_active$zMoves2=
+active.zMoves;_i13<_active$zMoves2.length;_i13++){var _move2=_active$zMoves2[_i13];
 if(!_move2)continue;
 if(_move2.move)_move2.name=_move2.move;
 _move2.id=toID(_move2.name);

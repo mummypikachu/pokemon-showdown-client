@@ -1,42 +1,27 @@
 var Config = Config || {};
 
-/* version */ Config.version = "0";
+// Default server configuration
 
-Config.bannedHosts = ['cool.jit.su', 'pokeball-nixonserver.rhcloud.com'];
-
-Config.whitelist = [
-	'wikipedia.org',
-
-	// The full list is maintained outside of this repository so changes to it
-	// don't clutter the commit log. Feel free to copy our list for your own
-	// purposes; it's here: https://play.pokemonshowdown.com/config/config.js
-
-	// If you would like to change our list, simply message Zarel on Smogon or
-	// Discord.
-];
-
-// `defaultserver` specifies the server to use when the domain name in the
-// address bar is `Config.routes.client`.
 Config.defaultserver = {
-	id: 'showdown',
-	host: '99.93.10.109',
+    id: 'showdown',
+    host: 'sigmatic-showdown.tailb96039.ts.net', // your Tailscale hostname
 	port: 8000,
-	httpport: 80,
-	altport: 0,
-	registered: false
+	httpport: 8000,
+	altport: 80,
 };
 
-
-Config.roomsFirstOpenScript = function () {
-};
-
-
-/*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (2cffb1d9)";
+// Minimal routes for frontend
+Config.routes = {
+    client: 'sigmatic-showdown.tailb96039.ts.net',
+    dex: 'dex.pokemonshowdown.com',
+    replays: 'replay.pokemonshowdown.com',
+    users: 'pokemonshowdown.com/users'
+};/*** Begin automatically generated configuration ***/
+Config.version = "0.11.2 (8905f36e)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
-	client: '99.93.10.109:8080',
+	client: 'sigmatic-showdown.tailb96039.ts.net',
 	dex: 'sigmatic-dex.herokuapp.com/testclient.html',
 	replays: 'replay.pokemonshowdown.com',
 	users: 'pokemonshowdown.com/users',

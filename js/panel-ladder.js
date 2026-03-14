@@ -1,4 +1,4 @@
-var _class2;function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+var _LadderPanel;function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Ladder Panel
  *
  * Panel for ladder formats and associated ladder tables.
@@ -7,7 +7,7 @@ var _class2;function _inheritsLoose(subClass,superClass){subClass.prototype=Obje
  * @license MIT
  */var
 
-LadderRoom=function(_PSRoom){_inheritsLoose(LadderRoom,_PSRoom);function LadderRoom(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoom.call.apply(_PSRoom,[this].concat(args))||this;_this.
+LadderRoom=function(_PSRoom){function LadderRoom(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoom.call.apply(_PSRoom,[this].concat(args))||this;_this.
 classType='ladder';_this.
 format=_this.id.split('-')[1];_this.
 notice=void 0;_this.
@@ -61,7 +61,7 @@ then(_this.setLadderData)["catch"](
 _this.setError);
 }
 _this.setLoading(true);
-};return _this;}return LadderRoom;}(PSRoom);
+};return _this;}_inheritsLoose(LadderRoom,_PSRoom);return LadderRoom;}(PSRoom);
 
 
 function LadderFormat(props){
@@ -136,7 +136,7 @@ preact.h(RenderFormat,null)
 );
 }var
 
-LadderPanel=function(_PSRoomPanel){_inheritsLoose(LadderPanel,_PSRoomPanel);function LadderPanel(){return _PSRoomPanel.apply(this,arguments)||this;}var _proto=LadderPanel.prototype;_proto.
+LadderPanel=function(_PSRoomPanel){function LadderPanel(){return _PSRoomPanel.apply(this,arguments)||this;}_inheritsLoose(LadderPanel,_PSRoomPanel);var _proto=LadderPanel.prototype;_proto.
 componentDidMount=function componentDidMount(){var _this2=this;
 var room=this.props.room;
 
@@ -237,7 +237,7 @@ preact.h(LadderPanel.ShowFormatList,{room:room}),
 room.format!==undefined&&preact.h(LadderFormat,{room:room})
 )
 );
-};return LadderPanel;}(PSRoomPanel);_class2=LadderPanel;LadderPanel.Notice=function(props){var notice=props.notice;if(notice){return preact.h("p",null,preact.h("strong",{style:"color:red"},notice));}return null;};LadderPanel.BattleFormatList=function(){if(!BattleFormats){return preact.h("p",null,"Loading...");}var currentSection="";var sections=[];var formats=[];for(var _i2=0,_Object$entries2=Object.entries(BattleFormats);_i2<_Object$entries2.length;_i2++){var _ref=_Object$entries2[_i2];var key=_ref[0];var format=_ref[1];if(!format.rated||!format.searchShow)continue;if(format.section!==currentSection){if(formats.length>0){sections.push(preact.h(preact.Fragment,{key:currentSection},preact.h("h3",null,currentSection),preact.h("ul",{style:"list-style:none;margin:0;padding:0"},formats)));formats=[];}currentSection=format.section;}formats.push(preact.h("li",{key:key,style:"margin:5px"},preact.h("button",{name:"joinRoom",value:"ladder-"+key,"class":"button",style:"width:320px;height:30px;text-align:left;font:12pt Verdana"},BattleLog.escapeFormat(format.id))));}return preact.h(preact.Fragment,null,sections);};LadderPanel.ShowFormatList=function(props){var room=props.room;return preact.h(preact.Fragment,null,preact.h("p",null,preact.h("a",{"class":"button",href:"/"+Config.routes.users+"/",target:"_blank"},"Look up a specific user's rating")),preact.h(_class2.Notice,{notice:room.notice}),preact.h("p",null,preact.h("button",{name:"joinRoom",value:"view-ladderhelp","class":"button"},preact.h("i",{"class":"fa fa-info-circle"})," How the ladder works")),preact.h(_class2.BattleFormatList,null));};
+};return LadderPanel;}(PSRoomPanel);_LadderPanel=LadderPanel;LadderPanel.Notice=function(props){var notice=props.notice;if(notice){return preact.h("p",null,preact.h("strong",{style:"color:red"},notice));}return null;};LadderPanel.BattleFormatList=function(){if(!BattleFormats){return preact.h("p",null,"Loading...");}var currentSection="";var sections=[];var formats=[];for(var _i2=0,_Object$entries2=Object.entries(BattleFormats);_i2<_Object$entries2.length;_i2++){var _ref=_Object$entries2[_i2];var key=_ref[0];var format=_ref[1];if(!format.rated||!format.searchShow)continue;if(format.section!==currentSection){if(formats.length>0){sections.push(preact.h(preact.Fragment,{key:currentSection},preact.h("h3",null,currentSection),preact.h("ul",{style:"list-style:none;margin:0;padding:0"},formats)));formats=[];}currentSection=format.section;}formats.push(preact.h("li",{key:key,style:"margin:5px"},preact.h("button",{name:"joinRoom",value:"ladder-"+key,"class":"button",style:"width:320px;height:30px;text-align:left;font:12pt Verdana"},BattleLog.escapeFormat(format.id))));}return preact.h(preact.Fragment,null,sections);};LadderPanel.ShowFormatList=function(props){var room=props.room;return preact.h(preact.Fragment,null,preact.h("p",null,preact.h("a",{"class":"button",href:"/"+Config.routes.users+"/",target:"_blank"},"Look up a specific user's rating")),preact.h(_LadderPanel.Notice,{notice:room.notice}),preact.h("p",null,preact.h("button",{name:"joinRoom",value:"view-ladderhelp","class":"button"},preact.h("i",{"class":"fa fa-info-circle"})," How the ladder works")),preact.h(_LadderPanel.BattleFormatList,null));};
 
 
 PS.roomTypes['ladder']={

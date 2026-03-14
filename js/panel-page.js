@@ -1,4 +1,4 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Page Panel
  *
  * Panel for static content and server-rendered HTML.
@@ -7,7 +7,7 @@ function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(su
  * @license MIT
  */var
 
-PageRoom=function(_PSRoom){_inheritsLoose(PageRoom,_PSRoom);
+PageRoom=function(_PSRoom){
 
 
 
@@ -24,7 +24,7 @@ PageRoom=function(_PSRoom){_inheritsLoose(PageRoom,_PSRoom);
 function PageRoom(options){var _this;
 _this=_PSRoom.call(this,options)||this;_this.classType='html';_this.page=_this.id.split("-")[1];_this.canConnect=true;_this.loading=true;_this.htmlData=void 0;_this.setHTMLData=function(htmlData){_this.loading=false;_this.htmlData=htmlData;_this.update(null);};
 _this.connect();return _this;
-}var _proto=PageRoom.prototype;_proto.
+}_inheritsLoose(PageRoom,_PSRoom);var _proto=PageRoom.prototype;_proto.
 connect=function connect(){
 if(!this.connected){
 PS.send("|/join "+this.id);
@@ -68,8 +68,8 @@ preact.h("p",null,"Note that win/loss should not be used to estimate skill, sinc
 );
 }var
 
-PagePanel=function(_PSRoomPanel){_inheritsLoose(PagePanel,_PSRoomPanel);function PagePanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
-clientRooms={'ladderhelp':preact.h(PageLadderHelp,{room:_this2.props.room})};return _this2;}var _proto2=PagePanel.prototype;_proto2.
+PagePanel=function(_PSRoomPanel){function PagePanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
+clientRooms={'ladderhelp':preact.h(PageLadderHelp,{room:_this2.props.room})};return _this2;}_inheritsLoose(PagePanel,_PSRoomPanel);var _proto2=PagePanel.prototype;_proto2.
 
 
 

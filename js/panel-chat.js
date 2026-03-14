@@ -1,11 +1,11 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Chat panel
  *
  * @author Guangcong Luo <guangcongluo@gmail.com>
  * @license AGPLv3
  */var
 
-ChatRoom=function(_PSRoom){_inheritsLoose(ChatRoom,_PSRoom);
+ChatRoom=function(_PSRoom){
 
 
 
@@ -23,7 +23,7 @@ if(options.pmTarget)_this.pmTarget=options.pmTarget;
 if(options.challengeMenuOpen)_this.challengeMenuOpen=true;
 _this.updateTarget(true);
 _this.connect();return _this;
-}var _proto=ChatRoom.prototype;_proto.
+}_inheritsLoose(ChatRoom,_PSRoom);var _proto=ChatRoom.prototype;_proto.
 connect=function connect(){
 if(!this.connected){
 if(!this.pmTarget)PS.send("|/join "+this.id);
@@ -119,8 +119,8 @@ setUsers=function setUsers(count,usernames){
 this.userCount=count;
 this.users={};for(var _i2=0;_i2<
 usernames.length;_i2++){var username=usernames[_i2];
-var _userid=toID(username);
-this.users[_userid]=username;
+var userid=toID(username);
+this.users[userid]=username;
 }
 this.update(null);
 };_proto.
@@ -149,7 +149,7 @@ _PSRoom.prototype.destroy.call(this);
 };return ChatRoom;}(PSRoom);var
 
 
-ChatTextEntry=function(_preact$Component){_inheritsLoose(ChatTextEntry,_preact$Component);function ChatTextEntry(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this2.
+ChatTextEntry=function(_preact$Component){function ChatTextEntry(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this2.
 
 
 
@@ -195,7 +195,7 @@ if(_this2.handleKey(e)||_this2.props.onKey(e)){
 e.preventDefault();
 e.stopImmediatePropagation();
 }
-};return _this2;}var _proto2=ChatTextEntry.prototype;_proto2.componentDidMount=function componentDidMount(){var _this3=this;this.subscription=PS.user.subscribe(function(){_this3.forceUpdate();});this.textbox=this.base.children[0].children[1];if(this.base)this.update();};_proto2.componentWillUnmount=function componentWillUnmount(){if(this.subscription){this.subscription.unsubscribe();this.subscription=null;}};_proto2.submit=function submit(){this.props.onMessage(this.textbox.value);this.historyPush(this.textbox.value);this.textbox.value='';this.update();return true;};_proto2.
+};return _this2;}_inheritsLoose(ChatTextEntry,_preact$Component);var _proto2=ChatTextEntry.prototype;_proto2.componentDidMount=function componentDidMount(){var _this3=this;this.subscription=PS.user.subscribe(function(){_this3.forceUpdate();});this.textbox=this.base.children[0].children[1];if(this.base)this.update();};_proto2.componentWillUnmount=function componentWillUnmount(){if(this.subscription){this.subscription.unsubscribe();this.subscription=null;}};_proto2.submit=function submit(){this.props.onMessage(this.textbox.value);this.historyPush(this.textbox.value);this.textbox.value='';this.update();return true;};_proto2.
 historyUp=function historyUp(){
 if(this.historyIndex===0)return false;
 var line=this.textbox.value;
@@ -314,7 +314,7 @@ placeholder:PS.focusPreview(this.props.room)}
 };return ChatTextEntry;}(preact.Component);var
 
 
-ChatPanel=function(_PSRoomPanel){_inheritsLoose(ChatPanel,_PSRoomPanel);function ChatPanel(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this4.
+ChatPanel=function(_PSRoomPanel){function ChatPanel(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this4.
 send=function(text){
 _this4.props.room.send(text);
 };_this4.
@@ -356,7 +356,7 @@ PS.send("|/utm "+packedTeam);
 _this4.props.room.send("/accept");
 room.challengedFormat=null;
 room.update(null);
-};return _this4;}var _proto3=ChatPanel.prototype;_proto3.focus=function focus(){this.base.querySelector('textarea').focus();};_proto3.
+};return _this4;}_inheritsLoose(ChatPanel,_PSRoomPanel);var _proto3=ChatPanel.prototype;_proto3.focus=function focus(){this.base.querySelector('textarea').focus();};_proto3.
 render=function render(){
 var room=this.props.room;
 var tinyLayout=room.width<450;
@@ -390,14 +390,14 @@ preact.h(ChatUserList,{room:this.props.room,minimized:tinyLayout})
 };return ChatPanel;}(PSRoomPanel);var
 
 
-ChatUserList=function(_preact$Component2){_inheritsLoose(ChatUserList,_preact$Component2);function ChatUserList(){var _this5;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this5=_preact$Component2.call.apply(_preact$Component2,[this].concat(args))||this;_this5.
+ChatUserList=function(_preact$Component2){function ChatUserList(){var _this5;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this5=_preact$Component2.call.apply(_preact$Component2,[this].concat(args))||this;_this5.
 subscription=null;_this5.
 state={
 expanded:false
 };_this5.
 toggleExpanded=function(){
 _this5.setState({expanded:!_this5.state.expanded});
-};return _this5;}var _proto4=ChatUserList.prototype;_proto4.
+};return _this5;}_inheritsLoose(ChatUserList,_preact$Component2);var _proto4=ChatUserList.prototype;_proto4.
 componentDidMount=function componentDidMount(){var _this6=this;
 this.subscription=this.props.room.subscribe(function(msg){
 if(!msg)_this6.forceUpdate();
@@ -441,12 +441,12 @@ preact.h("span",{style:{color:color}},name.substr(1))
 };return ChatUserList;}(preact.Component);var
 
 
-ChatLog=function(_preact$Component3){_inheritsLoose(ChatLog,_preact$Component3);function ChatLog(){var _this7;for(var _len4=arguments.length,args=new Array(_len4),_key4=0;_key4<_len4;_key4++){args[_key4]=arguments[_key4];}_this7=_preact$Component3.call.apply(_preact$Component3,[this].concat(args))||this;_this7.
+ChatLog=function(_preact$Component3){function ChatLog(){var _this7;for(var _len4=arguments.length,args=new Array(_len4),_key4=0;_key4<_len4;_key4++){args[_key4]=arguments[_key4];}_this7=_preact$Component3.call.apply(_preact$Component3,[this].concat(args))||this;_this7.
 
 
 
 log=null;_this7.
-subscription=null;return _this7;}var _proto5=ChatLog.prototype;_proto5.
+subscription=null;return _this7;}_inheritsLoose(ChatLog,_preact$Component3);var _proto5=ChatLog.prototype;_proto5.
 componentDidMount=function componentDidMount(){var _this8=this;
 if(!this.props.noSubscription){
 this.log=new BattleLog(this.base);

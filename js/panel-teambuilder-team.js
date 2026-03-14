@@ -1,15 +1,15 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Teambuilder team panel
  *
  * @author Guangcong Luo <guangcongluo@gmail.com>
  * @license AGPLv3
  */var
 
-TeamRoom=function(_PSRoom){_inheritsLoose(TeamRoom,_PSRoom);function TeamRoom(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoom.call.apply(_PSRoom,[this].concat(args))||this;_this.
-team=null;return _this;}return TeamRoom;}(PSRoom);var
+TeamRoom=function(_PSRoom){function TeamRoom(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoom.call.apply(_PSRoom,[this].concat(args))||this;_this.
+team=null;return _this;}_inheritsLoose(TeamRoom,_PSRoom);return TeamRoom;}(PSRoom);var
 
 
-TeamTextbox=function(_preact$Component){_inheritsLoose(TeamTextbox,_preact$Component);function TeamTextbox(){var _this2;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this2=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this2.
+TeamTextbox=function(_preact$Component){function TeamTextbox(){var _this2;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this2=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this2.
 setInfo=
 
 
@@ -128,7 +128,7 @@ textbox.style.height=bottomY+100+"px";
 _this2.save();
 }
 _this2.forceUpdate();
-};return _this2;}var _proto=TeamTextbox.prototype;_proto.getYAt=function getYAt(index,value){if(index<0)return 10;this.heightTester.value=value.slice(0,index);return this.heightTester.scrollHeight;};_proto.
+};return _this2;}_inheritsLoose(TeamTextbox,_preact$Component);var _proto=TeamTextbox.prototype;_proto.getYAt=function getYAt(index,value){if(index<0)return 10;this.heightTester.value=value.slice(0,index);return this.heightTester.scrollHeight;};_proto.
 save=function save(){
 var sets=PSTeambuilder.importTeam(this.textbox.value);
 this.props.team.packedTeam=PSTeambuilder.packTeam(sets);
@@ -185,14 +185,14 @@ preact.h(PSSearchResults,{search:this.search})
 };return TeamTextbox;}(preact.Component);var
 
 
-TeamPanel=function(_PSRoomPanel){_inheritsLoose(TeamPanel,_PSRoomPanel);function TeamPanel(){var _this4;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this4=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this4.
+TeamPanel=function(_PSRoomPanel){function TeamPanel(){var _this4;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this4=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this4.
 rename=function(e){
 var textbox=e.currentTarget;
 var room=_this4.props.room;
 
 room.team.name=textbox.value.trim();
 PS.teams.save();
-};return _this4;}var _proto2=TeamPanel.prototype;_proto2.
+};return _this4;}_inheritsLoose(TeamPanel,_PSRoomPanel);var _proto2=TeamPanel.prototype;_proto2.
 render=function render(){
 var room=this.props.room;
 var team=PS.teams.byKey[room.id.slice(5)];

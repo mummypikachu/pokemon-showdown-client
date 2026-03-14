@@ -1,4 +1,4 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Panels
  *
  * Main view - sets up the frame, and the generic panels.
@@ -118,8 +118,8 @@ PS.join(roomid);
 
 PS.router=new PSRouter();var
 
-PSRoomPanel=function(_preact$Component){_inheritsLoose(PSRoomPanel,_preact$Component);function PSRoomPanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this2.
-subscriptions=[];return _this2;}var _proto2=PSRoomPanel.prototype;_proto2.
+PSRoomPanel=function(_preact$Component){function PSRoomPanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this2.
+subscriptions=[];return _this2;}_inheritsLoose(PSRoomPanel,_preact$Component);var _proto2=PSRoomPanel.prototype;_proto2.
 componentDidMount=function componentDidMount(){var _this3=this;
 if(PS.room===this.props.room)this.focus();
 this.props.room.onParentEvent=function(id,e){
@@ -192,7 +192,7 @@ props.children
 );
 }var
 
-PSMain=function(_preact$Component2){_inheritsLoose(PSMain,_preact$Component2);
+PSMain=function(_preact$Component2){
 function PSMain(){var _this4;
 _this4=_preact$Component2.call(this)||this;
 PS.subscribe(function(){return _this4.forceUpdate();});
@@ -318,7 +318,7 @@ PS.prefs.theme==='system'&&colorSchemeQuery&&colorSchemeQuery.matches;
 document.body.className=dark?'dark':'';
 }
 });return _this4;
-}var _proto3=PSMain.prototype;_proto3.
+}_inheritsLoose(PSMain,_preact$Component2);var _proto3=PSMain.prototype;_proto3.
 getRoom=function getRoom(elem){
 var curElem=elem;
 while(curElem){

@@ -1,11 +1,11 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Teambuilder panel
  *
  * @author Guangcong Luo <guangcongluo@gmail.com>
  * @license AGPLv3
  */var
 
-TeambuilderRoom=function(_PSRoom){_inheritsLoose(TeambuilderRoom,_PSRoom);function TeambuilderRoom(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoom.call.apply(_PSRoom,[this].concat(args))||this;_this.
+TeambuilderRoom=function(_PSRoom){function TeambuilderRoom(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_PSRoom.call.apply(_PSRoom,[this].concat(args))||this;_this.
 DEFAULT_FORMAT='gen8';_this.
 
 
@@ -16,7 +16,7 @@ DEFAULT_FORMAT='gen8';_this.
 
 
 curFolder='';_this.
-curFolderKeep='';return _this;}var _proto=TeambuilderRoom.prototype;_proto.
+curFolderKeep='';return _this;}_inheritsLoose(TeambuilderRoom,_PSRoom);var _proto=TeambuilderRoom.prototype;_proto.
 
 
 
@@ -63,11 +63,11 @@ key:''
 };
 }else{
 var format=this.curFolder&&!this.curFolder.endsWith('/')?this.curFolder:this.DEFAULT_FORMAT;
-var _folder=this.curFolder.endsWith('/')?this.curFolder.slice(0,-1):'';
+var folder=this.curFolder.endsWith('/')?this.curFolder.slice(0,-1):'';
 return{
 name:"Untitled "+(PS.teams.list.length+1),
 format:format,
-folder:_folder,
+folder:folder,
 packedTeam:'',
 iconCache:null,
 key:''
@@ -76,7 +76,7 @@ key:''
 };return TeambuilderRoom;}(PSRoom);var
 
 
-TeambuilderPanel=function(_PSRoomPanel){_inheritsLoose(TeambuilderPanel,_PSRoomPanel);function TeambuilderPanel(){var _this2;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
+TeambuilderPanel=function(_PSRoomPanel){function TeambuilderPanel(){var _this2;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
 selectFolder=function(e){
 var room=_this2.props.room;
 var elem=e.target;
@@ -96,7 +96,7 @@ room.curFolder=folder;
 e.preventDefault();
 e.stopImmediatePropagation();
 _this2.forceUpdate();
-};return _this2;}var _proto2=TeambuilderPanel.prototype;_proto2.
+};return _this2;}_inheritsLoose(TeambuilderPanel,_PSRoomPanel);var _proto2=TeambuilderPanel.prototype;_proto2.
 renderFolderList=function renderFolderList(){
 var room=this.props.room;
 
@@ -108,10 +108,10 @@ var room=this.props.room;
 var folderTable={'':1};
 var folders=[];for(var _i2=0,_PS$teams$list2=
 PS.teams.list;_i2<_PS$teams$list2.length;_i2++){var team=_PS$teams$list2[_i2];
-var _folder2=team.folder;
-if(_folder2&&!(_folder2+"/"in folderTable)){
-folders.push(_folder2+"/");
-folderTable[_folder2+"/"]=1;
+var folder=team.folder;
+if(folder&&!(folder+"/"in folderTable)){
+folders.push(folder+"/");
+folderTable[folder+"/"]=1;
 if(!('/'in folderTable)){
 folders.push('/');
 folderTable['/']=1;

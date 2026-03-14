@@ -1,4 +1,4 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Battle panel
  *
  * @author Guangcong Luo <guangcongluo@gmail.com>
@@ -14,7 +14,7 @@ function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(su
 
 
 
-BattlesRoom=function(_PSRoom){_inheritsLoose(BattlesRoom,_PSRoom);
+BattlesRoom=function(_PSRoom){
 
 
 
@@ -22,7 +22,7 @@ BattlesRoom=function(_PSRoom){_inheritsLoose(BattlesRoom,_PSRoom);
 function BattlesRoom(options){var _this;
 _this=_PSRoom.call(this,options)||this;_this.classType='battles';_this.format='';_this.battles=null;
 _this.refresh();return _this;
-}var _proto=BattlesRoom.prototype;_proto.
+}_inheritsLoose(BattlesRoom,_PSRoom);var _proto=BattlesRoom.prototype;_proto.
 setFormat=function setFormat(format){
 if(format===this.format)return this.refresh();
 this.battles=null;
@@ -35,14 +35,14 @@ PS.send("|/cmd roomlist "+toID(this.format));
 };return BattlesRoom;}(PSRoom);var
 
 
-BattlesPanel=function(_PSRoomPanel){_inheritsLoose(BattlesPanel,_PSRoomPanel);function BattlesPanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
+BattlesPanel=function(_PSRoomPanel){function BattlesPanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
 refresh=function(){
 _this2.props.room.refresh();
 };_this2.
 changeFormat=function(e){
 var value=e.target.value;
 _this2.props.room.setFormat(value);
-};return _this2;}var _proto2=BattlesPanel.prototype;_proto2.
+};return _this2;}_inheritsLoose(BattlesPanel,_PSRoomPanel);var _proto2=BattlesPanel.prototype;_proto2.
 renderBattleLink=function renderBattleLink(battle){
 var format=battle.id.split('-')[1];
 var minEloMessage=typeof battle.minElo==='number'?"rated "+battle.minElo:battle.minElo;
@@ -83,7 +83,7 @@ room.battles.map(function(battle){return _this3.renderBattleLink(battle);})
 };return BattlesPanel;}(PSRoomPanel);var
 
 
-BattleRoom=function(_ChatRoom){_inheritsLoose(BattleRoom,_ChatRoom);function BattleRoom(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_ChatRoom.call.apply(_ChatRoom,[this].concat(args))||this;_this4.
+BattleRoom=function(_ChatRoom){function BattleRoom(){var _this4;for(var _len2=arguments.length,args=new Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}_this4=_ChatRoom.call.apply(_ChatRoom,[this].concat(args))||this;_this4.
 classType='battle';_this4.
 
 
@@ -94,7 +94,7 @@ battle=null;_this4.
 
 side=null;_this4.
 request=null;_this4.
-choices=null;return _this4;}var _proto3=BattleRoom.prototype;_proto3.
+choices=null;return _this4;}_inheritsLoose(BattleRoom,_ChatRoom);var _proto3=BattleRoom.prototype;_proto3.
 
 
 
@@ -160,7 +160,7 @@ return _ChatRoom.prototype.handleMessage.call(this,line);
 };return BattleRoom;}(ChatRoom);var
 
 
-BattleDiv=function(_preact$Component){_inheritsLoose(BattleDiv,_preact$Component);function BattleDiv(){return _preact$Component.apply(this,arguments)||this;}var _proto4=BattleDiv.prototype;_proto4.
+BattleDiv=function(_preact$Component){function BattleDiv(){return _preact$Component.apply(this,arguments)||this;}_inheritsLoose(BattleDiv,_preact$Component);var _proto4=BattleDiv.prototype;_proto4.
 shouldComponentUpdate=function shouldComponentUpdate(){
 return false;
 };_proto4.
@@ -213,7 +213,7 @@ preact.h("span",{style:{width:Math.round(pokemon.hp*92/pokemon.maxhp)||1}})
 );
 }var
 
-BattlePanel=function(_PSRoomPanel2){_inheritsLoose(BattlePanel,_PSRoomPanel2);function BattlePanel(){var _this5;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this5=_PSRoomPanel2.call.apply(_PSRoomPanel2,[this].concat(args))||this;_this5.
+BattlePanel=function(_PSRoomPanel2){function BattlePanel(){var _this5;for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}_this5=_PSRoomPanel2.call.apply(_PSRoomPanel2,[this].concat(args))||this;_this5.
 send=function(text){
 _this5.props.room.send(text);
 };_this5.
@@ -256,7 +256,7 @@ choices.current.max=checkbox.checked;
 break;
 }
 _this5.props.room.update(null);
-};return _this5;}var _proto5=BattlePanel.prototype;_proto5.focus=function focus(){this.base.querySelector('textarea').focus();};_proto5.
+};return _this5;}_inheritsLoose(BattlePanel,_PSRoomPanel2);var _proto5=BattlePanel.prototype;_proto5.focus=function focus(){this.base.querySelector('textarea').focus();};_proto5.
 componentDidMount=function componentDidMount(){var _this6=this;
 var $elem=$(this.base);
 var battle=new Battle({

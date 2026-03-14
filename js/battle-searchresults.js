@@ -1,4 +1,4 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Search Results
  *
  * Code for displaying sesrch results from battle-dex-search.ts
@@ -7,8 +7,8 @@ function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(su
  * @license AGPLv3
  */var
 
-PSSearchResults=function(_preact$Component){_inheritsLoose(PSSearchResults,_preact$Component);function PSSearchResults(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this.
-URL_ROOT="//"+Config.routes.dex+"/";return _this;}var _proto=PSSearchResults.prototype;_proto.
+PSSearchResults=function(_preact$Component){function PSSearchResults(){var _this;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_preact$Component.call.apply(_preact$Component,[this].concat(args))||this;_this.
+URL_ROOT="//"+Config.routes.dex+"/";return _this;}_inheritsLoose(PSSearchResults,_preact$Component);var _proto=PSSearchResults.prototype;_proto.
 
 renderPokemonSortRow=function renderPokemonSortRow(){
 var search=this.props.search;

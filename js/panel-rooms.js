@@ -1,19 +1,19 @@
-function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}/**
+function _inheritsLoose(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,_setPrototypeOf(t,o);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}/**
  * Room-list panel (default right-panel)
  *
  * @author Guangcong Luo <guangcongluo@gmail.com>
  * @license AGPLv3
  */var
 
-RoomsRoom=function(_PSRoom){_inheritsLoose(RoomsRoom,_PSRoom);
+RoomsRoom=function(_PSRoom){
 
 function RoomsRoom(options){var _this;
 _this=_PSRoom.call(this,options)||this;_this.classType='rooms';
 PS.send("|/cmd rooms");return _this;
-}return RoomsRoom;}(PSRoom);var
+}_inheritsLoose(RoomsRoom,_PSRoom);return RoomsRoom;}(PSRoom);var
 
 
-RoomsPanel=function(_PSRoomPanel){_inheritsLoose(RoomsPanel,_PSRoomPanel);function RoomsPanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
+RoomsPanel=function(_PSRoomPanel){function RoomsPanel(){var _this2;for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this2=_PSRoomPanel.call.apply(_PSRoomPanel,[this].concat(args))||this;_this2.
 hidden=false;_this2.
 search='';_this2.
 lastKeyCode=0;_this2.
@@ -51,7 +51,7 @@ target.value='';
 
 PS.join(value);
 }
-};return _this2;}var _proto=RoomsPanel.prototype;_proto.componentDidMount=function componentDidMount(){_PSRoomPanel.prototype.componentDidMount.call(this);this.subscriptions.push(PS.user.subscribe(function(){if(PS.user.named)PS.send("|/cmd rooms");}));};_proto.
+};return _this2;}_inheritsLoose(RoomsPanel,_PSRoomPanel);var _proto=RoomsPanel.prototype;_proto.componentDidMount=function componentDidMount(){_PSRoomPanel.prototype.componentDidMount.call(this);this.subscriptions.push(PS.user.subscribe(function(){if(PS.user.named)PS.send("|/cmd rooms");}));};_proto.
 runSearch=function runSearch(){
 var searchid=toID(this.search);
 var exactMatch=false;

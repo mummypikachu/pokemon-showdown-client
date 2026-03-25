@@ -18,13 +18,14 @@ Config.whitelist = [
 // `defaultserver` specifies the server to use when the domain name in the
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
-	id: 'showdown',
-	host: '99.93.10.109',
-	port: 8000,
-	httpport: 80,
-	altport: 0,
-	registered: false
+    id: 'showdown',
+    host: 'backend.sigmatic-showdown.online', // point to the backend subdomain
+    port: 443,  // HTTP default
+    httpport: 80,
+	altport: 80,
+	registered: true,
 };
+
 
 
 Config.roomsFirstOpenScript = function () {
@@ -32,7 +33,7 @@ Config.roomsFirstOpenScript = function () {
 
 
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (2cffb1d9)";
+Config.version = "0.11.2 (8905f36e)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
